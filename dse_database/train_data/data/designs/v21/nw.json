@@ -1,0 +1,90 @@
+{
+    "__PARA__L0-32.__PARA__L1-32.__PARA__L2-4.__PARA__L3-1.__PIPE__L2-flatten.__TILE__L2-2": {
+        "perf": 0.0,
+        "valid": false,
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        },
+        "point": {
+            "__PARA__L0": 32,
+            "__PARA__L1": 32,
+            "__PARA__L2": 4,
+            "__PARA__L3": 1,
+            "__PIPE__L2": "flatten",
+            "__TILE__L2": 2
+        }
+    },
+    "__PARA__L0-32.__PARA__L1-2.__PARA__L2-4.__PARA__L3-128.__PIPE__L2-NA.__TILE__L2-1": {
+        "perf": 34012.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.0,
+            "util-LUT": 0.26,
+            "util-FF": 0.04,
+            "total-BRAM": 64.0,
+            "total-DSP": 0.0,
+            "total-LUT": 316649.0,
+            "total-FF": 96637.0
+        },
+        "point": {
+            "__PARA__L0": 32,
+            "__PARA__L1": 2,
+            "__PARA__L2": 4,
+            "__PARA__L3": 128,
+            "__PIPE__L2": "",
+            "__TILE__L2": 1
+        }
+    },
+    "__PARA__L0-32.__PARA__L1-1.__PARA__L2-4.__PARA__L3-128.__PIPE__L2-NA.__TILE__L2-1": {
+        "perf": 34067.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.0,
+            "util-LUT": 0.26,
+            "util-FF": 0.04,
+            "total-BRAM": 64.0,
+            "total-DSP": 0.0,
+            "total-LUT": 316263.0,
+            "total-FF": 96837.0
+        },
+        "point": {
+            "__PARA__L0": 32,
+            "__PARA__L1": 1,
+            "__PARA__L2": 4,
+            "__PARA__L3": 128,
+            "__PIPE__L2": "",
+            "__TILE__L2": 1
+        }
+    },
+    "__PARA__L0-32.__PARA__L1-16.__PARA__L2-4.__PARA__L3-1.__PIPE__L2-flatten.__TILE__L2-2": {
+        "perf": 0.0,
+        "valid": false,
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        },
+        "point": {
+            "__PARA__L0": 32,
+            "__PARA__L1": 16,
+            "__PARA__L2": 4,
+            "__PARA__L3": 1,
+            "__PIPE__L2": "flatten",
+            "__TILE__L2": 2
+        }
+    }
+}

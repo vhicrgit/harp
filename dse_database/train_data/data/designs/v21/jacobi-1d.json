@@ -1,0 +1,4895 @@
+{
+    "__PARA__L0-4.__PARA__L1-1.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 1,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-32.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-1": {
+        "perf": 3857.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.06,
+            "util-LUT": 0.06,
+            "util-FF": 0.03,
+            "total-BRAM": 60.0,
+            "total-DSP": 448.0,
+            "total-LUT": 71124.0,
+            "total-FF": 72375.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 32,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-118.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 118,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-32.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 32,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-20.__PARA__L1-118.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 20,
+            "__PARA__L1": 118,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-32.__PARA__L2-1.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 32,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-4.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-8": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 4,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 8
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-32.__PARA__L1-1.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 32,
+            "__PARA__L1": 1,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-32.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-4": {
+        "perf": 10701.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.06,
+            "util-LUT": 0.05,
+            "util-FF": 0.02,
+            "total-BRAM": 60.0,
+            "total-DSP": 448.0,
+            "total-LUT": 69644.0,
+            "total-FF": 67923.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 32,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-1.__PARA__L2-1.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 1,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-4.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 4,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-2.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 2,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-8.__PARA__L2-8.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 8,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-118.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-1": {
+        "perf": 1738.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.18,
+            "util-LUT": 0.1,
+            "util-FF": 0.06,
+            "total-BRAM": 60.0,
+            "total-DSP": 1298.0,
+            "total-LUT": 124536.0,
+            "total-FF": 156970.0
+        },
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 118,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-8.__PARA__L2-118.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 8,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-118.__PARA__L2-32.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 118,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-1.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 1,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-32.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 32,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-118.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 118,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-16.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 16,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-118.__PARA__L2-8.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 118,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-40.__PARA__L1-8.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 40,
+            "__PARA__L1": 8,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-4.__PARA__L2-32.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 4,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-32.__PARA__L2-32.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 32,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-20.__PARA__L1-32.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 20,
+            "__PARA__L1": 32,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-16.__PARA__L1-2.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 16,
+            "__PARA__L1": 2,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-16.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 16,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-40.__PARA__L1-118.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 40,
+            "__PARA__L1": 118,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-1.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 1,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-8.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 8,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-16.__PARA__L1-16.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 16,
+            "__PARA__L1": 16,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-40.__PARA__L1-118.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 40,
+            "__PARA__L1": 118,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-2.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 2,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-32.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 32,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-2.__PARA__L2-8.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 2,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-2.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 2,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-118.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 118,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-4.__PARA__L2-1.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 4,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-32.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-1": {
+        "perf": 8697.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.06,
+            "util-LUT": 0.05,
+            "util-FF": 0.02,
+            "total-BRAM": 60.0,
+            "total-DSP": 448.0,
+            "total-LUT": 69913.0,
+            "total-FF": 65587.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 32,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-16.__PARA__L2-1.__PIPE__L0-NA.__TILE__L0-40": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 16,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "",
+            "__TILE__L0": 40
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-1.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 1,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-4.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 4,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-8.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 8,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-40.__PARA__L1-8.__PARA__L2-4.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 40,
+            "__PARA__L1": 8,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-16.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 16,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-20.__PARA__L1-16.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 20,
+            "__PARA__L1": 16,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-16.__PARA__L2-4.__PIPE__L0-off.__TILE__L0-2": {
+        "perf": 13801.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.03,
+            "util-LUT": 0.03,
+            "util-FF": 0.01,
+            "total-BRAM": 60.0,
+            "total-DSP": 224.0,
+            "total-LUT": 39392.0,
+            "total-FF": 37610.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 16,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-2.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 2,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-8.__PARA__L2-118.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 8,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-8.__PARA__L2-8.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 8,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-16.__PARA__L1-32.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 16,
+            "__PARA__L1": 32,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-118.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 118,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-32.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 32,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-4.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 4,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-32.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-8": {
+        "perf": 6051.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.08,
+            "util-LUT": 0.06,
+            "util-FF": 0.03,
+            "total-BRAM": 60.0,
+            "total-DSP": 585.0,
+            "total-LUT": 78915.0,
+            "total-FF": 86591.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 32,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 8
+        }
+    },
+    "__PARA__L0-16.__PARA__L1-16.__PARA__L2-118.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 16,
+            "__PARA__L1": 16,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-32.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-2": {
+        "perf": 12561.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.06,
+            "util-LUT": 0.06,
+            "util-FF": 0.03,
+            "total-BRAM": 60.0,
+            "total-DSP": 448.0,
+            "total-LUT": 71153.0,
+            "total-FF": 72268.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 32,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-8.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 8,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-32.__PARA__L2-1.__PIPE__L0-NA.__TILE__L0-8": {
+        "perf": 10771.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.06,
+            "util-LUT": 0.05,
+            "util-FF": 0.02,
+            "total-BRAM": 60.0,
+            "total-DSP": 448.0,
+            "total-LUT": 69599.0,
+            "total-FF": 66933.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 32,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "",
+            "__TILE__L0": 8
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-118.__PARA__L2-8.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 118,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-16.__PARA__L2-8.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 16,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-118.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 118,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-32.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 32,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-4.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 4,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-8.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 8,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-4.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-8": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 4,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 8
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-118.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 118,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-32.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 32,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-16.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 16,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-118.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 118,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-1.__PARA__L2-32.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 1,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-40.__PARA__L1-2.__PARA__L2-1.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 40,
+            "__PARA__L1": 2,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-20.__PARA__L1-2.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 20,
+            "__PARA__L1": 2,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-16.__PARA__L1-32.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 16,
+            "__PARA__L1": 32,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-32.__PARA__L2-1.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 32,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-40.__PARA__L1-2.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 40,
+            "__PARA__L1": 2,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-20.__PARA__L1-4.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 20,
+            "__PARA__L1": 4,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-16.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-8": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 16,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 8
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-16.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 16,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-32.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-40": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 32,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 40
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-8.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-8": {
+        "perf": 10331.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.01,
+            "util-LUT": 0.02,
+            "util-FF": 0.01,
+            "total-BRAM": 60.0,
+            "total-DSP": 112.0,
+            "total-LUT": 24933.0,
+            "total-FF": 23986.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 8,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 8
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-8.__PARA__L2-32.__PIPE__L0-off.__TILE__L0-4": {
+        "perf": 9661.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.06,
+            "util-LUT": 0.06,
+            "util-FF": 0.02,
+            "total-BRAM": 60.0,
+            "total-DSP": 463.0,
+            "total-LUT": 73881.0,
+            "total-FF": 70624.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 8,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-16.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 16,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-32.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-40": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 32,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 40
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-8.__PARA__L2-1.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 8,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-40.__PARA__L1-16.__PARA__L2-118.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 40,
+            "__PARA__L1": 16,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-4.__PARA__L2-1.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 4,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-4.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-2": {
+        "perf": 17641.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0,
+            "util-LUT": 0.01,
+            "util-FF": 0,
+            "total-BRAM": 60.0,
+            "total-DSP": 0,
+            "total-LUT": 19298.0,
+            "total-FF": 0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 4,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        }
+    },
+    "__PARA__L0-32.__PARA__L1-32.__PARA__L2-8.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 32,
+            "__PARA__L1": 32,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-32.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 32,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-16.__PARA__L2-32.__PIPE__L0-off.__TILE__L0-2": {
+        "perf": 13961.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.06,
+            "util-LUT": 0.06,
+            "util-FF": 0.03,
+            "total-BRAM": 60.0,
+            "total-DSP": 463.0,
+            "total-LUT": 74210.0,
+            "total-FF": 73116.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 16,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-32.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 32,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-32.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 32,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-32.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 32,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-16.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 16,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-20.__PARA__L1-8.__PARA__L2-32.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 20,
+            "__PARA__L1": 8,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-16.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 16,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-16.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 16,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-32.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 32,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-2.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 2,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-40.__PARA__L1-118.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 40,
+            "__PARA__L1": 118,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-16.__PARA__L1-32.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 16,
+            "__PARA__L1": 32,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-4.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-8": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 4,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 8
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-1.__PARA__L2-118.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 1,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-16.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-8": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 16,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 8
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-16.__PARA__L2-1.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 16,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-2.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-8": {
+        "perf": 7691.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.03,
+            "util-LUT": 0.03,
+            "util-FF": 0.01,
+            "total-BRAM": 60.0,
+            "total-DSP": 224.0,
+            "total-LUT": 39665.0,
+            "total-FF": 38033.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 2,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 8
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-118.__PARA__L2-32.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 118,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-4.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 4,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-1.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 1,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-20.__PARA__L1-32.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 20,
+            "__PARA__L1": 32,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-8.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-8": {
+        "perf": 6531.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.03,
+            "util-LUT": 0.03,
+            "util-FF": 0.01,
+            "total-BRAM": 60.0,
+            "total-DSP": 249.0,
+            "total-LUT": 41890.0,
+            "total-FF": 41008.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 8,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 8
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-4.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 4,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-8.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-40": {
+        "perf": 6137.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.01,
+            "util-LUT": 0.02,
+            "util-FF": 0.01,
+            "total-BRAM": 60.0,
+            "total-DSP": 112.0,
+            "total-LUT": 25108.0,
+            "total-FF": 25324.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 8,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 40
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-8.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 8,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-32.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 32,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-32.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-4": {
+        "perf": 8861.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.06,
+            "util-LUT": 0.05,
+            "util-FF": 0.02,
+            "total-BRAM": 60.0,
+            "total-DSP": 448.0,
+            "total-LUT": 70211.0,
+            "total-FF": 69660.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 32,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        }
+    },
+    "__PARA__L0-16.__PARA__L1-32.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 16,
+            "__PARA__L1": 32,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-8.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 8,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-4.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-8": {
+        "perf": 8131.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0,
+            "util-LUT": 0.01,
+            "util-FF": 0,
+            "total-BRAM": 60.0,
+            "total-DSP": 0,
+            "total-LUT": 20909.0,
+            "total-FF": 0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 4,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 8
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-8.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 8,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-32.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 32,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-8.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-8": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 8,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 8
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-32.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 32,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-118.__PARA__L2-1.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 118,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-32.__PARA__L2-4.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 32,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-8.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 8,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-16.__PARA__L2-4.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 16,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-16.__PARA__L1-16.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 16,
+            "__PARA__L1": 16,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-4.__PARA__L2-118.__PIPE__L0-NA.__TILE__L0-8": {
+        "perf": 5536.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.18,
+            "util-LUT": 0.11,
+            "util-FF": 0.08,
+            "total-BRAM": 60.0,
+            "total-DSP": 1298.0,
+            "total-LUT": 139714.0,
+            "total-FF": 209817.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 4,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "",
+            "__TILE__L0": 8
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-8.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 8,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-16.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 16,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-1.__PARA__L2-1.__PIPE__L0-flatten.__TILE__L0-40": {
+        "perf": 1739.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.16,
+            "util-LUT": 0.09,
+            "util-FF": 0.06,
+            "total-BRAM": 60.0,
+            "total-DSP": 1100.0,
+            "total-LUT": 109789.0,
+            "total-FF": 142063.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 1,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "flatten",
+            "__TILE__L0": 40
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-32.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 32,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-4.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-4": {
+        "perf": 7831.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.18,
+            "util-LUT": 0.11,
+            "util-FF": 0.08,
+            "total-BRAM": 60.0,
+            "total-DSP": 1298.0,
+            "total-LUT": 139715.0,
+            "total-FF": 209817.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 4,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-1.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 1,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-4.__PARA__L2-4.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 4,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-20.__PARA__L1-16.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 20,
+            "__PARA__L1": 16,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-4.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 4,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-32.__PARA__L2-118.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 32,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-40.__PARA__L1-1.__PARA__L2-32.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 40,
+            "__PARA__L1": 1,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-118.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 118,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-8.__PARA__L2-8.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 8,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-8.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-8": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 8,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 8
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-16.__PARA__L2-32.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 16,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-4.__PARA__L2-8.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 4,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-2.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 2,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-4.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 4,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-32.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-1": {
+        "perf": 2617.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.18,
+            "util-LUT": 0.11,
+            "util-FF": 0.08,
+            "total-BRAM": 60.0,
+            "total-DSP": 1298.0,
+            "total-LUT": 132880.0,
+            "total-FF": 195122.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 32,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-118.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 118,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-4.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 4,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-8.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 8,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-16.__PARA__L1-16.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 16,
+            "__PARA__L1": 16,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-16.__PARA__L2-118.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 16,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-1.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 1,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-118.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 118,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-2.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 2,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-2.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 2,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-118.__PARA__L2-1.__PIPE__L0-NA.__TILE__L0-2": {
+        "perf": 15701.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.18,
+            "util-LUT": 0.12,
+            "util-FF": 0.09,
+            "total-BRAM": 60.0,
+            "total-DSP": 1298.0,
+            "total-LUT": 144488.0,
+            "total-FF": 216798.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 118,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-1.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 1,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-16.__PARA__L2-8.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 16,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-20.__PARA__L1-118.__PARA__L2-118.__PIPE__L0-NA.__TILE__L0-1": {
+        "perf": 1739.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.18,
+            "util-LUT": 0.1,
+            "util-FF": 0.07,
+            "total-BRAM": 60.0,
+            "total-DSP": 1298.0,
+            "total-LUT": 126236.0,
+            "total-FF": 172645.0
+        },
+        "point": {
+            "__PARA__L0": 20,
+            "__PARA__L1": 118,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-118.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 118,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-16.__PARA__L1-16.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 16,
+            "__PARA__L1": 16,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-32.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 32,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-16.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 16,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-8.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-8": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 8,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 8
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-8.__PARA__L2-1.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 8,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-32.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 32,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-16.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 16,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-16.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-8": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 16,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 8
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-16.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-2": {
+        "perf": 16961.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.03,
+            "util-LUT": 0.03,
+            "util-FF": 0.01,
+            "total-BRAM": 60.0,
+            "total-DSP": 224.0,
+            "total-LUT": 39523.0,
+            "total-FF": 36749.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 16,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-8.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 8,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-8.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-8": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 8,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 8
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-40.__PARA__L1-32.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 40,
+            "__PARA__L1": 32,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-8.__PARA__L2-118.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 8,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-8.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 8,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-20.__PARA__L1-32.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 20,
+            "__PARA__L1": 32,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-16.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-8": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 16,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 8
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-1.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 1,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-4.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 4,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-32.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-4": {
+        "perf": 6711.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.18,
+            "util-LUT": 0.11,
+            "util-FF": 0.09,
+            "total-BRAM": 60.0,
+            "total-DSP": 1298.0,
+            "total-LUT": 136676.0,
+            "total-FF": 214352.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 32,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        }
+    },
+    "__PARA__L0-40.__PARA__L1-8.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 40,
+            "__PARA__L1": 8,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-8.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-8": {
+        "perf": 7971.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.01,
+            "util-LUT": 0.02,
+            "util-FF": 0.01,
+            "total-BRAM": 60.0,
+            "total-DSP": 112.0,
+            "total-LUT": 25138.0,
+            "total-FF": 25217.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 8,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 8
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-4.__PARA__L2-32.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 4,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-16.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 16,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-118.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-2": {
+        "perf": 2658.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.18,
+            "util-LUT": 0.13,
+            "util-FF": 0.09,
+            "total-BRAM": 60.0,
+            "total-DSP": 1298.0,
+            "total-LUT": 159075.0,
+            "total-FF": 220563.0
+        },
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 118,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-118.__PARA__L2-1.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 118,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-4.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 4,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-16.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 16,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-32.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 32,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-8.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 8,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-16.__PARA__L1-16.__PARA__L2-4.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 16,
+            "__PARA__L1": 16,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-32.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 32,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-118.__PARA__L2-8.__PIPE__L0-off.__TILE__L0-1": {
+        "perf": 3097.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.18,
+            "util-LUT": 0.11,
+            "util-FF": 0.07,
+            "total-BRAM": 60.0,
+            "total-DSP": 1298.0,
+            "total-LUT": 133785.0,
+            "total-FF": 183002.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 118,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-32.__PARA__L2-4.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 32,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-2.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-2": {
+        "perf": 14841.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.01,
+            "util-LUT": 0.02,
+            "util-FF": 0.01,
+            "total-BRAM": 60.0,
+            "total-DSP": 112.0,
+            "total-LUT": 25137.0,
+            "total-FF": 25217.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 2,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        }
+    },
+    "__PARA__L0-16.__PARA__L1-4.__PARA__L2-118.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 16,
+            "__PARA__L1": 4,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-118.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 118,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-16.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 16,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-16.__PARA__L1-1.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 16,
+            "__PARA__L1": 1,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-4.__PARA__L2-1.__PIPE__L0-NA.__TILE__L0-4": {
+        "perf": 13061.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0,
+            "util-LUT": 0.01,
+            "util-FF": 0,
+            "total-BRAM": 60.0,
+            "total-DSP": 0,
+            "total-LUT": 19300.0,
+            "total-FF": 0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 4,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-8.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 8,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-16.__PARA__L1-4.__PARA__L2-4.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 16,
+            "__PARA__L1": 4,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-32.__PARA__L2-32.__PIPE__L0-NA.__TILE__L0-4": {
+        "perf": 8341.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.08,
+            "util-LUT": 0.06,
+            "util-FF": 0.03,
+            "total-BRAM": 60.0,
+            "total-DSP": 585.0,
+            "total-LUT": 78916.0,
+            "total-FF": 86591.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 32,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-32.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 32,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-16.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 16,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-8.__PARA__L1-16.__PARA__L2-2.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 8,
+            "__PARA__L1": 16,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-16.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-8": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 16,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 8
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-4.__PARA__L2-32.__PIPE__L0-off.__TILE__L0-8": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 4,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 8
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-1.__PARA__L2-32.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 1,
+            "__PARA__L2": 32,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-2.__PARA__L1-1.__PARA__L2-4.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 2,
+            "__PARA__L1": 1,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-20.__PARA__L1-2.__PARA__L2-8.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 20,
+            "__PARA__L1": 2,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-4.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 4,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-32.__PARA__L1-16.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 32,
+            "__PARA__L1": 16,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-32.__PARA__L1-118.__PARA__L2-4.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 32,
+            "__PARA__L1": 118,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-1.__PARA__L2-4.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 1,
+            "__PARA__L2": 4,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-5.__PARA__L1-1.__PARA__L2-118.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 5,
+            "__PARA__L1": 1,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-4.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 4,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-8.__PARA__L2-2.__PIPE__L0-off.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 8,
+            "__PARA__L2": 2,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-20.__PARA__L1-1.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 20,
+            "__PARA__L1": 1,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-4.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 4,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-1.__PARA__L2-16.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 1,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-20.__PARA__L1-4.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 20,
+            "__PARA__L1": 4,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-16.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 16,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-1.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 1,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-16.__PARA__L1-1.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 16,
+            "__PARA__L1": 1,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-16.__PARA__L2-16.__PIPE__L0-off.__TILE__L0-8": {
+        "perf": 6251.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.03,
+            "util-LUT": 0.03,
+            "util-FF": 0.01,
+            "total-BRAM": 60.0,
+            "total-DSP": 249.0,
+            "total-LUT": 44433.0,
+            "total-FF": 43880.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 16,
+            "__PARA__L2": 16,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 8
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-8.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 8,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-20.__PARA__L1-4.__PARA__L2-1.__PIPE__L0-off.__TILE__L0-1": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 20,
+            "__PARA__L1": 4,
+            "__PARA__L2": 1,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 1
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-10.__PARA__L1-32.__PARA__L2-8.__PIPE__L0-NA.__TILE__L0-4": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 10,
+            "__PARA__L1": 32,
+            "__PARA__L2": 8,
+            "__PIPE__L0": "",
+            "__TILE__L0": 4
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-4.__PARA__L1-1.__PARA__L2-118.__PIPE__L0-NA.__TILE__L0-2": {
+        "valid": false,
+        "perf": 0,
+        "point": {
+            "__PARA__L0": 4,
+            "__PARA__L1": 1,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "",
+            "__TILE__L0": 2
+        },
+        "res_util": {
+            "util-BRAM": 0,
+            "util-DSP": 0,
+            "util-LUT": 0,
+            "util-FF": 0,
+            "total-BRAM": 0,
+            "total-DSP": 0,
+            "total-LUT": 0,
+            "total-FF": 0
+        }
+    },
+    "__PARA__L0-1.__PARA__L1-4.__PARA__L2-118.__PIPE__L0-off.__TILE__L0-40": {
+        "perf": 3737.0,
+        "valid": true,
+        "res_util": {
+            "util-BRAM": 0.01,
+            "util-DSP": 0.18,
+            "util-LUT": 0.11,
+            "util-FF": 0.08,
+            "total-BRAM": 60.0,
+            "total-DSP": 1298.0,
+            "total-LUT": 135649.0,
+            "total-FF": 189307.0
+        },
+        "point": {
+            "__PARA__L0": 1,
+            "__PARA__L1": 4,
+            "__PARA__L2": 118,
+            "__PIPE__L0": "off",
+            "__TILE__L0": 40
+        }
+    }
+}

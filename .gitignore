@@ -1,0 +1,17 @@
+# 忽略 Python 编译产生的文件
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# 忽略虚拟环境
+venv/
+.env/
+
+# 忽略日志文件和数据库文件
+*.log
+*.sqlite3
+
+*.pt
+src/logs/
+.vscode/
