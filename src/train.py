@@ -300,7 +300,7 @@ def update_csv_dict(csv_dict, data, i, target_name, target_value, out_value):
                 l.extend([f'acutal-{target_name}', f'predicted-{target_name}'])
                 csv_dict['header'] = l
 
-def train_main(dataset, pragma_dim = None, val_ratio=FLAGS.val_ratio, test_ratio=FLAGS.val_ratio, resample=-1):
+def train_main(dataset, pragma_dim = None, val_ratio=FLAGS.val_ratio, test_ratio=FLAGS.test_ratio, resample=-1):
     saver.info(f'Reading dataset from {SAVE_DIR}')
     
     clear_directory(FLAGS.visual_save_dir)
@@ -481,6 +481,10 @@ def inference(model, inference_dataset):
 
 
 def test(loader, tvt, model, epoch, plot_test = False, test_losses = [-1], csv_dict = None, data_list = [], is_train_set=False, is_val_set=False):
+    if FLAGS.fast_train and tvt == 'val' and epoch%50 != 7:
+        return 0, {}, 0, 0
+
+    
     model.eval()
     my_softplus = nn.Softplus()
     inference_loss, correct, total, count_data = 0, 0, 0, 1

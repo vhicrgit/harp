@@ -122,7 +122,7 @@ if __name__ == '__main__':
         else:
             raise NotImplementedError()
     elif FLAGS.subtask == 'train':
-        test_ratio, resample_list = FLAGS.val_ratio, [-1]
+        test_ratio, resample_list = FLAGS.test_ratio, [-1]
         if FLAGS.resample:
             test_ratio, resample_list = 0.25, range(4)
         for ind, r in enumerate(resample_list):

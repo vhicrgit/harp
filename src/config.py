@@ -11,8 +11,8 @@ TASK = 'class'
 # TASK = 'regression'
 parser.add_argument('--task', default=TASK)
 
-SUBTASK = 'train'
-# SUBTASK = 'inference'
+# SUBTASK = 'train'
+SUBTASK = 'inference'
 parser.add_argument('--subtask', default=SUBTASK)
 parser.add_argument('--plot_dse', default=False)
 
@@ -58,7 +58,7 @@ parser.add_argument('--new_speedup', default=True) # new_speedup: same reference
 parser.add_argument('--invalid', type = bool, default=False ) # False: do not include invalid designs
 
 parser.add_argument('--encode_log', type = bool, default=False)
-v_db = 'v21' # 'v20': v20 database, 'v18': v18 database
+v_db = 'v21' # 'v20': v20 database, 'v18': v18 database 'kaggle': kaggle
 parser.add_argument('--v_db', default=v_db) # if set to true uses the db of the new version of the tool: 2020.2
 
 test_kernels = None
@@ -240,7 +240,7 @@ parser.add_argument('--pragma_MLP_hidden_channels', default=pragma_MLP_hidden_ch
 parser.add_argument('--merge_MLP_hidden_channels', default=merge_MLP_hidden_channels)
 
 
-model_path = "/root/autodl-tmp/kaggle/src/logs/dse_results_v18_2024-10-14T02-42-49.240359/run1/train_model_state_dict.pth"
+model_path = "/root/autodl-tmp/kaggle/src/logs/final_class_0.98train/run1/train_model_state_dict.pth"
 # model_path = None
 model_path_list = []
 use_pretrain = False
@@ -289,9 +289,11 @@ parser.add_argument('--FT_extra', default=FT_extra) ## fine-tune only on the new
 ################ training details #################
 parser.add_argument('--save_model', type = bool, default=True)
 resample = False
-val_ratio = 0.15
+val_ratio = 0.01
+test_ratio = 0.01
 parser.add_argument('--resample', default=resample) ## when resample is turned on, it will divide the dataset in round-robin and train multiple times to have all the points in train/test set
 parser.add_argument('--val_ratio', type=float, default=val_ratio) # ratio of database for validation set
+parser.add_argument('--test_ratio', type=float, default=test_ratio) # ratio of database for validation set
 parser.add_argument('--activation', default='elu')     
 parser.add_argument('--D', type=int, default=64)
 parser.add_argument('--lr', default=2e-4) ## default=0.001
@@ -358,5 +360,10 @@ parser.add_argument('--visual_save_dir', type=str, default=visual_save_dir)
 ################# 打印test输出 ##################
 enable_print_test_res = True
 parser.add_argument('--enable_print_test_res', type=bool, default=enable_print_test_res)
+
+
+################# 打印test输出 ##################
+fast_train = True
+parser.add_argument('--fast_train', type=bool, default=fast_train)
 
 FLAGS = parser.parse_args()

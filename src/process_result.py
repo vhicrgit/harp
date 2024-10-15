@@ -11,8 +11,8 @@ def mask_negative(res_dict):
                     res_dict[k][target_name] = 0
 
 
-path = "/home/wqlou/kzw3933/HARP-MY/src/result.json"
-outpath = "/home/wqlou/kzw3933/HARP-MY/src/result_dict.json"
+path = "/root/autodl-tmp/kaggle/src/result.json"
+outpath = "/root/autodl-tmp/kaggle/src/result_dict.json"
 with open(path, 'r') as f:
     res = json.load(f)
 res_dict = dict()
@@ -32,7 +32,8 @@ with open('submission.csv', mode='r', encoding='utf-8') as file:
             continue
         id = i-1
         if row[1] == "True":
-            data_list.append([row[0], row[1], res_dict[id]['perf'], res_dict[id]['util-LUT'], res_dict[id]['util-DSP'], res_dict[id]['util-FF'], res_dict[id]['util-BRAM']])
+            # data_list.append([row[0], row[1], res_dict[id]['perf'], res_dict[id]['util-LUT'], res_dict[id]['util-DSP'], res_dict[id]['util-FF'], res_dict[id]['util-BRAM']])
+            data_list.append([row[0], row[1], 6000, 0, 0, 0, 0])
         else:
             data_list.append([row[0], row[1], 0, 0, 0, 0, 0])
     

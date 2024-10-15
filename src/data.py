@@ -37,11 +37,10 @@ NON_OPT_PRAGMAS = ['LOOP_TRIPCOUNT', 'INTERFACE', 'INTERFACE', 'KERNEL']
 WITH_VAR_PRAGMAS = ['DEPENDENCE', 'RESOURCE', 'STREAM', 'ARRAY_PARTITION']
 TARGET = ['perf', 'util-DSP', 'util-BRAM', 'util-LUT', 'util-FF']
 # SAVE_DIR = join(get_save_path(), FLAGS.dataset,  f'{FLAGS.v_db}_MLP-{FLAGS.pragma_as_MLP}-{FLAGS.graph_type}-{FLAGS.task}_edge-position-{FLAGS.encode_edge_position}_norm_with-invalid_{FLAGS.invalid}-normalization_{FLAGS.norm_method}_tag_{FLAGS.tag}_{"".join(TARGET)}')
-# SAVE_DIR = join('/root/autodl-tmp/kaggle/save', FLAGS.dataset,  f'{FLAGS.v_db}_MLP-{FLAGS.pragma_as_MLP}-{FLAGS.graph_type}-{FLAGS.task}_edge-position-{FLAGS.encode_edge_position}_norm_with-invalid_{FLAGS.invalid}-normalization_{FLAGS.norm_method}_tag_{FLAGS.tag}_{"".join(TARGET)}')
 # SAVE_DIR = '/root/autodl-tmp/kaggle/mem_dict_temp'
-# SAVE_DIR = '/root/autodl-tmp/kaggle/save/harp/v21_MLP-True-extended-pseudo-block-connected-hierarchy-regression_edge-position-True_norm_with-invalid_False-normalization_speedup-log2_tag_whole-machsuite-poly_perfutil-DSPutil-BRAMutil-LUTutil-FF'
-# SAVE_DIR = '/root/autodl-tmp/kaggle/dse_database/data/save_pt'
-SAVE_DIR = '/root/autodl-tmp/kaggle/save/v21_class'
+# SAVE_DIR = '/root/autodl-tmp/kaggle/save/v18_regression'
+# SAVE_DIR = '/root/autodl-tmp/kaggle/save/v21_class'
+SAVE_DIR = '/root/autodl-tmp/kaggle/save/infer_class'
 
 ENCODER_PATH = join(SAVE_DIR, 'encoders')
 create_dir_if_not_exists(SAVE_DIR)
@@ -68,8 +67,6 @@ if FLAGS.all_kernels:
 else:
     GEXF_FILES = sorted([f for f in iglob(GEXF_FOLDER, recursive=True) if f.endswith('.gexf') and f'{FLAGS.target_kernel}_' in f and FLAGS.graph_type in f])
 
-# with open("/root/autodl-tmp/kaggle/dse_database/kaggle/inference_data/test.json", "r") as f:
-#     DESIGNS = json.load(f)
 
 def finte_diff_as_quality(new_result: Result, ref_result: Result) -> float:
     """Compute the quality of the point by finite difference method.
@@ -385,14 +382,18 @@ def get_data_list():
         # lv2_keys = [k for k in keys if 'lv2' in k]
         # saver.log_info(f'num keys for {n}: {len(keys)} and lv2 keys: {len(lv2_keys)}')
         
-        design_path = osp.join(get_root_path(), f"dse_database/train_data/data/designs/{FLAGS.v_db}/"+kernel_name+".json")
-        if not osp.exists(design_path):
-            continue
-        with open(design_path) as f:
-            designs = json.load(f)
-        # if kernel_name not in DESIGNS:
-        #     continue
-        # designs = DESIGNS[kernel_name]
+        if FLAGS.v_db == 'kaggle':
+            with open("/root/autodl-tmp/kaggle/dse_database/test.json", "r") as f:
+                DESIGNS = json.load(f)
+            if kernel_name not in DESIGNS:
+                continue
+            designs = DESIGNS[kernel_name]
+        else:
+            design_path = osp.join(get_root_path(), f"dse_database/train_data/data/designs/{FLAGS.v_db}/"+kernel_name+".json")
+            if not osp.exists(design_path):
+                continue
+            with open(design_path) as f:
+                designs = json.load(f)
         keys = designs.keys()
         total_designs += len(keys)
         all_gs[gname] = g
@@ -428,11 +429,12 @@ def get_data_list():
             # obj = pickle.loads(pickle_obj)
             
             design = designs[key]
-            obj = Design(kernel_name, 'v21', design, is_inference=False)
-            # obj.id_ = design["id"]
-            if obj.valid is False and FLAGS.task == 'regression':
+            obj = Design(kernel_name, 'v21', design, is_inference=(FLAGS.task=='inference'))
+            if FLAGS.v_db == 'kaggle':
+                obj.id_ = design["id"]
+            if not obj.is_inference and obj.valid is False and FLAGS.task == 'regression':
                 continue
-            if obj.perf == 0 and FLAGS.task == 'regression':
+            if not obj.is_inference and obj.perf == 0 and FLAGS.task == 'regression':
                 continue
             
             if type(obj) is int or type(obj) is dict:
@@ -527,8 +529,8 @@ def get_data_list():
                 xy_dict['perf'] = torch.FloatTensor(np.array([y])).type(torch.LongTensor)
             else:
                 raise NotImplementedError()
-            
-            # xy_dict['id_'] = obj.id_
+            if FLAGS.v_db == 'kaggle':
+                xy_dict['id_'] = obj.id_
 
             vname = key
 
