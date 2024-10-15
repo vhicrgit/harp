@@ -1012,8 +1012,9 @@ def plot_models_per_graph(save_dir, name, graph_types, plot_data, multi_target):
 
 
 # 可视化
-visual_save_dir = '/root/autodl-tmp/kaggle/save/harp/visual'
-labels_map_dir = '/root/autodl-tmp/kaggle/save/harp/idx2text.json'
+harp_path = '/home/wqlou/kzw3933/harp'
+visual_save_dir = join(harp_path, 'save/harp/visual')
+labels_map_dir = join(harp_path, 'save/harp/idx2text.json')
 batch_size = 64
 
 def clear_directory(directory_path):

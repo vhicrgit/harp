@@ -6,23 +6,25 @@ from os.path import join
 
 decoder_arch = []
 
+
 parser = argparse.ArgumentParser()
-TASK = 'class'
-# TASK = 'regression'
+# TASK = 'class'
+TASK = 'regression'
 parser.add_argument('--task', default=TASK)
 
-# SUBTASK = 'train'
-SUBTASK = 'inference'
+SUBTASK = 'train'
+# SUBTASK = 'inference'
 parser.add_argument('--subtask', default=SUBTASK)
 parser.add_argument('--plot_dse', default=False)
 
 
+#################### basd path ####################
+harp_path = '/home/wqlou/kzw3933/harp'
+parser.add_argument('--harp_path', default=harp_path)
 #################### visualization ####################
 parser.add_argument('--vis_per_kernel', default=True) ## only tsne visualization for now 
 
-
 ######################## data ########################
-
 # TARGETS = ['perf', 'quality', 'util-BRAM', 'util-DSP', 'util-LUT', 'util-FF',
 #            'total-BRAM', 'total-DSP', 'total-LUT', 'total-FF']
 TARGETS = ['perf', 'util-BRAM', 'util-DSP', 'util-LUT', 'util-FF',
@@ -58,7 +60,7 @@ parser.add_argument('--new_speedup', default=True) # new_speedup: same reference
 parser.add_argument('--invalid', type = bool, default=False ) # False: do not include invalid designs
 
 parser.add_argument('--encode_log', type = bool, default=False)
-v_db = 'v21' # 'v20': v20 database, 'v18': v18 database 'kaggle': kaggle
+v_db = 'v18' # 'v20': v20 database, 'v18': v18 database 'kaggle': kaggle
 parser.add_argument('--v_db', default=v_db) # if set to true uses the db of the new version of the tool: 2020.2
 
 test_kernels = None
@@ -240,8 +242,8 @@ parser.add_argument('--pragma_MLP_hidden_channels', default=pragma_MLP_hidden_ch
 parser.add_argument('--merge_MLP_hidden_channels', default=merge_MLP_hidden_channels)
 
 
-model_path = "/root/autodl-tmp/kaggle/src/logs/final_class_0.98train/run1/train_model_state_dict.pth"
-# model_path = None
+# model_path = join(harp_path, 'models/v18/v18.regression.pth')
+model_path = None
 model_path_list = []
 use_pretrain = False
 # if use_pretrain:
@@ -289,8 +291,8 @@ parser.add_argument('--FT_extra', default=FT_extra) ## fine-tune only on the new
 ################ training details #################
 parser.add_argument('--save_model', type = bool, default=True)
 resample = False
-val_ratio = 0.01
-test_ratio = 0.01
+val_ratio = 0.15
+test_ratio = 0.15
 parser.add_argument('--resample', default=resample) ## when resample is turned on, it will divide the dataset in round-robin and train multiple times to have all the points in train/test set
 parser.add_argument('--val_ratio', type=float, default=val_ratio) # ratio of database for validation set
 parser.add_argument('--test_ratio', type=float, default=test_ratio) # ratio of database for validation set
@@ -304,7 +306,7 @@ parser.add_argument("--scheduler", default=scheduler)
 parser.add_argument("--warmup", default=warmup)
 
 parser.add_argument('--random_seed', default=123) ## default=100
-batch_size = 32
+batch_size = 64
 parser.add_argument('--batch_size', type=int, default=batch_size)
 
 loss = 'RMSE' # RMSE, MSE, 
@@ -352,9 +354,9 @@ parser.add_argument('--hostname', default=get_host())
 ################# visualize ##################
 gloabal_att_visual = False
 parser.add_argument('--gloabal_att_visual', type=bool, default=gloabal_att_visual)
-labels_map_dir = '/root/autodl-tmp/kaggle/save/harp/labels_map.json'
+labels_map_dir = join(harp_path, 'save/harp/labels_map.json')
 parser.add_argument('--labels_map_dir', type=str, default=labels_map_dir)
-visual_save_dir = '/root/autodl-tmp/kaggle/save/harp/visual'
+visual_save_dir = join(harp_path, 'save/harp/visual')
 parser.add_argument('--visual_save_dir', type=str, default=visual_save_dir)
 
 ################# 打印test输出 ##################

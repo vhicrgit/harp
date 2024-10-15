@@ -1,0 +1,603 @@
+task                       : regression
+subtask                    : train
+plot_dse                   : False
+harp_path                  : /home/wqlou/kzw3933/harp
+vis_per_kernel             : True
+force_regen                : False
+min_allowed_latency        : 100.0
+epsilon                    : 0.001
+normalizer                 : 10000000.0
+util_normalizer            : 1
+max_number                 : 10000000000.0
+norm_method                : speedup-log2
+new_speedup                : True
+invalid                    : False
+encode_log                 : False
+v_db                       : v18
+test_kernels               : None
+target_kernel              : None
+all_kernels                : True
+dataset                    : harp
+benchmarks                 : ['machsuite',
+                           :  'poly']
+tag                        : whole-machsuite-poly
+graph_type                 : extended-pseudo-block-connected-hierarchy
+encoder_path               : None
+bad_embedding              : False
+enable_embedding           : True
+n_size                     : 5
+p_size                     : 4
+numeric_size               : 500
+i_size                     : 83
+f_size                     : 8
+b_size                     : 56
+n_embed_dim                : 0
+p_embed_dim                : 0
+numeric_embed_dim          : 32
+i_embed_dim                : 32
+f_embed_dim                : 0
+b_embed_dim                : 0
+node_embed_dim             : 64
+edge_f_size                : 7
+edge_p_size                : 328
+edge_f_embed_dim           : 32
+edge_p_embed_dim           : 32
+edge_embed_dim             : 64
+encode_edge                : True
+encode_edge_position       : True
+num_layers                 : 6
+num_features               : 153
+edge_dim                   : 335
+target                     : ['perf',
+                           :  'util-LUT',
+                           :  'util-FF',
+                           :  'util-DSP',
+                           :  'util-BRAM']
+MLP_common_lyr             : 0
+gnn_type                   : multihead_transformer
+dropout                    : 0.1
+jkn_mode                   : max
+jkn_enable                 : True
+multi_attention            : True
+node_attention             : True
+node_attention_MLP         : False
+separate_P                 : True
+separate_icmp              : False
+separate_T                 : False
+separate_pseudo            : True
+P_use_all_nodes            : True
+gae_T                      : False
+gae_P                      : False
+gnn_layer_after_MLP        : 1
+pragma_as_MLP              : True
+pragma_as_MLP_list         : ['tile',
+                           :  'pipeline',
+                           :  'parallel']
+pragma_scope               : block
+keep_pragma_attribute      : False
+pragma_order               : parallel_and_merge
+pragma_MLP_hidden_channels : [in_D // 2]
+merge_MLP_hidden_channels  : [in_D // 2]
+model_path                 : None
+ensemble                   : 0
+ensemble_weights           : None
+class_model_path           : None
+feature_extract            : True
+random_MLP                 : False
+fix_gnn_layer              : 1
+FT_extra                   : False
+save_model                 : True
+resample                   : False
+val_ratio                  : 0.15
+test_ratio                 : 0.15
+activation                 : elu
+D                          : 64
+lr                         : 0.0002
+weight_decay               : 0
+scheduler                  : cosine
+warmup                     : linear
+random_seed                : 123
+batch_size                 : 64
+loss                       : RMSE
+epoch_num                  : 1000
+device                     : cuda:0
+explorer                   : exhaustive
+model_tag                  : test
+prune_util                 : True
+prune_class                : True
+print_every_iter           : 100
+plot_pred_points           : True
+user                       : wqlou
+hostname                   : lab502-Super-Server
+gloabal_att_visual         : False
+labels_map_dir             : /home/wqlou/kzw3933/harp/save/harp/labels_map.json
+visual_save_dir            : /home/wqlou/kzw3933/harp/save/harp/visual
+enable_print_test_res      : True
+fast_train                 : True
+ts                         : 2024-10-15T10-16-44.673014
+Logging to /home/wqlou/kzw3933/harp/src/logs/dse_results_v18_2024-10-15T10-16-44.673014
+read dataset
+Trying to load but no file /home/kzw3933/Desktop/kaggle/dse_database/data/save_pt/pragma_dim.klepto
+[0m] INFO: Starting training with resample -1
+[0m] INFO: Reading dataset from /home/wqlou/kzw3933/harp/save/v18_regression_unmasked
+8785 graphs in total: 6149 train 1317 val 1319 test
+[0m] INFO: num features for training: 157
+[0m] INFO: size of the edge attribute is 335
+Model size (number of parameters): 851740
+fixing parameter: conv_first.bn.module.weight
+fixing parameter: conv_first.bn.module.bias
+fixing parameter: conv_first.conv.lin_key.weight
+fixing parameter: conv_first.conv.lin_key.bias
+fixing parameter: conv_first.conv.lin_query.weight
+fixing parameter: conv_first.conv.lin_query.bias
+fixing parameter: conv_first.conv.lin_value.weight
+fixing parameter: conv_first.conv.lin_value.bias
+fixing parameter: conv_first.conv.lin_edge.weight
+fixing parameter: conv_first.conv.lin_skip.weight
+fixing parameter: conv_first.conv.lin_skip.bias
+fixing parameter: conv_first.fc.weight
+fixing parameter: conv_first.fc.bias
+Net(
+  (node_embedding): NodeEmbedding(
+    (residual): Identity()
+    (numeric_embed): Embedding(500, 32)
+    (i_embed): Embedding(83, 32)
+    (fc): Linear(in_features=64, out_features=64, bias=True)
+  )
+  (edge_embedding): EdgeEmbedding(
+    (p_embed): Embedding(328, 32)
+    (f_embed): Embedding(7, 32)
+    (fc): Linear(in_features=64, out_features=64, bias=True)
+  )
+  (conv_first): MultiheadTransformer(
+    (bn): BatchNorm(64)
+    (residual): Identity()
+    (conv): TransformerConv(64, 64, heads=4)
+    (fc): Linear(in_features=256, out_features=64, bias=True)
+  )
+  (conv_layers): ModuleList(
+    (0): MultiheadTransformer(
+      (bn): BatchNorm(64)
+      (residual): Identity()
+      (conv): TransformerConv(64, 64, heads=4)
+      (fc): Linear(in_features=256, out_features=64, bias=True)
+    )
+    (1): MultiheadTransformer(
+      (bn): BatchNorm(64)
+      (residual): Identity()
+      (conv): TransformerConv(64, 64, heads=4)
+      (fc): Linear(in_features=256, out_features=64, bias=True)
+    )
+    (2): MultiheadTransformer(
+      (bn): BatchNorm(64)
+      (residual): Identity()
+      (conv): TransformerConv(64, 64, heads=4)
+      (fc): Linear(in_features=256, out_features=64, bias=True)
+    )
+    (3): MultiheadTransformer(
+      (bn): BatchNorm(64)
+      (residual): Identity()
+      (conv): TransformerConv(64, 64, heads=4)
+      (fc): Linear(in_features=256, out_features=64, bias=True)
+    )
+    (4): MultiheadTransformer(
+      (bn): BatchNorm(64)
+      (residual): Identity()
+      (conv): TransformerConv(64, 64, heads=4)
+      (fc): Linear(in_features=256, out_features=64, bias=True)
+    )
+    (5): MultiheadTransformer(
+      (bn): BatchNorm(64)
+      (residual): Identity()
+      (conv): TransformerConv(64, 64, heads=4)
+      (fc): Linear(in_features=256, out_features=64, bias=True)
+    )
+  )
+  (jkn): JumpingKnowledge(max)
+  (loss_function): MSELoss()
+  (gate_nn_P): Sequential(
+    (0): Linear(in_features=64, out_features=64, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=64, out_features=1, bias=True)
+  )
+  (gate_nn_pseudo_B): Sequential(
+    (0): Linear(in_features=64, out_features=64, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=64, out_features=1, bias=True)
+  )
+  (MLPs): MultiAttension_MLP_multi_objective(
+    (gate_nn): Sequential(
+      (0): Linear(in_features=64, out_features=64, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=64, out_features=1, bias=True)
+    )
+    (activation): ELU(alpha=1.0)
+    (MLP_heads): ModuleDict(
+      (perf): ModuleList(
+        (0): MultiMyGlobalAttention(
+          (glob_P): MyGlobalAttention(gate_nn=Sequential(
+            (0): Linear(in_features=64, out_features=64, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=64, out_features=1, bias=True)
+          ), nn=None)
+          (glob_pseudo_B): MyGlobalAttention(gate_nn=Sequential(
+            (0): Linear(in_features=64, out_features=64, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=64, out_features=1, bias=True)
+          ), nn=None)
+        )
+        (1): Linear(in_features=128, out_features=32, bias=True)
+        (2): Linear(in_features=32, out_features=16, bias=True)
+        (3): Linear(in_features=16, out_features=8, bias=True)
+        (4): Linear(in_features=8, out_features=1, bias=True)
+      )
+      (util-LUT): ModuleList(
+        (0): MultiMyGlobalAttention(
+          (glob_P): MyGlobalAttention(gate_nn=Sequential(
+            (0): Linear(in_features=64, out_features=64, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=64, out_features=1, bias=True)
+          ), nn=None)
+          (glob_pseudo_B): MyGlobalAttention(gate_nn=Sequential(
+            (0): Linear(in_features=64, out_features=64, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=64, out_features=1, bias=True)
+          ), nn=None)
+        )
+        (1): Linear(in_features=128, out_features=32, bias=True)
+        (2): Linear(in_features=32, out_features=16, bias=True)
+        (3): Linear(in_features=16, out_features=8, bias=True)
+        (4): Linear(in_features=8, out_features=1, bias=True)
+      )
+      (util-FF): ModuleList(
+        (0): MultiMyGlobalAttention(
+          (glob_P): MyGlobalAttention(gate_nn=Sequential(
+            (0): Linear(in_features=64, out_features=64, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=64, out_features=1, bias=True)
+          ), nn=None)
+          (glob_pseudo_B): MyGlobalAttention(gate_nn=Sequential(
+            (0): Linear(in_features=64, out_features=64, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=64, out_features=1, bias=True)
+          ), nn=None)
+        )
+        (1): Linear(in_features=128, out_features=32, bias=True)
+        (2): Linear(in_features=32, out_features=16, bias=True)
+        (3): Linear(in_features=16, out_features=8, bias=True)
+        (4): Linear(in_features=8, out_features=1, bias=True)
+      )
+      (util-DSP): ModuleList(
+        (0): MultiMyGlobalAttention(
+          (glob_P): MyGlobalAttention(gate_nn=Sequential(
+            (0): Linear(in_features=64, out_features=64, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=64, out_features=1, bias=True)
+          ), nn=None)
+          (glob_pseudo_B): MyGlobalAttention(gate_nn=Sequential(
+            (0): Linear(in_features=64, out_features=64, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=64, out_features=1, bias=True)
+          ), nn=None)
+        )
+        (1): Linear(in_features=128, out_features=32, bias=True)
+        (2): Linear(in_features=32, out_features=16, bias=True)
+        (3): Linear(in_features=16, out_features=8, bias=True)
+        (4): Linear(in_features=8, out_features=1, bias=True)
+      )
+      (util-BRAM): ModuleList(
+        (0): MultiMyGlobalAttention(
+          (glob_P): MyGlobalAttention(gate_nn=Sequential(
+            (0): Linear(in_features=64, out_features=64, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=64, out_features=1, bias=True)
+          ), nn=None)
+          (glob_pseudo_B): MyGlobalAttention(gate_nn=Sequential(
+            (0): Linear(in_features=64, out_features=64, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=64, out_features=1, bias=True)
+          ), nn=None)
+        )
+        (1): Linear(in_features=128, out_features=32, bias=True)
+        (2): Linear(in_features=32, out_features=16, bias=True)
+        (3): Linear(in_features=16, out_features=8, bias=True)
+        (4): Linear(in_features=8, out_features=1, bias=True)
+      )
+    )
+  )
+  (MLPs_per_pragma): ModuleDict(
+    (tile): MLP(
+      (activation): ELU(alpha=1.0)
+      (layers): ModuleList(
+        (0): Linear(in_features=65, out_features=32, bias=True)
+        (1): Linear(in_features=32, out_features=64, bias=True)
+      )
+    )
+    (pipeline): MLP(
+      (activation): ELU(alpha=1.0)
+      (layers): ModuleList(
+        (0): Linear(in_features=65, out_features=32, bias=True)
+        (1): Linear(in_features=32, out_features=64, bias=True)
+      )
+    )
+    (parallel): MLP(
+      (activation): ELU(alpha=1.0)
+      (layers): ModuleList(
+        (0): Linear(in_features=66, out_features=33, bias=True)
+        (1): Linear(in_features=33, out_features=64, bias=True)
+      )
+    )
+    (merge): MLP(
+      (activation): ELU(alpha=1.0)
+      (layers): ModuleList(
+        (0): Linear(in_features=192, out_features=96, bias=True)
+        (1): Linear(in_features=96, out_features=64, bias=True)
+      )
+    )
+  )
+)
+
+Test batch ID (resample): -1 - Epoch 0 train
+  0%|          | 0/97 [00:00<?, ?it/s]/home/wqlou/anaconda3/envs/harp/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:154: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+  1%|          | 1/97 [00:04<07:51,  4.92s/it]  2%|▏         | 2/97 [00:06<04:29,  2.84s/it]  3%|▎         | 3/97 [00:07<03:23,  2.16s/it]  4%|▍         | 4/97 [00:08<02:49,  1.82s/it]  5%|▌         | 5/97 [00:10<02:29,  1.63s/it]  6%|▌         | 6/97 [00:11<02:19,  1.53s/it]  7%|▋         | 7/97 [00:12<02:11,  1.46s/it]  8%|▊         | 8/97 [00:14<02:05,  1.41s/it]  9%|▉         | 9/97 [00:15<02:03,  1.40s/it] 10%|█         | 10/97 [00:16<02:00,  1.39s/it] 11%|█▏        | 11/97 [00:17<01:26,  1.01s/it] 12%|█▏        | 12/97 [00:17<01:02,  1.35it/s] 13%|█▎        | 13/97 [00:17<00:47,  1.78it/s] 14%|█▍        | 14/97 [00:17<00:37,  2.23it/s] 15%|█▌        | 15/97 [00:17<00:29,  2.78it/s] 16%|█▋        | 16/97 [00:17<00:23,  3.42it/s] 18%|█▊        | 17/97 [00:18<00:21,  3.71it/s] 19%|█▊        | 18/97 [00:18<00:18,  4.25it/s] 20%|█▉        | 19/97 [00:18<00:15,  5.02it/s] 21%|██        | 20/97 [00:18<00:15,  4.94it/s] 22%|██▏       | 21/97 [00:18<00:13,  5.63it/s] 23%|██▎       | 22/97 [00:18<00:12,  6.22it/s] 24%|██▎       | 23/97 [00:18<00:10,  6.76it/s] 25%|██▍       | 24/97 [00:19<00:10,  7.14it/s] 26%|██▌       | 25/97 [00:19<00:10,  7.06it/s] 27%|██▋       | 26/97 [00:19<00:10,  6.57it/s] 28%|██▊       | 27/97 [00:19<00:09,  7.02it/s] 29%|██▉       | 28/97 [00:19<00:09,  6.91it/s] 30%|██▉       | 29/97 [00:19<00:09,  6.95it/s] 31%|███       | 30/97 [00:19<00:09,  6.83it/s] 32%|███▏      | 31/97 [00:20<00:10,  6.42it/s] 33%|███▎      | 32/97 [00:20<00:10,  6.47it/s] 34%|███▍      | 33/97 [00:20<00:09,  6.88it/s] 35%|███▌      | 34/97 [00:20<00:09,  6.84it/s] 36%|███▌      | 35/97 [00:20<00:09,  6.35it/s] 37%|███▋      | 36/97 [00:20<00:09,  6.45it/s] 38%|███▊      | 37/97 [00:20<00:08,  6.72it/s] 39%|███▉      | 38/97 [00:21<00:09,  6.51it/s] 40%|████      | 39/97 [00:21<00:09,  6.10it/s] 41%|████      | 40/97 [00:21<00:08,  6.41it/s] 42%|████▏     | 41/97 [00:21<00:07,  7.04it/s] 43%|████▎     | 42/97 [00:21<00:07,  7.31it/s] 44%|████▍     | 43/97 [00:21<00:07,  7.35it/s] 45%|████▌     | 44/97 [00:21<00:07,  7.24it/s] 46%|████▋     | 45/97 [00:22<00:07,  7.15it/s] 47%|████▋     | 46/97 [00:22<00:07,  7.07it/s] 48%|████▊     | 47/97 [00:22<00:07,  7.03it/s] 49%|████▉     | 48/97 [00:22<00:06,  7.33it/s] 51%|█████     | 49/97 [00:22<00:06,  7.85it/s] 52%|█████▏    | 50/97 [00:22<00:06,  7.24it/s] 53%|█████▎    | 51/97 [00:22<00:06,  6.62it/s] 54%|█████▎    | 52/97 [00:23<00:06,  7.03it/s] 55%|█████▍    | 53/97 [00:23<00:06,  7.01it/s] 56%|█████▌    | 54/97 [00:23<00:06,  7.06it/s] 57%|█████▋    | 55/97 [00:23<00:05,  7.02it/s] 58%|█████▊    | 56/97 [00:23<00:06,  6.66it/s] 59%|█████▉    | 57/97 [00:23<00:06,  6.13it/s] 60%|█████▉    | 58/97 [00:24<00:06,  6.27it/s] 61%|██████    | 59/97 [00:24<00:05,  6.64it/s] 62%|██████▏   | 60/97 [00:24<00:05,  6.63it/s] 63%|██████▎   | 61/97 [00:24<00:05,  6.16it/s] 64%|██████▍   | 62/97 [00:24<00:05,  6.69it/s] 65%|██████▍   | 63/97 [00:24<00:05,  6.65it/s] 66%|██████▌   | 64/97 [00:24<00:05,  6.55it/s] 67%|██████▋   | 65/97 [00:25<00:04,  6.64it/s] 68%|██████▊   | 66/97 [00:25<00:04,  6.63it/s] 69%|██████▉   | 67/97 [00:25<00:04,  6.45it/s] 70%|███████   | 68/97 [00:25<00:04,  6.08it/s] 71%|███████   | 69/97 [00:25<00:04,  5.75it/s] 72%|███████▏  | 70/97 [00:26<00:05,  5.18it/s] 73%|███████▎  | 71/97 [00:26<00:04,  5.77it/s] 74%|███████▍  | 72/97 [00:26<00:03,  6.37it/s] 75%|███████▌  | 73/97 [00:26<00:04,  5.56it/s] 76%|███████▋  | 74/97 [00:26<00:03,  5.80it/s] 77%|███████▋  | 75/97 [00:26<00:03,  6.26it/s] 78%|███████▊  | 76/97 [00:26<00:03,  6.51it/s] 79%|███████▉  | 77/97 [00:27<00:03,  6.65it/s] 80%|████████  | 78/97 [00:27<00:02,  6.79it/s] 81%|████████▏ | 79/97 [00:27<00:03,  5.89it/s] 82%|████████▏ | 80/97 [00:27<00:03,  5.32it/s] 84%|████████▎ | 81/97 [00:27<00:02,  5.71it/s] 85%|████████▍ | 82/97 [00:27<00:02,  6.28it/s] 86%|████████▌ | 83/97 [00:28<00:02,  6.84it/s] 87%|████████▋ | 84/97 [00:28<00:01,  7.22it/s] 88%|████████▊ | 85/97 [00:28<00:01,  7.53it/s] 89%|████████▊ | 86/97 [00:28<00:01,  7.76it/s] 90%|████████▉ | 87/97 [00:28<00:01,  7.71it/s] 91%|█████████ | 88/97 [00:28<00:01,  7.98it/s] 92%|█████████▏| 89/97 [00:28<00:00,  8.36it/s] 93%|█████████▎| 90/97 [00:28<00:00,  8.54it/s] 94%|█████████▍| 91/97 [00:28<00:00,  8.50it/s] 95%|█████████▍| 92/97 [00:29<00:00,  8.62it/s] 96%|█████████▌| 93/97 [00:29<00:00,  8.28it/s] 97%|█████████▋| 94/97 [00:29<00:00,  8.36it/s] 98%|█████████▊| 95/97 [00:29<00:00,  8.25it/s] 99%|█████████▉| 96/97 [00:29<00:00,  8.33it/s]100%|██████████| 97/97 [00:29<00:00,  3.25it/s]
+epoch = 0, learning rate = 1.0005002501250625e-07
+Epoch 0 val
+Epoch 0 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:02<00:44,  2.24s/it] 10%|▉         | 2/21 [00:02<00:25,  1.33s/it] 14%|█▍        | 3/21 [00:03<00:18,  1.05s/it] 19%|█▉        | 4/21 [00:04<00:15,  1.10it/s] 24%|██▍       | 5/21 [00:05<00:13,  1.22it/s] 29%|██▊       | 6/21 [00:05<00:11,  1.31it/s] 33%|███▎      | 7/21 [00:06<00:10,  1.37it/s] 38%|███▊      | 8/21 [00:06<00:09,  1.42it/s] 43%|████▎     | 9/21 [00:07<00:08,  1.45it/s] 48%|████▊     | 10/21 [00:08<00:06,  1.69it/s] 57%|█████▋    | 12/21 [00:08<00:03,  2.81it/s] 67%|██████▋   | 14/21 [00:08<00:01,  4.05it/s] 76%|███████▌  | 16/21 [00:08<00:00,  5.38it/s] 86%|████████▌ | 18/21 [00:08<00:00,  6.63it/s] 95%|█████████▌| 20/21 [00:08<00:00,  7.77it/s]100%|██████████| 21/21 [00:09<00:00,  2.31it/s]
+Train GAE loss: 0
+Train loss breakdown {'perf': 3.4694973390126966, 'util-LUT': 0.5661556014080638, 'util-FF': 0.5847156250599733, 'util-DSP': 1.7703485716249525, 'util-BRAM': 3.3733551354752374}
+Val GAE loss: 0
+Val loss breakdown {}
+Test GAE loss: 0
+Test loss breakdown {'perf': 1.9768017076310658, 'util-LUT': 0.47483629130181815, 'util-FF': 0.5299688166096097, 'util-DSP': 1.3051483631134033, 'util-BRAM': 0.7095971079099745}
+ 		 38.927 secs
+Epoch: 000, Train Loss: 9.7641, Val loss: 0.0000, Test: 4.9964) Time: 38.927 secs
+Test batch ID (resample): -1 - Epoch 1 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<02:42,  1.70s/it]  2%|▏         | 2/97 [00:01<01:16,  1.24it/s]  3%|▎         | 3/97 [00:02<00:48,  1.93it/s]  4%|▍         | 4/97 [00:02<00:35,  2.61it/s]  5%|▌         | 5/97 [00:02<00:28,  3.19it/s]  6%|▌         | 6/97 [00:02<00:24,  3.72it/s]  7%|▋         | 7/97 [00:02<00:22,  4.08it/s]  8%|▊         | 8/97 [00:02<00:20,  4.42it/s]  9%|▉         | 9/97 [00:03<00:17,  5.13it/s] 10%|█         | 10/97 [00:03<00:15,  5.66it/s] 11%|█▏        | 11/97 [00:03<00:14,  6.08it/s] 12%|█▏        | 12/97 [00:03<00:12,  6.62it/s] 13%|█▎        | 13/97 [00:03<00:11,  7.03it/s] 14%|█▍        | 14/97 [00:03<00:11,  7.20it/s] 15%|█▌        | 15/97 [00:03<00:11,  7.31it/s] 16%|█▋        | 16/97 [00:04<00:10,  7.41it/s] 18%|█▊        | 17/97 [00:04<00:11,  7.14it/s] 19%|█▊        | 18/97 [00:04<00:11,  7.13it/s] 20%|█▉        | 19/97 [00:04<00:11,  6.80it/s] 21%|██        | 20/97 [00:04<00:12,  6.22it/s] 22%|██▏       | 21/97 [00:04<00:12,  6.32it/s] 23%|██▎       | 22/97 [00:04<00:11,  6.75it/s] 24%|██▎       | 23/97 [00:05<00:10,  7.03it/s] 25%|██▍       | 24/97 [00:05<00:09,  7.33it/s] 26%|██▌       | 25/97 [00:05<00:10,  7.02it/s] 27%|██▋       | 26/97 [00:05<00:11,  6.39it/s] 28%|██▊       | 27/97 [00:05<00:10,  6.93it/s] 29%|██▉       | 28/97 [00:05<00:09,  7.24it/s] 30%|██▉       | 29/97 [00:05<00:09,  6.94it/s] 31%|███       | 30/97 [00:06<00:09,  7.00it/s] 32%|███▏      | 31/97 [00:06<00:09,  6.92it/s] 33%|███▎      | 32/97 [00:06<00:09,  6.72it/s] 34%|███▍      | 33/97 [00:06<00:09,  6.81it/s] 35%|███▌      | 34/97 [00:06<00:09,  6.61it/s] 36%|███▌      | 35/97 [00:06<00:09,  6.22it/s] 37%|███▋      | 36/97 [00:06<00:08,  6.78it/s] 38%|███▊      | 37/97 [00:07<00:09,  6.59it/s] 39%|███▉      | 38/97 [00:07<00:09,  6.36it/s] 40%|████      | 39/97 [00:07<00:08,  6.47it/s] 41%|████      | 40/97 [00:07<00:08,  6.36it/s] 42%|████▏     | 41/97 [00:07<00:08,  6.27it/s] 43%|████▎     | 42/97 [00:07<00:08,  6.32it/s] 44%|████▍     | 43/97 [00:08<00:09,  5.74it/s] 45%|████▌     | 44/97 [00:08<00:08,  6.04it/s] 46%|████▋     | 45/97 [00:08<00:08,  6.33it/s] 47%|████▋     | 46/97 [00:08<00:07,  6.46it/s] 48%|████▊     | 47/97 [00:08<00:07,  6.41it/s] 49%|████▉     | 48/97 [00:08<00:08,  6.07it/s] 51%|█████     | 49/97 [00:09<00:07,  6.57it/s] 52%|█████▏    | 50/97 [00:09<00:06,  7.11it/s] 53%|█████▎    | 51/97 [00:09<00:06,  7.26it/s] 54%|█████▎    | 52/97 [00:09<00:06,  7.38it/s] 55%|█████▍    | 53/97 [00:09<00:05,  7.52it/s] 56%|█████▌    | 54/97 [00:09<00:05,  7.17it/s] 57%|█████▋    | 55/97 [00:09<00:05,  7.29it/s] 58%|█████▊    | 56/97 [00:10<00:05,  6.99it/s] 59%|█████▉    | 57/97 [00:10<00:05,  6.91it/s] 60%|█████▉    | 58/97 [00:10<00:06,  6.17it/s] 61%|██████    | 59/97 [00:10<00:05,  6.93it/s] 62%|██████▏   | 60/97 [00:10<00:05,  6.83it/s] 63%|██████▎   | 61/97 [00:10<00:05,  6.95it/s] 64%|██████▍   | 62/97 [00:10<00:05,  6.78it/s] 65%|██████▍   | 63/97 [00:11<00:05,  6.69it/s] 66%|██████▌   | 64/97 [00:11<00:05,  6.51it/s] 67%|██████▋   | 65/97 [00:11<00:05,  5.95it/s] 68%|██████▊   | 66/97 [00:11<00:04,  6.55it/s] 69%|██████▉   | 67/97 [00:11<00:04,  6.43it/s] 70%|███████   | 68/97 [00:11<00:04,  6.57it/s] 71%|███████   | 69/97 [00:12<00:04,  6.36it/s] 72%|███████▏  | 70/97 [00:12<00:04,  5.79it/s] 73%|███████▎  | 71/97 [00:12<00:04,  6.26it/s] 74%|███████▍  | 72/97 [00:12<00:04,  6.09it/s] 75%|███████▌  | 73/97 [00:12<00:03,  6.38it/s] 76%|███████▋  | 74/97 [00:12<00:03,  6.44it/s] 77%|███████▋  | 75/97 [00:12<00:03,  6.34it/s] 78%|███████▊  | 76/97 [00:13<00:03,  6.29it/s] 79%|███████▉  | 77/97 [00:13<00:03,  6.10it/s] 80%|████████  | 78/97 [00:13<00:02,  6.79it/s] 81%|████████▏ | 79/97 [00:13<00:02,  6.90it/s] 82%|████████▏ | 80/97 [00:13<00:02,  7.18it/s] 84%|████████▎ | 81/97 [00:13<00:02,  7.04it/s] 85%|████████▍ | 82/97 [00:13<00:02,  7.39it/s] 86%|████████▌ | 83/97 [00:14<00:01,  7.79it/s] 87%|████████▋ | 84/97 [00:14<00:01,  7.84it/s] 88%|████████▊ | 85/97 [00:14<00:01,  8.12it/s] 89%|████████▊ | 86/97 [00:14<00:01,  8.25it/s] 90%|████████▉ | 87/97 [00:14<00:01,  8.06it/s] 91%|█████████ | 88/97 [00:14<00:01,  8.25it/s] 92%|█████████▏| 89/97 [00:14<00:00,  8.48it/s] 93%|█████████▎| 90/97 [00:14<00:00,  8.60it/s] 94%|█████████▍| 91/97 [00:15<00:00,  8.53it/s] 95%|█████████▍| 92/97 [00:15<00:00,  8.65it/s] 96%|█████████▌| 93/97 [00:15<00:00,  8.49it/s] 97%|█████████▋| 94/97 [00:15<00:00,  8.69it/s] 98%|█████████▊| 95/97 [00:15<00:00,  8.60it/s] 99%|█████████▉| 96/97 [00:15<00:00,  8.59it/s]100%|██████████| 97/97 [00:15<00:00,  6.12it/s]
+epoch = 1, learning rate = 9.804879468248776e-06
+Saved train model at epoch 1
+Epoch 1 val
+Epoch 1 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:01<00:24,  1.23s/it] 10%|▉         | 2/21 [00:01<00:12,  1.51it/s] 14%|█▍        | 3/21 [00:01<00:07,  2.45it/s] 24%|██▍       | 5/21 [00:01<00:03,  4.46it/s] 38%|███▊      | 8/21 [00:01<00:01,  7.87it/s] 48%|████▊     | 10/21 [00:02<00:01,  6.14it/s] 57%|█████▋    | 12/21 [00:02<00:01,  7.14it/s] 67%|██████▋   | 14/21 [00:02<00:00,  7.93it/s] 76%|███████▌  | 16/21 [00:02<00:00,  8.95it/s] 86%|████████▌ | 18/21 [00:03<00:00, 10.36it/s]100%|██████████| 21/21 [00:03<00:00, 13.48it/s]100%|██████████| 21/21 [00:03<00:00,  6.30it/s]
+@@@ plot_pred_points
+Saved test model at epoch 1
+Train GAE loss: 0
+Train loss breakdown {'perf': 1.7930222098360356, 'util-LUT': 0.4697528936199306, 'util-FF': 0.480827456897067, 'util-DSP': 1.031792806595871, 'util-BRAM': 0.6234253546626297}
+Val GAE loss: 0
+Val loss breakdown {}
+Test GAE loss: 0
+Test loss breakdown {'perf': 1.6600113993599301, 'util-LUT': 0.4035276614484333, 'util-FF': 0.38712508054006667, 'util-DSP': 0.9878851884887332, 'util-BRAM': 0.5014529526233673}
+ 		 19.236 secs
+Epoch: 001, Train Loss: 4.3988, Val loss: 0.0000, Test: 3.9400) Time: 19.236 secs
+Test batch ID (resample): -1 - Epoch 2 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<02:38,  1.65s/it]  2%|▏         | 2/97 [00:01<01:14,  1.28it/s]  3%|▎         | 3/97 [00:02<00:47,  1.97it/s]  4%|▍         | 4/97 [00:02<00:35,  2.63it/s]  5%|▌         | 5/97 [00:02<00:27,  3.38it/s]  6%|▌         | 6/97 [00:02<00:22,  4.14it/s]  7%|▋         | 7/97 [00:02<00:19,  4.60it/s]  8%|▊         | 8/97 [00:02<00:18,  4.74it/s]  9%|▉         | 9/97 [00:03<00:17,  4.94it/s] 10%|█         | 10/97 [00:03<00:17,  5.07it/s] 11%|█▏        | 11/97 [00:03<00:16,  5.11it/s] 12%|█▏        | 12/97 [00:03<00:15,  5.53it/s] 13%|█▎        | 13/97 [00:03<00:13,  6.28it/s] 14%|█▍        | 14/97 [00:03<00:12,  6.69it/s] 15%|█▌        | 15/97 [00:03<00:11,  7.00it/s] 16%|█▋        | 16/97 [00:04<00:11,  7.19it/s] 18%|█▊        | 17/97 [00:04<00:10,  7.52it/s] 19%|█▊        | 18/97 [00:04<00:10,  7.63it/s] 20%|█▉        | 19/97 [00:04<00:10,  7.71it/s] 21%|██        | 20/97 [00:04<00:12,  6.40it/s] 22%|██▏       | 21/97 [00:04<00:11,  6.69it/s] 23%|██▎       | 22/97 [00:04<00:10,  7.03it/s] 24%|██▎       | 23/97 [00:05<00:10,  7.25it/s] 25%|██▍       | 24/97 [00:05<00:09,  7.60it/s] 26%|██▌       | 25/97 [00:05<00:09,  7.25it/s] 27%|██▋       | 26/97 [00:05<00:10,  6.48it/s] 28%|██▊       | 27/97 [00:05<00:10,  6.89it/s] 29%|██▉       | 28/97 [00:05<00:09,  6.99it/s] 30%|██▉       | 29/97 [00:05<00:09,  7.10it/s] 31%|███       | 30/97 [00:06<00:09,  7.22it/s] 32%|███▏      | 31/97 [00:06<00:09,  7.25it/s] 33%|███▎      | 32/97 [00:06<00:09,  7.17it/s] 34%|███▍      | 33/97 [00:06<00:09,  6.49it/s] 35%|███▌      | 34/97 [00:06<00:09,  6.73it/s] 36%|███▌      | 35/97 [00:06<00:08,  7.14it/s] 37%|███▋      | 36/97 [00:06<00:08,  7.53it/s] 38%|███▊      | 37/97 [00:06<00:07,  7.70it/s] 39%|███▉      | 38/97 [00:07<00:07,  7.58it/s] 40%|████      | 39/97 [00:07<00:07,  7.76it/s] 41%|████      | 40/97 [00:07<00:07,  8.03it/s] 42%|████▏     | 41/97 [00:07<00:07,  7.26it/s] 43%|████▎     | 42/97 [00:07<00:07,  7.20it/s] 44%|████▍     | 43/97 [00:07<00:08,  6.71it/s] 45%|████▌     | 44/97 [00:08<00:08,  6.27it/s] 46%|████▋     | 45/97 [00:08<00:08,  6.33it/s] 47%|████▋     | 46/97 [00:08<00:07,  6.78it/s] 48%|████▊     | 47/97 [00:08<00:07,  6.50it/s] 49%|████▉     | 48/97 [00:08<00:07,  6.24it/s] 51%|█████     | 49/97 [00:08<00:06,  6.96it/s] 52%|█████▏    | 50/97 [00:08<00:06,  7.28it/s] 53%|█████▎    | 51/97 [00:08<00:06,  7.38it/s] 54%|█████▎    | 52/97 [00:09<00:05,  7.59it/s] 55%|█████▍    | 53/97 [00:09<00:05,  7.60it/s] 56%|█████▌    | 54/97 [00:09<00:06,  7.06it/s] 57%|█████▋    | 55/97 [00:09<00:06,  6.74it/s] 58%|█████▊    | 56/97 [00:09<00:05,  7.04it/s] 59%|█████▉    | 57/97 [00:09<00:06,  6.54it/s] 60%|█████▉    | 58/97 [00:10<00:05,  6.62it/s] 61%|██████    | 59/97 [00:10<00:05,  7.01it/s] 62%|██████▏   | 60/97 [00:10<00:04,  7.56it/s] 63%|██████▎   | 61/97 [00:10<00:04,  7.26it/s] 64%|██████▍   | 62/97 [00:10<00:05,  6.65it/s] 65%|██████▍   | 63/97 [00:10<00:05,  6.46it/s] 66%|██████▌   | 64/97 [00:10<00:05,  6.52it/s] 67%|██████▋   | 65/97 [00:11<00:04,  6.46it/s] 68%|██████▊   | 66/97 [00:11<00:05,  5.58it/s] 69%|██████▉   | 67/97 [00:11<00:05,  5.69it/s] 70%|███████   | 68/97 [00:11<00:04,  5.95it/s] 71%|███████   | 69/97 [00:11<00:04,  5.96it/s] 72%|███████▏  | 70/97 [00:11<00:04,  6.15it/s] 73%|███████▎  | 71/97 [00:12<00:04,  6.23it/s] 74%|███████▍  | 72/97 [00:12<00:04,  6.20it/s] 75%|███████▌  | 73/97 [00:12<00:04,  5.89it/s] 76%|███████▋  | 74/97 [00:12<00:03,  6.18it/s] 77%|███████▋  | 75/97 [00:12<00:03,  6.81it/s] 78%|███████▊  | 76/97 [00:12<00:02,  7.04it/s] 79%|███████▉  | 77/97 [00:12<00:02,  7.30it/s] 80%|████████  | 78/97 [00:13<00:02,  6.94it/s] 81%|████████▏ | 79/97 [00:13<00:02,  7.01it/s] 82%|████████▏ | 80/97 [00:13<00:02,  6.71it/s] 84%|████████▎ | 81/97 [00:13<00:02,  6.40it/s] 85%|████████▍ | 82/97 [00:13<00:02,  6.97it/s] 86%|████████▌ | 83/97 [00:13<00:01,  7.38it/s] 87%|████████▋ | 84/97 [00:13<00:01,  7.59it/s] 88%|████████▊ | 85/97 [00:14<00:01,  7.77it/s] 89%|████████▊ | 86/97 [00:14<00:01,  7.95it/s] 90%|████████▉ | 87/97 [00:14<00:01,  7.83it/s] 91%|█████████ | 88/97 [00:14<00:01,  8.06it/s] 92%|█████████▏| 89/97 [00:14<00:00,  8.28it/s] 93%|█████████▎| 90/97 [00:14<00:00,  8.38it/s] 94%|█████████▍| 91/97 [00:14<00:00,  8.24it/s] 95%|█████████▍| 92/97 [00:14<00:00,  8.50it/s] 96%|█████████▌| 93/97 [00:15<00:00,  8.37it/s] 97%|█████████▋| 94/97 [00:15<00:00,  8.36it/s] 98%|█████████▊| 95/97 [00:15<00:00,  8.24it/s] 99%|█████████▉| 96/97 [00:15<00:00,  8.42it/s]100%|██████████| 97/97 [00:15<00:00,  6.20it/s]
+epoch = 2, learning rate = 1.950957195215605e-05
+Saved train model at epoch 2
+Epoch 2 val
+Epoch 2 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:01<00:30,  1.53s/it] 10%|▉         | 2/21 [00:01<00:13,  1.44it/s] 19%|█▉        | 4/21 [00:01<00:05,  3.17it/s] 33%|███▎      | 7/21 [00:01<00:02,  6.05it/s] 43%|████▎     | 9/21 [00:02<00:02,  5.31it/s] 52%|█████▏    | 11/21 [00:02<00:01,  6.33it/s] 62%|██████▏   | 13/21 [00:02<00:01,  7.27it/s] 71%|███████▏  | 15/21 [00:02<00:00,  8.25it/s] 86%|████████▌ | 18/21 [00:03<00:00, 11.17it/s]100%|██████████| 21/21 [00:03<00:00, 14.06it/s]100%|██████████| 21/21 [00:03<00:00,  6.14it/s]
+@@@ plot_pred_points
+Saved test model at epoch 2
+Train GAE loss: 0
+Train loss breakdown {'perf': 1.5526151399022525, 'util-LUT': 0.4385760033253542, 'util-FF': 0.37565432058781695, 'util-DSP': 0.8821516510137578, 'util-BRAM': 0.4175945022671493}
+Val GAE loss: 0
+Val loss breakdown {}
+Test GAE loss: 0
+Test loss breakdown {'perf': 1.4398545083545504, 'util-LUT': 0.3840081656262988, 'util-FF': 0.30723794939972104, 'util-DSP': 0.9297775597799391, 'util-BRAM': 0.5031811311131432}
+ 		 19.112 secs
+Epoch: 002, Train Loss: 3.6666, Val loss: 0.0000, Test: 3.5641) Time: 19.112 secs
+Test batch ID (resample): -1 - Epoch 3 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<02:52,  1.79s/it]  2%|▏         | 2/97 [00:01<01:20,  1.18it/s]  3%|▎         | 3/97 [00:02<00:51,  1.84it/s]  4%|▍         | 4/97 [00:02<00:36,  2.54it/s]  5%|▌         | 5/97 [00:02<00:27,  3.39it/s]  6%|▌         | 6/97 [00:02<00:22,  4.00it/s]  7%|▋         | 7/97 [00:02<00:21,  4.27it/s]  8%|▊         | 8/97 [00:02<00:19,  4.66it/s]  9%|▉         | 9/97 [00:03<00:16,  5.33it/s] 10%|█         | 10/97 [00:03<00:15,  5.58it/s] 11%|█▏        | 11/97 [00:03<00:16,  5.37it/s] 12%|█▏        | 12/97 [00:03<00:14,  5.87it/s] 13%|█▎        | 13/97 [00:03<00:13,  6.42it/s] 14%|█▍        | 14/97 [00:03<00:11,  6.93it/s] 15%|█▌        | 15/97 [00:03<00:11,  7.40it/s] 16%|█▋        | 16/97 [00:04<00:11,  7.32it/s] 18%|█▊        | 17/97 [00:04<00:10,  7.56it/s] 19%|█▊        | 18/97 [00:04<00:10,  7.30it/s] 20%|█▉        | 19/97 [00:04<00:11,  7.04it/s] 21%|██        | 20/97 [00:04<00:11,  6.44it/s] 22%|██▏       | 21/97 [00:04<00:10,  7.12it/s] 23%|██▎       | 22/97 [00:04<00:11,  6.78it/s] 24%|██▎       | 23/97 [00:05<00:10,  6.76it/s] 25%|██▍       | 24/97 [00:05<00:10,  6.75it/s] 26%|██▌       | 25/97 [00:05<00:10,  6.87it/s] 27%|██▋       | 26/97 [00:05<00:10,  6.77it/s] 28%|██▊       | 27/97 [00:05<00:10,  6.63it/s] 29%|██▉       | 28/97 [00:05<00:10,  6.53it/s] 30%|██▉       | 29/97 [00:06<00:10,  6.35it/s] 31%|███       | 30/97 [00:06<00:11,  5.87it/s] 32%|███▏      | 31/97 [00:06<00:10,  6.22it/s] 33%|███▎      | 32/97 [00:06<00:09,  6.84it/s] 34%|███▍      | 33/97 [00:06<00:09,  6.74it/s] 35%|███▌      | 34/97 [00:06<00:10,  6.29it/s] 36%|███▌      | 35/97 [00:06<00:09,  6.40it/s] 37%|███▋      | 36/97 [00:07<00:08,  7.04it/s] 38%|███▊      | 37/97 [00:07<00:08,  7.18it/s] 39%|███▉      | 38/97 [00:07<00:07,  7.38it/s] 40%|████      | 39/97 [00:07<00:07,  7.61it/s] 41%|████      | 40/97 [00:07<00:07,  7.90it/s] 42%|████▏     | 41/97 [00:07<00:07,  7.97it/s] 43%|████▎     | 42/97 [00:07<00:07,  7.59it/s] 44%|████▍     | 43/97 [00:08<00:07,  7.33it/s] 45%|████▌     | 44/97 [00:08<00:07,  6.69it/s] 46%|████▋     | 45/97 [00:08<00:07,  6.66it/s] 47%|████▋     | 46/97 [00:08<00:07,  7.11it/s] 48%|████▊     | 47/97 [00:08<00:06,  7.56it/s] 49%|████▉     | 48/97 [00:08<00:06,  7.34it/s] 51%|█████     | 49/97 [00:08<00:06,  7.73it/s] 52%|█████▏    | 50/97 [00:08<00:06,  7.53it/s] 53%|█████▎    | 51/97 [00:09<00:06,  7.49it/s] 54%|█████▎    | 52/97 [00:09<00:06,  7.48it/s] 55%|█████▍    | 53/97 [00:09<00:05,  7.62it/s] 56%|█████▌    | 54/97 [00:09<00:05,  7.28it/s] 57%|█████▋    | 55/97 [00:09<00:06,  6.58it/s] 58%|█████▊    | 56/97 [00:09<00:05,  6.87it/s] 59%|█████▉    | 57/97 [00:10<00:06,  6.47it/s] 60%|█████▉    | 58/97 [00:10<00:06,  6.33it/s] 61%|██████    | 59/97 [00:10<00:05,  6.84it/s] 62%|██████▏   | 60/97 [00:10<00:05,  6.91it/s] 63%|██████▎   | 61/97 [00:10<00:05,  6.87it/s] 64%|██████▍   | 62/97 [00:10<00:05,  6.63it/s] 65%|██████▍   | 63/97 [00:10<00:05,  6.44it/s] 66%|██████▌   | 64/97 [00:11<00:04,  6.63it/s] 67%|██████▋   | 65/97 [00:11<00:04,  6.46it/s] 68%|██████▊   | 66/97 [00:11<00:05,  6.01it/s] 69%|██████▉   | 67/97 [00:11<00:04,  6.52it/s] 70%|███████   | 68/97 [00:11<00:04,  6.24it/s] 71%|███████   | 69/97 [00:11<00:04,  5.88it/s] 72%|███████▏  | 70/97 [00:12<00:04,  6.56it/s] 73%|███████▎  | 71/97 [00:12<00:04,  6.36it/s] 74%|███████▍  | 72/97 [00:12<00:03,  6.50it/s] 75%|███████▌  | 73/97 [00:12<00:03,  6.53it/s] 76%|███████▋  | 74/97 [00:12<00:03,  6.09it/s] 77%|███████▋  | 75/97 [00:12<00:03,  6.37it/s] 78%|███████▊  | 76/97 [00:12<00:03,  6.93it/s] 79%|███████▉  | 77/97 [00:13<00:02,  7.03it/s] 80%|████████  | 78/97 [00:13<00:02,  7.54it/s] 81%|████████▏ | 79/97 [00:13<00:02,  7.57it/s] 82%|████████▏ | 80/97 [00:13<00:02,  7.67it/s] 84%|████████▎ | 81/97 [00:13<00:02,  6.96it/s] 85%|████████▍ | 82/97 [00:13<00:02,  6.75it/s] 86%|████████▌ | 83/97 [00:13<00:01,  7.14it/s] 87%|████████▋ | 84/97 [00:14<00:01,  7.54it/s] 88%|████████▊ | 85/97 [00:14<00:01,  7.77it/s] 89%|████████▊ | 86/97 [00:14<00:01,  7.95it/s] 90%|████████▉ | 87/97 [00:14<00:01,  7.87it/s] 91%|█████████ | 88/97 [00:14<00:01,  8.09it/s] 92%|█████████▏| 89/97 [00:14<00:00,  8.41it/s] 93%|█████████▎| 90/97 [00:14<00:00,  8.57it/s] 94%|█████████▍| 91/97 [00:14<00:00,  8.49it/s] 95%|█████████▍| 92/97 [00:14<00:00,  8.71it/s] 96%|█████████▌| 93/97 [00:15<00:00,  8.56it/s] 97%|█████████▋| 94/97 [00:15<00:00,  8.60it/s] 98%|█████████▊| 95/97 [00:15<00:00,  8.57it/s] 99%|█████████▉| 96/97 [00:15<00:00,  8.64it/s]100%|██████████| 97/97 [00:15<00:00,  6.20it/s]
+epoch = 3, learning rate = 2.9213990988695482e-05
+Saved train model at epoch 3
+Epoch 3 val
+Epoch 3 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:01<00:24,  1.23s/it] 10%|▉         | 2/21 [00:01<00:12,  1.51it/s] 14%|█▍        | 3/21 [00:01<00:07,  2.46it/s] 24%|██▍       | 5/21 [00:01<00:03,  4.47it/s] 38%|███▊      | 8/21 [00:01<00:01,  7.88it/s] 48%|████▊     | 10/21 [00:02<00:01,  6.02it/s] 57%|█████▋    | 12/21 [00:02<00:01,  7.04it/s] 67%|██████▋   | 14/21 [00:02<00:00,  7.99it/s] 76%|███████▌  | 16/21 [00:02<00:00,  8.86it/s] 86%|████████▌ | 18/21 [00:03<00:00, 10.35it/s]100%|██████████| 21/21 [00:03<00:00, 13.68it/s]100%|██████████| 21/21 [00:03<00:00,  6.31it/s]
+@@@ plot_pred_points
+Saved test model at epoch 3
+Train GAE loss: 0
+Train loss breakdown {'perf': 1.3688311798056376, 'util-LUT': 0.4251460426861478, 'util-FF': 0.33462482982689573, 'util-DSP': 0.8208459044240185, 'util-BRAM': 0.36398697606067065}
+Val GAE loss: 0
+Val loss breakdown {}
+Test GAE loss: 0
+Test loss breakdown {'perf': 1.281934766542344, 'util-LUT': 0.3736395764918554, 'util-FF': 0.2852152351822172, 'util-DSP': 0.8185233530544099, 'util-BRAM': 0.33066485822200775}
+ 		 19.019 secs
+Epoch: 003, Train Loss: 3.3134, Val loss: 0.0000, Test: 3.0900) Time: 19.019 secs
+Test batch ID (resample): -1 - Epoch 4 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<02:50,  1.77s/it]  2%|▏         | 2/97 [00:01<01:18,  1.21it/s]  3%|▎         | 3/97 [00:02<00:50,  1.87it/s]  4%|▍         | 4/97 [00:02<00:36,  2.53it/s]  5%|▌         | 5/97 [00:02<00:29,  3.14it/s]  6%|▌         | 6/97 [00:02<00:24,  3.64it/s]  7%|▋         | 7/97 [00:02<00:21,  4.23it/s]  8%|▊         | 8/97 [00:03<00:19,  4.52it/s]  9%|▉         | 9/97 [00:03<00:17,  5.01it/s] 10%|█         | 10/97 [00:03<00:15,  5.79it/s] 11%|█▏        | 11/97 [00:03<00:13,  6.18it/s] 12%|█▏        | 12/97 [00:03<00:13,  6.52it/s] 13%|█▎        | 13/97 [00:03<00:12,  6.49it/s] 14%|█▍        | 14/97 [00:03<00:12,  6.57it/s] 15%|█▌        | 15/97 [00:04<00:12,  6.58it/s] 16%|█▋        | 16/97 [00:04<00:13,  5.90it/s] 18%|█▊        | 17/97 [00:04<00:12,  6.17it/s] 19%|█▊        | 18/97 [00:04<00:12,  6.48it/s] 20%|█▉        | 19/97 [00:04<00:12,  6.38it/s] 21%|██        | 20/97 [00:04<00:12,  5.97it/s] 22%|██▏       | 21/97 [00:04<00:12,  6.30it/s] 23%|██▎       | 22/97 [00:05<00:11,  6.66it/s] 24%|██▎       | 23/97 [00:05<00:10,  6.97it/s] 25%|██▍       | 24/97 [00:05<00:10,  7.27it/s] 26%|██▌       | 25/97 [00:05<00:10,  7.07it/s] 27%|██▋       | 26/97 [00:05<00:10,  6.50it/s] 28%|██▊       | 27/97 [00:05<00:09,  7.03it/s] 29%|██▉       | 28/97 [00:05<00:09,  7.37it/s] 30%|██▉       | 29/97 [00:06<00:08,  7.81it/s] 31%|███       | 30/97 [00:06<00:09,  6.90it/s] 32%|███▏      | 31/97 [00:06<00:09,  6.68it/s] 33%|███▎      | 32/97 [00:06<00:09,  7.09it/s] 34%|███▍      | 33/97 [00:06<00:09,  6.86it/s] 35%|███▌      | 34/97 [00:06<00:09,  6.52it/s] 36%|███▌      | 35/97 [00:07<00:09,  6.53it/s] 37%|███▋      | 36/97 [00:07<00:08,  6.95it/s] 38%|███▊      | 37/97 [00:07<00:09,  6.61it/s] 39%|███▉      | 38/97 [00:07<00:08,  6.59it/s] 40%|████      | 39/97 [00:07<00:09,  5.98it/s] 41%|████      | 40/97 [00:07<00:08,  6.47it/s] 42%|████▏     | 41/97 [00:07<00:07,  7.07it/s] 43%|████▎     | 42/97 [00:08<00:07,  7.00it/s] 44%|████▍     | 43/97 [00:08<00:07,  6.88it/s] 45%|████▌     | 44/97 [00:08<00:08,  6.31it/s] 46%|████▋     | 45/97 [00:08<00:08,  6.43it/s] 47%|████▋     | 46/97 [00:08<00:07,  6.68it/s] 48%|████▊     | 47/97 [00:08<00:07,  6.54it/s] 49%|████▉     | 48/97 [00:08<00:07,  6.30it/s] 51%|█████     | 49/97 [00:09<00:06,  6.90it/s] 52%|█████▏    | 50/97 [00:09<00:06,  7.21it/s] 53%|█████▎    | 51/97 [00:09<00:06,  7.58it/s] 54%|█████▎    | 52/97 [00:09<00:05,  7.79it/s] 55%|█████▍    | 53/97 [00:09<00:05,  7.49it/s] 56%|█████▌    | 54/97 [00:09<00:06,  6.95it/s] 57%|█████▋    | 55/97 [00:09<00:06,  6.54it/s] 58%|█████▊    | 56/97 [00:10<00:06,  6.76it/s] 59%|█████▉    | 57/97 [00:10<00:06,  6.45it/s] 60%|█████▉    | 58/97 [00:10<00:06,  6.37it/s] 61%|██████    | 59/97 [00:10<00:05,  6.79it/s] 62%|██████▏   | 60/97 [00:10<00:05,  6.75it/s] 63%|██████▎   | 61/97 [00:10<00:05,  6.69it/s] 64%|██████▍   | 62/97 [00:11<00:05,  6.36it/s] 65%|██████▍   | 63/97 [00:11<00:05,  6.32it/s] 66%|██████▌   | 64/97 [00:11<00:04,  6.73it/s] 67%|██████▋   | 65/97 [00:11<00:04,  7.11it/s] 68%|██████▊   | 66/97 [00:11<00:04,  7.40it/s] 69%|██████▉   | 67/97 [00:11<00:04,  7.49it/s] 70%|███████   | 68/97 [00:11<00:04,  7.17it/s] 71%|███████   | 69/97 [00:12<00:04,  6.81it/s] 72%|███████▏  | 70/97 [00:12<00:03,  6.80it/s] 73%|███████▎  | 71/97 [00:12<00:03,  6.61it/s] 74%|███████▍  | 72/97 [00:12<00:03,  6.30it/s] 75%|███████▌  | 73/97 [00:12<00:03,  6.04it/s] 76%|███████▋  | 74/97 [00:12<00:03,  6.23it/s] 77%|███████▋  | 75/97 [00:12<00:03,  6.76it/s] 78%|███████▊  | 76/97 [00:13<00:02,  7.19it/s] 79%|███████▉  | 77/97 [00:13<00:02,  6.92it/s] 80%|████████  | 78/97 [00:13<00:02,  6.69it/s] 81%|████████▏ | 79/97 [00:13<00:02,  6.75it/s] 82%|████████▏ | 80/97 [00:13<00:02,  6.51it/s] 84%|████████▎ | 81/97 [00:13<00:02,  6.15it/s] 85%|████████▍ | 82/97 [00:13<00:02,  6.68it/s] 86%|████████▌ | 83/97 [00:14<00:01,  7.16it/s] 87%|████████▋ | 84/97 [00:14<00:01,  7.38it/s] 88%|████████▊ | 85/97 [00:14<00:01,  7.60it/s] 89%|████████▊ | 86/97 [00:14<00:01,  7.85it/s] 90%|████████▉ | 87/97 [00:14<00:01,  7.87it/s] 91%|█████████ | 88/97 [00:14<00:01,  8.22it/s] 92%|█████████▏| 89/97 [00:14<00:00,  8.43it/s] 93%|█████████▎| 90/97 [00:14<00:00,  8.51it/s] 94%|█████████▍| 91/97 [00:15<00:00,  8.34it/s] 95%|█████████▍| 92/97 [00:15<00:00,  8.51it/s] 96%|█████████▌| 93/97 [00:15<00:00,  8.40it/s] 97%|█████████▋| 94/97 [00:15<00:00,  8.63it/s] 98%|█████████▊| 95/97 [00:15<00:00,  8.44it/s] 99%|█████████▉| 96/97 [00:15<00:00,  8.53it/s]100%|██████████| 97/97 [00:15<00:00,  6.12it/s]
+epoch = 4, learning rate = 3.891800009432318e-05
+Saved train model at epoch 4
+Epoch 4 val
+Epoch 4 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:01<00:30,  1.55s/it] 10%|▉         | 2/21 [00:01<00:13,  1.43it/s] 19%|█▉        | 4/21 [00:01<00:05,  3.16it/s] 33%|███▎      | 7/21 [00:01<00:02,  6.15it/s] 43%|████▎     | 9/21 [00:02<00:02,  5.25it/s] 52%|█████▏    | 11/21 [00:02<00:01,  6.31it/s] 62%|██████▏   | 13/21 [00:02<00:01,  7.42it/s] 71%|███████▏  | 15/21 [00:02<00:00,  8.30it/s] 81%|████████  | 17/21 [00:03<00:00,  9.80it/s] 95%|█████████▌| 20/21 [00:03<00:00, 12.68it/s]100%|██████████| 21/21 [00:03<00:00,  6.06it/s]
+@@@ plot_pred_points
+Saved test model at epoch 4
+Train GAE loss: 0
+Train loss breakdown {'perf': 1.2453966650766195, 'util-LUT': 0.4172137063188651, 'util-FF': 0.3172813008741005, 'util-DSP': 0.8187437659686374, 'util-BRAM': 0.3509452256959738}
+Val GAE loss: 0
+Val loss breakdown {}
+Test GAE loss: 0
+Test loss breakdown {'perf': 1.1682535381544203, 'util-LUT': 0.3674729083265577, 'util-FF': 0.2711071329457419, 'util-DSP': 0.7202099590074449, 'util-BRAM': 0.31611586539518266}
+ 		 19.381 secs
+Epoch: 004, Train Loss: 3.1496, Val loss: 0.0000, Test: 2.8432) Time: 19.381 secs
+Test batch ID (resample): -1 - Epoch 5 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<02:54,  1.82s/it]  2%|▏         | 2/97 [00:01<01:20,  1.19it/s]  3%|▎         | 3/97 [00:02<00:50,  1.85it/s]  4%|▍         | 4/97 [00:02<00:36,  2.55it/s]  5%|▌         | 5/97 [00:02<00:29,  3.14it/s]  6%|▌         | 6/97 [00:02<00:25,  3.58it/s]  7%|▋         | 7/97 [00:02<00:21,  4.23it/s]  8%|▊         | 8/97 [00:03<00:18,  4.74it/s]  9%|▉         | 9/97 [00:03<00:18,  4.86it/s] 10%|█         | 10/97 [00:03<00:15,  5.54it/s] 11%|█▏        | 11/97 [00:03<00:15,  5.61it/s] 12%|█▏        | 12/97 [00:03<00:14,  5.78it/s] 13%|█▎        | 13/97 [00:03<00:14,  5.72it/s] 14%|█▍        | 14/97 [00:03<00:13,  6.33it/s] 15%|█▌        | 15/97 [00:04<00:13,  6.26it/s] 16%|█▋        | 16/97 [00:04<00:13,  5.94it/s] 18%|█▊        | 17/97 [00:04<00:12,  6.53it/s] 19%|█▊        | 18/97 [00:04<00:12,  6.29it/s] 20%|█▉        | 19/97 [00:04<00:13,  5.99it/s] 21%|██        | 20/97 [00:04<00:12,  6.13it/s] 22%|██▏       | 21/97 [00:05<00:11,  6.69it/s] 23%|██▎       | 22/97 [00:05<00:11,  6.37it/s] 24%|██▎       | 23/97 [00:05<00:11,  6.55it/s] 25%|██▍       | 24/97 [00:05<00:11,  6.19it/s] 26%|██▌       | 25/97 [00:05<00:11,  6.21it/s] 27%|██▋       | 26/97 [00:05<00:10,  6.74it/s] 28%|██▊       | 27/97 [00:05<00:10,  6.84it/s] 29%|██▉       | 28/97 [00:06<00:10,  6.85it/s] 30%|██▉       | 29/97 [00:06<00:09,  7.17it/s] 31%|███       | 30/97 [00:06<00:09,  7.39it/s] 32%|███▏      | 31/97 [00:06<00:09,  7.19it/s] 33%|███▎      | 32/97 [00:06<00:09,  6.99it/s] 34%|███▍      | 33/97 [00:06<00:09,  6.51it/s] 35%|███▌      | 34/97 [00:06<00:09,  6.71it/s] 36%|███▌      | 35/97 [00:07<00:08,  7.13it/s] 37%|███▋      | 36/97 [00:07<00:08,  6.81it/s] 38%|███▊      | 37/97 [00:07<00:09,  6.32it/s] 39%|███▉      | 38/97 [00:07<00:08,  6.70it/s] 40%|████      | 39/97 [00:07<00:08,  6.52it/s] 41%|████      | 40/97 [00:07<00:09,  6.33it/s] 42%|████▏     | 41/97 [00:08<00:08,  6.86it/s] 43%|████▎     | 42/97 [00:08<00:08,  6.40it/s] 44%|████▍     | 43/97 [00:08<00:08,  6.02it/s] 45%|████▌     | 44/97 [00:08<00:07,  6.63it/s] 46%|████▋     | 45/97 [00:08<00:08,  6.47it/s] 47%|████▋     | 46/97 [00:08<00:08,  6.24it/s] 48%|████▊     | 47/97 [00:08<00:07,  6.68it/s] 49%|████▉     | 48/97 [00:09<00:07,  6.61it/s] 51%|█████     | 49/97 [00:09<00:07,  6.60it/s] 52%|█████▏    | 50/97 [00:09<00:07,  6.18it/s] 53%|█████▎    | 51/97 [00:09<00:06,  6.87it/s] 54%|█████▎    | 52/97 [00:09<00:06,  6.89it/s] 55%|█████▍    | 53/97 [00:09<00:06,  7.17it/s] 56%|█████▌    | 54/97 [00:09<00:05,  7.36it/s] 57%|█████▋    | 55/97 [00:10<00:05,  7.73it/s] 58%|█████▊    | 56/97 [00:10<00:05,  7.83it/s] 59%|█████▉    | 57/97 [00:10<00:05,  7.25it/s] 60%|█████▉    | 58/97 [00:10<00:05,  6.73it/s] 61%|██████    | 59/97 [00:10<00:05,  7.23it/s] 62%|██████▏   | 60/97 [00:10<00:05,  6.86it/s] 63%|██████▎   | 61/97 [00:11<00:05,  6.44it/s] 64%|██████▍   | 62/97 [00:11<00:05,  6.75it/s] 65%|██████▍   | 63/97 [00:11<00:04,  6.82it/s] 66%|██████▌   | 64/97 [00:11<00:05,  6.38it/s] 67%|██████▋   | 65/97 [00:11<00:05,  6.09it/s] 68%|██████▊   | 66/97 [00:11<00:04,  6.65it/s] 69%|██████▉   | 67/97 [00:11<00:04,  6.61it/s] 70%|███████   | 68/97 [00:12<00:04,  6.63it/s] 71%|███████   | 69/97 [00:12<00:04,  6.42it/s] 72%|███████▏  | 70/97 [00:12<00:04,  6.50it/s] 73%|███████▎  | 71/97 [00:12<00:04,  6.40it/s] 74%|███████▍  | 72/97 [00:12<00:03,  6.31it/s] 75%|███████▌  | 73/97 [00:12<00:03,  6.46it/s] 76%|███████▋  | 74/97 [00:13<00:03,  6.10it/s] 77%|███████▋  | 75/97 [00:13<00:03,  6.74it/s] 78%|███████▊  | 76/97 [00:13<00:02,  7.15it/s] 79%|███████▉  | 77/97 [00:13<00:02,  7.42it/s] 80%|████████  | 78/97 [00:13<00:02,  7.09it/s] 81%|████████▏ | 79/97 [00:13<00:02,  7.03it/s] 82%|████████▏ | 80/97 [00:13<00:02,  6.68it/s] 84%|████████▎ | 81/97 [00:14<00:02,  6.34it/s] 85%|████████▍ | 82/97 [00:14<00:02,  6.85it/s] 86%|████████▌ | 83/97 [00:14<00:01,  7.29it/s] 87%|████████▋ | 84/97 [00:14<00:01,  7.57it/s] 88%|████████▊ | 85/97 [00:14<00:01,  7.91it/s] 89%|████████▊ | 86/97 [00:14<00:01,  8.06it/s] 90%|████████▉ | 87/97 [00:14<00:01,  8.06it/s] 91%|█████████ | 88/97 [00:14<00:01,  8.34it/s] 92%|█████████▏| 89/97 [00:14<00:00,  8.58it/s] 93%|█████████▎| 90/97 [00:15<00:00,  8.75it/s] 94%|█████████▍| 91/97 [00:15<00:00,  8.72it/s] 95%|█████████▍| 92/97 [00:15<00:00,  8.87it/s] 96%|█████████▌| 93/97 [00:15<00:00,  8.76it/s] 97%|█████████▋| 94/97 [00:15<00:00,  8.85it/s] 98%|█████████▊| 95/97 [00:15<00:00,  8.69it/s] 99%|█████████▉| 96/97 [00:15<00:00,  8.74it/s]100%|██████████| 97/97 [00:15<00:00,  6.06it/s]
+epoch = 5, learning rate = 4.862146279223525e-05
+Saved train model at epoch 5
+Epoch 5 val
+Epoch 5 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:01<00:31,  1.56s/it] 14%|█▍        | 3/21 [00:01<00:08,  2.12it/s] 24%|██▍       | 5/21 [00:01<00:04,  3.86it/s] 38%|███▊      | 8/21 [00:01<00:01,  6.87it/s] 48%|████▊     | 10/21 [00:02<00:01,  5.50it/s] 57%|█████▋    | 12/21 [00:02<00:01,  6.35it/s] 67%|██████▋   | 14/21 [00:02<00:00,  7.00it/s] 76%|███████▌  | 16/21 [00:03<00:00,  7.72it/s] 86%|████████▌ | 18/21 [00:03<00:00,  9.07it/s]100%|██████████| 21/21 [00:03<00:00, 12.11it/s]100%|██████████| 21/21 [00:03<00:00,  5.86it/s]
+@@@ plot_pred_points
+Saved test model at epoch 5
+Train GAE loss: 0
+Train loss breakdown {'perf': 1.1810376902216488, 'util-LUT': 0.4139248601247355, 'util-FF': 0.30849369285032924, 'util-DSP': 0.8011713479597544, 'util-BRAM': 0.33486898489219624}
+Val GAE loss: 0
+Val loss breakdown {}
+Test GAE loss: 0
+Test loss breakdown {'perf': 1.1236928275653295, 'util-LUT': 0.3637937179633549, 'util-FF': 0.26473183291299, 'util-DSP': 0.6252918229216621, 'util-BRAM': 0.3592243194580078}
+ 		 19.633 secs
+Epoch: 005, Train Loss: 3.0395, Val loss: 0.0000, Test: 2.7367) Time: 19.633 secs
+Test batch ID (resample): -1 - Epoch 6 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<02:47,  1.75s/it]  2%|▏         | 2/97 [00:01<01:18,  1.22it/s]  3%|▎         | 3/97 [00:02<00:49,  1.89it/s]  4%|▍         | 4/97 [00:02<00:36,  2.56it/s]  5%|▌         | 5/97 [00:02<00:29,  3.16it/s]  6%|▌         | 6/97 [00:02<00:25,  3.59it/s]  7%|▋         | 7/97 [00:02<00:21,  4.20it/s]  8%|▊         | 8/97 [00:03<00:20,  4.44it/s]  9%|▉         | 9/97 [00:03<00:17,  4.91it/s] 10%|█         | 10/97 [00:03<00:15,  5.70it/s] 11%|█▏        | 11/97 [00:03<00:13,  6.20it/s] 12%|█▏        | 12/97 [00:03<00:13,  6.50it/s] 13%|█▎        | 13/97 [00:03<00:12,  6.80it/s] 14%|█▍        | 14/97 [00:03<00:12,  6.55it/s] 15%|█▌        | 15/97 [00:04<00:12,  6.59it/s] 16%|█▋        | 16/97 [00:04<00:12,  6.43it/s] 18%|█▊        | 17/97 [00:04<00:12,  6.55it/s] 19%|█▊        | 18/97 [00:04<00:12,  6.54it/s] 20%|█▉        | 19/97 [00:04<00:12,  6.13it/s] 21%|██        | 20/97 [00:04<00:12,  6.16it/s] 22%|██▏       | 21/97 [00:04<00:11,  6.65it/s] 23%|██▎       | 22/97 [00:05<00:11,  6.68it/s] 24%|██▎       | 23/97 [00:05<00:10,  6.90it/s] 25%|██▍       | 24/97 [00:05<00:10,  7.15it/s] 26%|██▌       | 25/97 [00:05<00:10,  7.07it/s] 27%|██▋       | 26/97 [00:05<00:10,  6.97it/s] 28%|██▊       | 27/97 [00:05<00:10,  6.57it/s] 29%|██▉       | 28/97 [00:05<00:10,  6.60it/s] 30%|██▉       | 29/97 [00:06<00:10,  6.33it/s] 31%|███       | 30/97 [00:06<00:11,  5.97it/s] 32%|███▏      | 31/97 [00:06<00:10,  6.11it/s] 33%|███▎      | 32/97 [00:06<00:09,  6.52it/s] 34%|███▍      | 33/97 [00:06<00:09,  6.57it/s] 35%|███▌      | 34/97 [00:06<00:09,  6.39it/s] 36%|███▌      | 35/97 [00:07<00:08,  6.95it/s] 37%|███▋      | 36/97 [00:07<00:09,  6.68it/s] 38%|███▊      | 37/97 [00:07<00:09,  6.22it/s] 39%|███▉      | 38/97 [00:07<00:08,  6.66it/s] 40%|████      | 39/97 [00:07<00:08,  6.48it/s] 41%|████      | 40/97 [00:07<00:08,  6.86it/s] 42%|████▏     | 41/97 [00:07<00:08,  6.95it/s] 43%|████▎     | 42/97 [00:08<00:08,  6.76it/s] 44%|████▍     | 43/97 [00:08<00:08,  6.16it/s] 45%|████▌     | 44/97 [00:08<00:08,  6.49it/s] 46%|████▋     | 45/97 [00:08<00:07,  6.82it/s] 47%|████▋     | 46/97 [00:08<00:07,  6.78it/s] 48%|████▊     | 47/97 [00:08<00:07,  6.52it/s] 49%|████▉     | 48/97 [00:09<00:07,  6.36it/s] 52%|█████▏    | 50/97 [00:09<00:06,  7.23it/s] 53%|█████▎    | 51/97 [00:09<00:06,  7.50it/s] 54%|█████▎    | 52/97 [00:09<00:05,  7.70it/s] 55%|█████▍    | 53/97 [00:09<00:05,  7.51it/s] 56%|█████▌    | 54/97 [00:09<00:06,  7.00it/s] 57%|█████▋    | 55/97 [00:09<00:06,  6.77it/s] 58%|█████▊    | 56/97 [00:10<00:06,  6.53it/s] 59%|█████▉    | 57/97 [00:10<00:06,  6.08it/s] 60%|█████▉    | 58/97 [00:10<00:06,  6.32it/s] 61%|██████    | 59/97 [00:10<00:05,  6.93it/s] 62%|██████▏   | 60/97 [00:10<00:05,  7.19it/s] 63%|██████▎   | 61/97 [00:10<00:05,  7.04it/s] 64%|██████▍   | 62/97 [00:11<00:05,  6.77it/s] 65%|██████▍   | 63/97 [00:11<00:05,  6.49it/s] 66%|██████▌   | 64/97 [00:11<00:04,  6.75it/s] 67%|██████▋   | 65/97 [00:11<00:04,  7.17it/s] 68%|██████▊   | 66/97 [00:11<00:04,  7.40it/s] 69%|██████▉   | 67/97 [00:11<00:04,  7.32it/s] 70%|███████   | 68/97 [00:11<00:03,  7.48it/s] 71%|███████   | 69/97 [00:11<00:03,  7.51it/s] 72%|███████▏  | 70/97 [00:12<00:03,  7.64it/s] 73%|███████▎  | 71/97 [00:12<00:03,  7.63it/s] 74%|███████▍  | 72/97 [00:12<00:03,  7.59it/s] 75%|███████▌  | 73/97 [00:12<00:03,  7.11it/s] 76%|███████▋  | 74/97 [00:12<00:03,  7.30it/s] 77%|███████▋  | 75/97 [00:12<00:03,  6.93it/s] 78%|███████▊  | 76/97 [00:12<00:03,  6.56it/s] 79%|███████▉  | 77/97 [00:13<00:03,  6.50it/s] 80%|████████  | 78/97 [00:13<00:02,  7.14it/s] 81%|████████▏ | 79/97 [00:13<00:02,  7.31it/s] 82%|████████▏ | 80/97 [00:13<00:02,  7.50it/s] 84%|████████▎ | 81/97 [00:13<00:02,  7.31it/s] 85%|████████▍ | 82/97 [00:13<00:01,  7.57it/s] 86%|████████▌ | 83/97 [00:13<00:01,  7.89it/s] 87%|████████▋ | 84/97 [00:14<00:01,  8.00it/s] 88%|████████▊ | 85/97 [00:14<00:01,  8.02it/s] 89%|████████▊ | 86/97 [00:14<00:01,  8.15it/s] 90%|████████▉ | 87/97 [00:14<00:01,  8.07it/s] 91%|█████████ | 88/97 [00:14<00:01,  8.38it/s] 92%|█████████▏| 89/97 [00:14<00:00,  8.72it/s] 93%|█████████▎| 90/97 [00:14<00:00,  8.85it/s] 94%|█████████▍| 91/97 [00:14<00:00,  8.83it/s] 95%|█████████▍| 92/97 [00:14<00:00,  8.95it/s] 96%|█████████▌| 93/97 [00:15<00:00,  8.72it/s] 97%|█████████▋| 94/97 [00:15<00:00,  8.66it/s] 98%|█████████▊| 95/97 [00:15<00:00,  8.42it/s] 99%|█████████▉| 96/97 [00:15<00:00,  8.52it/s]100%|██████████| 97/97 [00:15<00:00,  6.20it/s]
+epoch = 6, learning rate = 5.832424261461286e-05
+Saved train model at epoch 6
+Epoch 6 val
+Epoch 6 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:01<00:27,  1.36s/it] 10%|▉         | 2/21 [00:01<00:12,  1.51it/s] 14%|█▍        | 3/21 [00:01<00:07,  2.46it/s] 19%|█▉        | 4/21 [00:01<00:04,  3.50it/s] 29%|██▊       | 6/21 [00:01<00:02,  5.89it/s] 38%|███▊      | 8/21 [00:01<00:01,  8.39it/s] 48%|████▊     | 10/21 [00:02<00:01,  6.11it/s] 57%|█████▋    | 12/21 [00:02<00:01,  7.02it/s] 67%|██████▋   | 14/21 [00:02<00:00,  8.30it/s] 76%|███████▌  | 16/21 [00:03<00:00,  8.87it/s] 86%|████████▌ | 18/21 [00:03<00:00, 10.44it/s]100%|██████████| 21/21 [00:03<00:00, 13.59it/s]100%|██████████| 21/21 [00:03<00:00,  6.13it/s]
+@@@ plot_pred_points
+Train GAE loss: 0
+Train loss breakdown {'perf': 1.1492233466856259, 'util-LUT': 0.4106647198654942, 'util-FF': 0.30201148986816406, 'util-DSP': 0.7741273153074009, 'util-BRAM': 0.31140844247390315}
+Val GAE loss: 0
+Val loss breakdown {}
+Test GAE loss: 0
+Test loss breakdown {'perf': 1.1975739626657396, 'util-LUT': 0.36107666080906275, 'util-FF': 0.27754260457697366, 'util-DSP': 0.5986163460073017, 'util-BRAM': 0.39329932701020015}
+ 		 19.097 secs
+Epoch: 006, Train Loss: 2.9474, Val loss: 0.0000, Test: 2.8281) Time: 19.097 secs
+Test batch ID (resample): -1 - Epoch 7 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<02:44,  1.71s/it]  2%|▏         | 2/97 [00:01<01:13,  1.29it/s]  3%|▎         | 3/97 [00:01<00:46,  2.04it/s]  4%|▍         | 4/97 [00:02<00:34,  2.73it/s]  5%|▌         | 5/97 [00:02<00:27,  3.32it/s]  6%|▌         | 6/97 [00:02<00:23,  3.88it/s]  7%|▋         | 7/97 [00:02<00:21,  4.17it/s]  8%|▊         | 8/97 [00:02<00:19,  4.64it/s]  9%|▉         | 9/97 [00:03<00:16,  5.29it/s] 10%|█         | 10/97 [00:03<00:15,  5.45it/s] 11%|█▏        | 11/97 [00:03<00:15,  5.72it/s] 12%|█▏        | 12/97 [00:03<00:15,  5.65it/s] 13%|█▎        | 13/97 [00:03<00:13,  6.41it/s] 14%|█▍        | 14/97 [00:03<00:13,  6.16it/s] 15%|█▌        | 15/97 [00:03<00:13,  6.02it/s] 16%|█▋        | 16/97 [00:04<00:12,  6.35it/s] 18%|█▊        | 17/97 [00:04<00:12,  6.29it/s] 19%|█▊        | 18/97 [00:04<00:13,  5.95it/s] 20%|█▉        | 19/97 [00:04<00:12,  6.08it/s] 21%|██        | 20/97 [00:04<00:12,  6.32it/s] 22%|██▏       | 21/97 [00:04<00:11,  6.46it/s] 23%|██▎       | 22/97 [00:05<00:11,  6.28it/s] 24%|██▎       | 23/97 [00:05<00:12,  5.88it/s] 25%|██▍       | 24/97 [00:05<00:11,  6.41it/s] 26%|██▌       | 25/97 [00:05<00:12,  5.91it/s] 27%|██▋       | 26/97 [00:05<00:11,  6.24it/s] 28%|██▊       | 27/97 [00:05<00:10,  6.87it/s] 29%|██▉       | 28/97 [00:05<00:09,  7.15it/s] 30%|██▉       | 29/97 [00:06<00:09,  6.99it/s] 31%|███       | 30/97 [00:06<00:09,  7.03it/s] 32%|███▏      | 31/97 [00:06<00:10,  6.40it/s] 33%|███▎      | 32/97 [00:06<00:10,  6.45it/s] 34%|███▍      | 33/97 [00:06<00:09,  6.87it/s] 35%|███▌      | 34/97 [00:06<00:09,  6.85it/s] 36%|███▌      | 35/97 [00:07<00:09,  6.34it/s] 37%|███▋      | 36/97 [00:07<00:09,  6.46it/s] 38%|███▊      | 37/97 [00:07<00:08,  6.74it/s] 39%|███▉      | 38/97 [00:07<00:09,  6.54it/s] 40%|████      | 39/97 [00:07<00:09,  6.15it/s] 41%|████      | 40/97 [00:07<00:09,  6.31it/s] 42%|████▏     | 41/97 [00:07<00:08,  6.95it/s] 43%|████▎     | 42/97 [00:08<00:07,  7.16it/s] 44%|████▍     | 43/97 [00:08<00:07,  7.32it/s] 45%|████▌     | 44/97 [00:08<00:07,  7.26it/s] 46%|████▋     | 45/97 [00:08<00:08,  6.50it/s] 47%|████▋     | 46/97 [00:08<00:07,  6.48it/s] 48%|████▊     | 47/97 [00:08<00:07,  7.02it/s] 49%|████▉     | 48/97 [00:08<00:06,  7.49it/s] 51%|█████     | 49/97 [00:09<00:06,  7.56it/s] 52%|█████▏    | 50/97 [00:09<00:06,  7.07it/s] 53%|█████▎    | 51/97 [00:09<00:06,  7.18it/s] 54%|█████▎    | 52/97 [00:09<00:06,  6.82it/s] 55%|█████▍    | 53/97 [00:09<00:06,  6.49it/s] 56%|█████▌    | 54/97 [00:09<00:07,  6.04it/s] 57%|█████▋    | 55/97 [00:09<00:06,  6.82it/s] 58%|█████▊    | 56/97 [00:10<00:06,  6.65it/s] 59%|█████▉    | 57/97 [00:10<00:05,  6.67it/s] 60%|█████▉    | 58/97 [00:10<00:06,  6.35it/s] 61%|██████    | 59/97 [00:10<00:05,  6.88it/s] 62%|██████▏   | 60/97 [00:10<00:05,  6.68it/s] 63%|██████▎   | 61/97 [00:10<00:05,  6.88it/s] 64%|██████▍   | 62/97 [00:11<00:05,  6.46it/s] 65%|██████▍   | 63/97 [00:11<00:05,  6.15it/s] 66%|██████▌   | 64/97 [00:11<00:05,  6.35it/s] 67%|██████▋   | 65/97 [00:11<00:05,  6.36it/s] 68%|██████▊   | 66/97 [00:11<00:05,  6.01it/s] 69%|██████▉   | 67/97 [00:11<00:04,  6.56it/s] 70%|███████   | 68/97 [00:12<00:04,  6.22it/s] 71%|███████   | 69/97 [00:12<00:04,  6.48it/s] 72%|███████▏  | 70/97 [00:12<00:04,  6.35it/s] 73%|███████▎  | 71/97 [00:12<00:04,  5.87it/s] 74%|███████▍  | 72/97 [00:12<00:03,  6.36it/s] 75%|███████▌  | 73/97 [00:12<00:03,  6.23it/s] 76%|███████▋  | 74/97 [00:12<00:03,  6.32it/s] 77%|███████▋  | 75/97 [00:13<00:03,  6.03it/s] 78%|███████▊  | 76/97 [00:13<00:03,  6.49it/s] 79%|███████▉  | 77/97 [00:13<00:03,  6.47it/s] 80%|████████  | 78/97 [00:13<00:02,  6.42it/s] 81%|████████▏ | 79/97 [00:13<00:03,  5.96it/s] 82%|████████▏ | 80/97 [00:13<00:02,  6.42it/s] 84%|████████▎ | 81/97 [00:14<00:02,  6.30it/s] 85%|████████▍ | 82/97 [00:14<00:02,  6.34it/s] 86%|████████▌ | 83/97 [00:14<00:02,  6.81it/s] 87%|████████▋ | 84/97 [00:14<00:01,  7.14it/s] 88%|████████▊ | 85/97 [00:14<00:01,  7.46it/s] 89%|████████▊ | 86/97 [00:14<00:01,  7.68it/s] 90%|████████▉ | 87/97 [00:14<00:01,  7.69it/s] 91%|█████████ | 88/97 [00:14<00:01,  7.92it/s] 92%|█████████▏| 89/97 [00:15<00:00,  8.20it/s] 93%|█████████▎| 90/97 [00:15<00:00,  8.48it/s] 94%|█████████▍| 91/97 [00:15<00:00,  8.45it/s] 95%|█████████▍| 92/97 [00:15<00:00,  8.72it/s] 96%|█████████▌| 93/97 [00:15<00:00,  8.45it/s] 97%|█████████▋| 94/97 [00:15<00:00,  8.52it/s] 98%|█████████▊| 95/97 [00:15<00:00,  8.48it/s] 99%|█████████▉| 96/97 [00:15<00:00,  8.67it/s]100%|██████████| 97/97 [00:16<00:00,  6.01it/s]
+epoch = 7, learning rate = 6.802620310486703e-05
+Saved train model at epoch 7
+Epoch 7 val
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:00<00:17,  1.15it/s] 10%|▉         | 2/21 [00:01<00:09,  1.98it/s] 14%|█▍        | 3/21 [00:01<00:05,  3.10it/s] 19%|█▉        | 4/21 [00:01<00:05,  3.35it/s] 29%|██▊       | 6/21 [00:01<00:02,  5.12it/s] 38%|███▊      | 8/21 [00:01<00:01,  6.53it/s] 48%|████▊     | 10/21 [00:02<00:01,  7.67it/s] 57%|█████▋    | 12/21 [00:02<00:01,  8.57it/s] 67%|██████▋   | 14/21 [00:02<00:00,  9.10it/s] 76%|███████▌  | 16/21 [00:02<00:00,  9.08it/s] 86%|████████▌ | 18/21 [00:02<00:00,  9.84it/s]100%|██████████| 21/21 [00:02<00:00, 13.01it/s]100%|██████████| 21/21 [00:03<00:00,  6.68it/s]
+Epoch 7 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:01<00:25,  1.28s/it] 10%|▉         | 2/21 [00:01<00:12,  1.55it/s] 19%|█▉        | 4/21 [00:01<00:05,  3.34it/s] 29%|██▊       | 6/21 [00:01<00:02,  5.38it/s] 43%|████▎     | 9/21 [00:02<00:01,  6.37it/s] 48%|████▊     | 10/21 [00:02<00:01,  6.08it/s] 57%|█████▋    | 12/21 [00:02<00:01,  7.21it/s] 67%|██████▋   | 14/21 [00:02<00:00,  8.21it/s] 76%|███████▌  | 16/21 [00:02<00:00,  9.09it/s] 86%|████████▌ | 18/21 [00:03<00:00, 10.72it/s]100%|██████████| 21/21 [00:03<00:00, 14.15it/s]100%|██████████| 21/21 [00:03<00:00,  6.33it/s]
+@@@ plot_pred_points
+Train GAE loss: 0
+Train loss breakdown {'perf': 1.130058434206186, 'util-LUT': 0.40993498127485056, 'util-FF': 0.29903167701259104, 'util-DSP': 0.7890535826535569, 'util-BRAM': 0.305828834931875}
+Val GAE loss: 0
+Val loss breakdown {'perf': 1.1790656191962106, 'util-LUT': 0.3688629759209497, 'util-FF': 0.3019003492026102, 'util-DSP': 0.792228829293024, 'util-BRAM': 0.2609160365093322}
+Test GAE loss: 0
+Test loss breakdown {'perf': 1.1706844710168385, 'util-LUT': 0.3590362724803743, 'util-FF': 0.27516454671110424, 'util-DSP': 0.6947939622969854, 'util-BRAM': 0.281217675833475}
+ 		 22.648 secs
+Epoch: 007, Train Loss: 2.9339, Val loss: 2.9030, Test: 2.7809) Time: 22.648 secs
+Test batch ID (resample): -1 - Epoch 8 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<02:52,  1.80s/it]  2%|▏         | 2/97 [00:01<01:20,  1.19it/s]  3%|▎         | 3/97 [00:02<00:50,  1.88it/s]  4%|▍         | 4/97 [00:02<00:36,  2.54it/s]  5%|▌         | 5/97 [00:02<00:29,  3.12it/s]  6%|▌         | 6/97 [00:02<00:25,  3.60it/s]  7%|▋         | 7/97 [00:02<00:21,  4.21it/s]  8%|▊         | 8/97 [00:03<00:19,  4.67it/s]  9%|▉         | 9/97 [00:03<00:17,  5.17it/s] 10%|█         | 10/97 [00:03<00:15,  5.79it/s] 11%|█▏        | 11/97 [00:03<00:13,  6.34it/s] 12%|█▏        | 12/97 [00:03<00:12,  6.85it/s] 13%|█▎        | 13/97 [00:03<00:12,  6.76it/s] 14%|█▍        | 14/97 [00:03<00:12,  6.77it/s] 15%|█▌        | 15/97 [00:03<00:12,  6.62it/s] 16%|█▋        | 16/97 [00:04<00:12,  6.41it/s] 18%|█▊        | 17/97 [00:04<00:13,  5.93it/s] 19%|█▊        | 18/97 [00:04<00:12,  6.13it/s] 20%|█▉        | 19/97 [00:04<00:11,  6.66it/s] 21%|██        | 20/97 [00:04<00:11,  6.61it/s] 22%|██▏       | 21/97 [00:04<00:12,  6.24it/s] 23%|██▎       | 22/97 [00:05<00:11,  6.49it/s] 24%|██▎       | 23/97 [00:05<00:11,  6.52it/s] 25%|██▍       | 24/97 [00:05<00:11,  6.29it/s] 26%|██▌       | 25/97 [00:05<00:11,  6.24it/s] 27%|██▋       | 26/97 [00:05<00:10,  6.82it/s] 28%|██▊       | 27/97 [00:05<00:09,  7.01it/s] 29%|██▉       | 28/97 [00:05<00:09,  6.93it/s] 30%|██▉       | 29/97 [00:06<00:09,  7.18it/s] 31%|███       | 30/97 [00:06<00:09,  7.14it/s] 32%|███▏      | 31/97 [00:06<00:10,  6.34it/s] 33%|███▎      | 32/97 [00:06<00:09,  6.52it/s] 34%|███▍      | 33/97 [00:06<00:09,  7.03it/s] 35%|███▌      | 34/97 [00:06<00:08,  7.50it/s] 36%|███▌      | 35/97 [00:06<00:07,  7.75it/s] 37%|███▋      | 36/97 [00:07<00:07,  7.90it/s] 38%|███▊      | 37/97 [00:07<00:07,  7.85it/s] 39%|███▉      | 38/97 [00:07<00:07,  7.84it/s] 40%|████      | 39/97 [00:07<00:07,  7.82it/s] 41%|████      | 40/97 [00:07<00:07,  7.51it/s] 42%|████▏     | 41/97 [00:07<00:07,  7.11it/s] 43%|████▎     | 42/97 [00:07<00:07,  6.91it/s] 44%|████▍     | 43/97 [00:08<00:08,  6.67it/s] 45%|████▌     | 44/97 [00:08<00:08,  6.18it/s] 46%|████▋     | 45/97 [00:08<00:08,  6.47it/s] 47%|████▋     | 46/97 [00:08<00:07,  7.12it/s] 48%|████▊     | 47/97 [00:08<00:06,  7.55it/s] 49%|████▉     | 48/97 [00:08<00:06,  8.02it/s] 51%|█████     | 49/97 [00:08<00:06,  7.53it/s] 52%|█████▏    | 50/97 [00:09<00:06,  7.24it/s] 53%|█████▎    | 51/97 [00:09<00:06,  7.11it/s] 54%|█████▎    | 52/97 [00:09<00:06,  6.78it/s] 55%|█████▍    | 53/97 [00:09<00:07,  6.21it/s] 56%|█████▌    | 54/97 [00:09<00:07,  6.08it/s] 57%|█████▋    | 55/97 [00:09<00:06,  6.64it/s] 58%|█████▊    | 56/97 [00:09<00:06,  6.49it/s] 59%|█████▉    | 57/97 [00:10<00:06,  6.63it/s] 60%|█████▉    | 58/97 [00:10<00:06,  6.19it/s] 61%|██████    | 59/97 [00:10<00:05,  6.87it/s] 62%|██████▏   | 60/97 [00:10<00:05,  6.85it/s] 63%|██████▎   | 61/97 [00:10<00:05,  7.07it/s] 64%|██████▍   | 62/97 [00:10<00:05,  6.72it/s] 65%|██████▍   | 63/97 [00:11<00:05,  6.52it/s] 66%|██████▌   | 64/97 [00:11<00:04,  6.74it/s] 67%|██████▋   | 65/97 [00:11<00:04,  7.13it/s] 68%|██████▊   | 66/97 [00:11<00:04,  7.43it/s] 69%|██████▉   | 67/97 [00:11<00:03,  7.55it/s] 70%|███████   | 68/97 [00:11<00:03,  7.58it/s] 71%|███████   | 69/97 [00:11<00:03,  7.68it/s] 72%|███████▏  | 70/97 [00:11<00:03,  7.65it/s] 73%|███████▎  | 71/97 [00:12<00:03,  7.60it/s] 74%|███████▍  | 72/97 [00:12<00:03,  7.53it/s] 75%|███████▌  | 73/97 [00:12<00:03,  7.04it/s] 76%|███████▋  | 74/97 [00:12<00:03,  6.61it/s] 77%|███████▋  | 75/97 [00:12<00:03,  6.90it/s] 78%|███████▊  | 76/97 [00:12<00:03,  6.79it/s] 79%|███████▉  | 77/97 [00:12<00:03,  6.42it/s] 80%|████████  | 78/97 [00:13<00:02,  7.08it/s] 81%|████████▏ | 79/97 [00:13<00:02,  7.31it/s] 82%|████████▏ | 80/97 [00:13<00:02,  7.44it/s] 84%|████████▎ | 81/97 [00:13<00:02,  6.92it/s] 85%|████████▍ | 82/97 [00:13<00:02,  6.88it/s] 86%|████████▌ | 83/97 [00:13<00:01,  7.28it/s] 87%|████████▋ | 84/97 [00:13<00:01,  7.58it/s] 88%|████████▊ | 85/97 [00:14<00:01,  7.83it/s] 89%|████████▊ | 86/97 [00:14<00:01,  7.87it/s] 90%|████████▉ | 87/97 [00:14<00:01,  7.94it/s] 91%|█████████ | 88/97 [00:14<00:01,  8.19it/s] 92%|█████████▏| 89/97 [00:14<00:00,  8.39it/s] 93%|█████████▎| 90/97 [00:14<00:00,  8.48it/s] 94%|█████████▍| 91/97 [00:14<00:00,  8.33it/s] 95%|█████████▍| 92/97 [00:14<00:00,  8.58it/s] 96%|█████████▌| 93/97 [00:14<00:00,  8.49it/s] 97%|█████████▋| 94/97 [00:15<00:00,  8.46it/s] 98%|█████████▊| 95/97 [00:15<00:00,  8.45it/s] 99%|█████████▉| 96/97 [00:15<00:00,  8.67it/s]100%|██████████| 97/97 [00:15<00:00,  6.24it/s]
+epoch = 8, learning rate = 7.772720781988334e-05
+Epoch 8 val
+Epoch 8 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:01<00:25,  1.28s/it] 10%|▉         | 2/21 [00:01<00:12,  1.55it/s] 19%|█▉        | 4/21 [00:01<00:05,  3.38it/s] 29%|██▊       | 6/21 [00:01<00:02,  5.44it/s] 43%|████▎     | 9/21 [00:02<00:01,  6.92it/s] 52%|█████▏    | 11/21 [00:02<00:01,  6.40it/s] 62%|██████▏   | 13/21 [00:02<00:01,  7.36it/s] 71%|███████▏  | 15/21 [00:02<00:00,  8.17it/s] 81%|████████  | 17/21 [00:02<00:00,  9.27it/s] 95%|█████████▌| 20/21 [00:03<00:00, 12.29it/s]100%|██████████| 21/21 [00:03<00:00,  6.34it/s]
+@@@ plot_pred_points
+Saved test model at epoch 8
+Train GAE loss: 0
+Train loss breakdown {'perf': 1.127488389457624, 'util-LUT': 0.40536438543157477, 'util-FF': 0.29476719664544176, 'util-DSP': 0.8145761188772536, 'util-BRAM': 0.2938599151741598}
+Val GAE loss: 0
+Val loss breakdown {}
+Test GAE loss: 0
+Test loss breakdown {'perf': 1.1032229151044572, 'util-LUT': 0.362360988344465, 'util-FF': 0.26408731156871434, 'util-DSP': 0.5648203336057209, 'util-BRAM': 0.32787441923504784}
+ 		 18.899 secs
+Epoch: 008, Train Loss: 2.9361, Val loss: 0.0000, Test: 2.6224) Time: 18.899 secs
+Test batch ID (resample): -1 - Epoch 9 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<02:53,  1.81s/it]  2%|▏         | 2/97 [00:01<01:20,  1.18it/s]  3%|▎         | 3/97 [00:02<00:50,  1.86it/s]  4%|▍         | 4/97 [00:02<00:36,  2.53it/s]  5%|▌         | 5/97 [00:02<00:29,  3.13it/s]  6%|▌         | 6/97 [00:02<00:25,  3.59it/s]  7%|▋         | 7/97 [00:02<00:21,  4.27it/s]  8%|▊         | 8/97 [00:03<00:18,  4.71it/s]  9%|▉         | 9/97 [00:03<00:17,  5.09it/s] 10%|█         | 10/97 [00:03<00:15,  5.54it/s] 11%|█▏        | 11/97 [00:03<00:13,  6.20it/s] 12%|█▏        | 12/97 [00:03<00:12,  6.71it/s] 13%|█▎        | 13/97 [00:03<00:12,  6.92it/s] 14%|█▍        | 14/97 [00:03<00:11,  7.09it/s] 15%|█▌        | 15/97 [00:04<00:12,  6.70it/s] 16%|█▋        | 16/97 [00:04<00:12,  6.31it/s] 18%|█▊        | 17/97 [00:04<00:13,  6.09it/s] 19%|█▊        | 18/97 [00:04<00:12,  6.15it/s] 20%|█▉        | 19/97 [00:04<00:14,  5.54it/s] 21%|██        | 20/97 [00:04<00:13,  5.55it/s] 22%|██▏       | 21/97 [00:05<00:12,  5.87it/s] 23%|██▎       | 22/97 [00:05<00:12,  6.22it/s] 24%|██▎       | 23/97 [00:05<00:10,  6.76it/s] 25%|██▍       | 24/97 [00:05<00:10,  7.10it/s] 26%|██▌       | 25/97 [00:05<00:10,  6.92it/s] 27%|██▋       | 26/97 [00:05<00:10,  6.46it/s] 28%|██▊       | 27/97 [00:05<00:09,  7.13it/s] 29%|██▉       | 28/97 [00:05<00:08,  7.72it/s] 30%|██▉       | 29/97 [00:06<00:09,  7.03it/s] 31%|███       | 30/97 [00:06<00:10,  6.25it/s] 32%|███▏      | 31/97 [00:06<00:10,  6.34it/s] 33%|███▎      | 32/97 [00:06<00:09,  6.74it/s] 34%|███▍      | 33/97 [00:06<00:09,  6.69it/s] 35%|███▌      | 34/97 [00:06<00:09,  6.51it/s] 36%|███▌      | 35/97 [00:07<00:08,  6.96it/s] 37%|███▋      | 36/97 [00:07<00:08,  6.80it/s] 38%|███▊      | 37/97 [00:07<00:09,  6.33it/s] 39%|███▉      | 38/97 [00:07<00:08,  6.64it/s] 40%|████      | 39/97 [00:07<00:08,  6.51it/s] 41%|████      | 40/97 [00:07<00:08,  6.34it/s] 42%|████▏     | 41/97 [00:07<00:08,  6.90it/s] 43%|████▎     | 42/97 [00:08<00:07,  7.27it/s] 44%|████▍     | 43/97 [00:08<00:07,  7.44it/s] 45%|████▌     | 44/97 [00:08<00:07,  7.19it/s] 46%|████▋     | 45/97 [00:08<00:07,  6.77it/s] 47%|████▋     | 46/97 [00:08<00:07,  7.25it/s] 48%|████▊     | 47/97 [00:08<00:06,  7.24it/s] 49%|████▉     | 48/97 [00:08<00:06,  7.33it/s] 51%|█████     | 49/97 [00:09<00:06,  7.22it/s] 52%|█████▏    | 50/97 [00:09<00:06,  7.39it/s] 53%|█████▎    | 51/97 [00:09<00:06,  7.05it/s] 54%|█████▎    | 52/97 [00:09<00:06,  6.84it/s] 55%|█████▍    | 53/97 [00:09<00:06,  6.54it/s] 56%|█████▌    | 54/97 [00:09<00:06,  6.15it/s] 57%|█████▋    | 55/97 [00:10<00:06,  6.28it/s] 58%|█████▊    | 56/97 [00:10<00:06,  6.82it/s] 59%|█████▉    | 57/97 [00:10<00:05,  7.12it/s] 60%|█████▉    | 58/97 [00:10<00:05,  7.52it/s] 61%|██████    | 59/97 [00:10<00:04,  7.80it/s] 62%|██████▏   | 60/97 [00:10<00:04,  8.12it/s] 63%|██████▎   | 61/97 [00:10<00:04,  8.28it/s] 64%|██████▍   | 62/97 [00:10<00:04,  8.25it/s] 65%|██████▍   | 63/97 [00:11<00:04,  7.72it/s] 66%|██████▌   | 64/97 [00:11<00:04,  7.01it/s] 67%|██████▋   | 65/97 [00:11<00:05,  6.37it/s] 68%|██████▊   | 66/97 [00:11<00:04,  6.97it/s] 69%|██████▉   | 67/97 [00:11<00:04,  6.36it/s] 70%|███████   | 68/97 [00:11<00:04,  6.23it/s] 71%|███████   | 69/97 [00:11<00:04,  6.51it/s] 72%|███████▏  | 70/97 [00:12<00:04,  6.43it/s] 73%|███████▎  | 71/97 [00:12<00:04,  6.49it/s] 74%|███████▍  | 72/97 [00:12<00:03,  6.26it/s] 75%|███████▌  | 73/97 [00:12<00:03,  6.03it/s] 76%|███████▋  | 74/97 [00:12<00:03,  6.19it/s] 77%|███████▋  | 75/97 [00:12<00:03,  6.53it/s] 78%|███████▊  | 76/97 [00:13<00:03,  6.73it/s] 79%|███████▉  | 77/97 [00:13<00:02,  6.78it/s] 80%|████████  | 78/97 [00:13<00:02,  6.58it/s] 81%|████████▏ | 79/97 [00:13<00:02,  6.01it/s] 82%|████████▏ | 80/97 [00:13<00:02,  6.55it/s] 84%|████████▎ | 81/97 [00:13<00:02,  5.63it/s] 85%|████████▍ | 82/97 [00:14<00:02,  5.82it/s] 86%|████████▌ | 83/97 [00:14<00:02,  6.43it/s] 87%|████████▋ | 84/97 [00:14<00:01,  6.95it/s] 88%|████████▊ | 85/97 [00:14<00:01,  7.27it/s] 89%|████████▊ | 86/97 [00:14<00:01,  7.60it/s] 90%|████████▉ | 87/97 [00:14<00:01,  7.78it/s] 91%|█████████ | 88/97 [00:14<00:01,  7.98it/s] 92%|█████████▏| 89/97 [00:14<00:00,  8.35it/s] 93%|█████████▎| 90/97 [00:15<00:00,  8.48it/s] 94%|█████████▍| 91/97 [00:15<00:00,  8.57it/s] 95%|█████████▍| 92/97 [00:15<00:00,  8.70it/s] 96%|█████████▌| 93/97 [00:15<00:00,  8.44it/s] 97%|█████████▋| 94/97 [00:15<00:00,  8.47it/s] 98%|█████████▊| 95/97 [00:15<00:00,  8.31it/s] 99%|█████████▉| 96/97 [00:15<00:00,  8.51it/s]100%|██████████| 97/97 [00:15<00:00,  6.07it/s]
+epoch = 9, learning rate = 8.742712033226655e-05
+Saved train model at epoch 9
+Epoch 9 val
+Epoch 9 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:01<00:28,  1.42s/it] 10%|▉         | 2/21 [00:01<00:12,  1.53it/s] 14%|█▍        | 3/21 [00:01<00:07,  2.47it/s] 24%|██▍       | 5/21 [00:01<00:03,  4.53it/s] 38%|███▊      | 8/21 [00:01<00:01,  7.87it/s] 48%|████▊     | 10/21 [00:02<00:01,  6.08it/s] 57%|█████▋    | 12/21 [00:02<00:01,  7.14it/s] 67%|██████▋   | 14/21 [00:02<00:00,  8.07it/s] 76%|███████▌  | 16/21 [00:02<00:00,  8.73it/s] 86%|████████▌ | 18/21 [00:03<00:00, 10.30it/s]100%|██████████| 21/21 [00:03<00:00, 13.62it/s]100%|██████████| 21/21 [00:03<00:00,  6.19it/s]
+@@@ plot_pred_points
+Train GAE loss: 0
+Train loss breakdown {'perf': 1.1034139560669969, 'util-LUT': 0.4054162273394693, 'util-FF': 0.29189840665797595, 'util-DSP': 0.7943151728394106, 'util-BRAM': 0.30392749853355366}
+Val GAE loss: 0
+Val loss breakdown {}
+Test GAE loss: 0
+Test loss breakdown {'perf': 1.047278730642228, 'util-LUT': 0.3584834734598796, 'util-FF': 0.2582226615576517, 'util-DSP': 0.7134915732202076, 'util-BRAM': 0.2685841243891489}
+ 		 19.391 secs
+Epoch: 009, Train Loss: 2.8990, Val loss: 0.0000, Test: 2.6461) Time: 19.391 secs
+Test batch ID (resample): -1 - Epoch 10 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<02:38,  1.65s/it]  2%|▏         | 2/97 [00:01<01:14,  1.28it/s]  3%|▎         | 3/97 [00:01<00:47,  1.99it/s]  4%|▍         | 4/97 [00:02<00:35,  2.65it/s]  5%|▌         | 5/97 [00:02<00:26,  3.42it/s]  6%|▌         | 6/97 [00:02<00:21,  4.27it/s]  7%|▋         | 7/97 [00:02<00:19,  4.60it/s]  8%|▊         | 8/97 [00:02<00:18,  4.76it/s]  9%|▉         | 9/97 [00:03<00:17,  4.91it/s] 10%|█         | 10/97 [00:03<00:16,  5.12it/s] 11%|█▏        | 11/97 [00:03<00:16,  5.17it/s] 12%|█▏        | 12/97 [00:03<00:14,  5.90it/s] 13%|█▎        | 13/97 [00:03<00:14,  5.90it/s] 14%|█▍        | 14/97 [00:03<00:14,  5.76it/s] 15%|█▌        | 15/97 [00:03<00:12,  6.33it/s] 16%|█▋        | 16/97 [00:04<00:13,  6.21it/s] 18%|█▊        | 17/97 [00:04<00:12,  6.46it/s] 19%|█▊        | 18/97 [00:04<00:13,  6.03it/s] 20%|█▉        | 19/97 [00:04<00:12,  6.23it/s] 21%|██        | 20/97 [00:04<00:11,  6.52it/s] 22%|██▏       | 21/97 [00:04<00:11,  6.58it/s] 23%|██▎       | 22/97 [00:05<00:11,  6.49it/s] 24%|██▎       | 23/97 [00:05<00:11,  6.55it/s] 25%|██▍       | 24/97 [00:05<00:11,  6.48it/s] 26%|██▌       | 25/97 [00:05<00:11,  6.25it/s] 27%|██▋       | 26/97 [00:05<00:10,  6.82it/s] 28%|██▊       | 27/97 [00:05<00:10,  6.82it/s] 29%|██▉       | 28/97 [00:05<00:09,  7.29it/s] 30%|██▉       | 29/97 [00:06<00:09,  7.45it/s] 31%|███       | 30/97 [00:06<00:09,  7.18it/s] 32%|███▏      | 31/97 [00:06<00:09,  6.64it/s] 33%|███▎      | 32/97 [00:06<00:09,  7.22it/s] 34%|███▍      | 33/97 [00:06<00:09,  6.82it/s] 35%|███▌      | 34/97 [00:06<00:09,  6.61it/s] 36%|███▌      | 35/97 [00:06<00:08,  7.10it/s] 37%|███▋      | 36/97 [00:07<00:08,  7.10it/s] 38%|███▊      | 37/97 [00:07<00:08,  7.15it/s] 39%|███▉      | 38/97 [00:07<00:08,  6.77it/s] 40%|████      | 39/97 [00:07<00:09,  6.32it/s] 41%|████      | 40/97 [00:07<00:08,  6.87it/s] 42%|████▏     | 41/97 [00:07<00:08,  6.92it/s] 43%|████▎     | 42/97 [00:07<00:07,  7.10it/s] 44%|████▍     | 43/97 [00:08<00:07,  7.26it/s] 45%|████▌     | 44/97 [00:08<00:07,  7.53it/s] 46%|████▋     | 45/97 [00:08<00:06,  7.80it/s] 47%|████▋     | 46/97 [00:08<00:06,  8.20it/s] 48%|████▊     | 47/97 [00:08<00:06,  8.08it/s] 49%|████▉     | 48/97 [00:08<00:06,  7.96it/s] 51%|█████     | 49/97 [00:08<00:06,  7.67it/s] 52%|█████▏    | 50/97 [00:08<00:06,  7.63it/s] 53%|█████▎    | 51/97 [00:09<00:06,  7.20it/s] 54%|█████▎    | 52/97 [00:09<00:06,  6.97it/s] 55%|█████▍    | 53/97 [00:09<00:06,  6.61it/s] 56%|█████▌    | 54/97 [00:09<00:06,  6.20it/s] 57%|█████▋    | 55/97 [00:09<00:06,  6.39it/s] 58%|█████▊    | 56/97 [00:09<00:05,  6.87it/s] 59%|█████▉    | 57/97 [00:10<00:05,  7.21it/s] 60%|█████▉    | 58/97 [00:10<00:05,  7.20it/s] 61%|██████    | 59/97 [00:10<00:05,  7.52it/s] 62%|██████▏   | 60/97 [00:10<00:04,  7.86it/s] 63%|██████▎   | 61/97 [00:10<00:04,  8.04it/s] 64%|██████▍   | 62/97 [00:10<00:04,  8.11it/s] 65%|██████▍   | 63/97 [00:10<00:04,  7.61it/s] 66%|██████▌   | 64/97 [00:10<00:04,  6.91it/s] 67%|██████▋   | 65/97 [00:11<00:05,  6.36it/s] 68%|██████▊   | 66/97 [00:11<00:04,  6.92it/s] 69%|██████▉   | 67/97 [00:11<00:04,  6.47it/s] 70%|███████   | 68/97 [00:11<00:04,  6.20it/s] 71%|███████   | 69/97 [00:11<00:04,  6.58it/s] 72%|███████▏  | 70/97 [00:11<00:04,  6.46it/s] 73%|███████▎  | 71/97 [00:12<00:04,  5.98it/s] 74%|███████▍  | 72/97 [00:12<00:03,  6.32it/s] 75%|███████▌  | 73/97 [00:12<00:03,  6.38it/s] 76%|███████▋  | 74/97 [00:12<00:03,  6.17it/s] 77%|███████▋  | 75/97 [00:12<00:03,  6.79it/s] 78%|███████▊  | 76/97 [00:12<00:03,  6.79it/s] 79%|███████▉  | 77/97 [00:12<00:02,  7.03it/s] 80%|████████  | 78/97 [00:13<00:02,  7.13it/s] 81%|████████▏ | 79/97 [00:13<00:02,  6.07it/s] 82%|████████▏ | 80/97 [00:13<00:03,  5.40it/s] 84%|████████▎ | 81/97 [00:13<00:02,  5.84it/s] 85%|████████▍ | 82/97 [00:13<00:02,  6.33it/s] 86%|████████▌ | 83/97 [00:13<00:02,  6.86it/s] 87%|████████▋ | 84/97 [00:14<00:01,  7.17it/s] 88%|████████▊ | 85/97 [00:14<00:01,  7.44it/s] 89%|████████▊ | 86/97 [00:14<00:01,  7.61it/s] 90%|████████▉ | 87/97 [00:14<00:01,  7.70it/s] 91%|█████████ | 88/97 [00:14<00:01,  7.91it/s] 92%|█████████▏| 89/97 [00:14<00:00,  8.19it/s] 93%|█████████▎| 90/97 [00:14<00:00,  8.33it/s] 94%|█████████▍| 91/97 [00:14<00:00,  8.24it/s] 95%|█████████▍| 92/97 [00:14<00:00,  8.44it/s] 96%|█████████▌| 93/97 [00:15<00:00,  8.31it/s] 97%|█████████▋| 94/97 [00:15<00:00,  8.43it/s] 98%|█████████▊| 95/97 [00:15<00:00,  8.29it/s] 99%|█████████▉| 96/97 [00:15<00:00,  8.47it/s]100%|██████████| 97/97 [00:15<00:00,  6.17it/s]
+epoch = 10, learning rate = 9.712580423258476e-05
+Saved train model at epoch 10
+Epoch 10 val
+Epoch 10 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:01<00:29,  1.45s/it] 10%|▉         | 2/21 [00:01<00:12,  1.52it/s] 14%|█▍        | 3/21 [00:01<00:07,  2.48it/s] 19%|█▉        | 4/21 [00:01<00:04,  3.50it/s] 29%|██▊       | 6/21 [00:01<00:02,  5.91it/s] 38%|███▊      | 8/21 [00:02<00:01,  7.81it/s] 48%|████▊     | 10/21 [00:02<00:01,  6.53it/s] 52%|█████▏    | 11/21 [00:02<00:01,  7.04it/s] 62%|██████▏   | 13/21 [00:02<00:00,  8.14it/s] 71%|███████▏  | 15/21 [00:02<00:00,  9.12it/s] 81%|████████  | 17/21 [00:03<00:00,  9.83it/s] 95%|█████████▌| 20/21 [00:03<00:00, 12.90it/s]100%|██████████| 21/21 [00:03<00:00,  6.17it/s]
+@@@ plot_pred_points
+Saved test model at epoch 10
+Train GAE loss: 0
+Train loss breakdown {'perf': 1.095767651022095, 'util-LUT': 0.40298946877730263, 'util-FF': 0.29002927758337294, 'util-DSP': 0.7853144594689005, 'util-BRAM': 0.2806384383710389}
+Val GAE loss: 0
+Val loss breakdown {}
+Test GAE loss: 0
+Test loss breakdown {'perf': 1.0333973964055378, 'util-LUT': 0.3659466419901167, 'util-FF': 0.27659838398297626, 'util-DSP': 0.5752139829453968, 'util-BRAM': 0.2982193997928074}
+ 		 19.175 secs
+Epoch: 010, Train Loss: 2.8547, Val loss: 0.0000, Test: 2.5494) Time: 19.175 secs
+Test batch ID (resample): -1 - Epoch 11 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<02:46,  1.73s/it]  2%|▏         | 2/97 [00:01<01:17,  1.23it/s]  3%|▎         | 3/97 [00:02<00:48,  1.92it/s]  4%|▍         | 4/97 [00:02<00:35,  2.64it/s]  5%|▌         | 5/97 [00:02<00:25,  3.55it/s]  6%|▌         | 6/97 [00:02<00:21,  4.21it/s]  7%|▋         | 7/97 [00:02<00:20,  4.41it/s]  8%|▊         | 8/97 [00:02<00:19,  4.56it/s]  9%|▉         | 9/97 [00:03<00:18,  4.81it/s] 10%|█         | 10/97 [00:03<00:17,  5.02it/s] 11%|█▏        | 11/97 [00:03<00:17,  5.06it/s] 12%|█▏        | 12/97 [00:03<00:15,  5.48it/s] 13%|█▎        | 13/97 [00:03<00:14,  5.95it/s] 14%|█▍        | 14/97 [00:03<00:13,  6.05it/s] 15%|█▌        | 15/97 [00:04<00:13,  6.30it/s] 16%|█▋        | 16/97 [00:04<00:13,  6.17it/s] 18%|█▊        | 17/97 [00:04<00:13,  6.00it/s] 19%|█▊        | 18/97 [00:04<00:13,  6.00it/s] 20%|█▉        | 19/97 [00:04<00:11,  6.58it/s] 21%|██        | 20/97 [00:04<00:13,  5.80it/s] 22%|██▏       | 21/97 [00:05<00:12,  6.25it/s] 23%|██▎       | 22/97 [00:05<00:11,  6.66it/s] 24%|██▎       | 23/97 [00:05<00:10,  7.16it/s] 25%|██▍       | 24/97 [00:05<00:09,  7.34it/s] 26%|██▌       | 25/97 [00:05<00:10,  7.02it/s] 27%|██▋       | 26/97 [00:05<00:10,  6.52it/s] 28%|██▊       | 27/97 [00:05<00:09,  7.15it/s] 29%|██▉       | 28/97 [00:05<00:09,  7.03it/s] 30%|██▉       | 29/97 [00:06<00:09,  7.12it/s] 31%|███       | 30/97 [00:06<00:09,  7.27it/s] 32%|███▏      | 31/97 [00:06<00:08,  7.52it/s] 33%|███▎      | 32/97 [00:06<00:08,  7.63it/s] 34%|███▍      | 33/97 [00:06<00:08,  7.96it/s] 35%|███▌      | 34/97 [00:06<00:07,  8.12it/s] 36%|███▌      | 35/97 [00:06<00:07,  8.28it/s] 37%|███▋      | 36/97 [00:06<00:07,  8.24it/s] 38%|███▊      | 37/97 [00:07<00:07,  8.29it/s] 39%|███▉      | 38/97 [00:07<00:07,  8.38it/s] 40%|████      | 39/97 [00:07<00:07,  8.07it/s] 41%|████      | 40/97 [00:07<00:06,  8.30it/s] 42%|████▏     | 41/97 [00:07<00:06,  8.34it/s] 43%|████▎     | 42/97 [00:07<00:07,  7.78it/s] 44%|████▍     | 43/97 [00:07<00:07,  7.56it/s] 45%|████▌     | 44/97 [00:08<00:07,  6.76it/s] 46%|████▋     | 45/97 [00:08<00:07,  7.28it/s] 47%|████▋     | 46/97 [00:08<00:07,  6.91it/s] 48%|████▊     | 47/97 [00:08<00:07,  6.87it/s] 49%|████▉     | 48/97 [00:08<00:07,  6.50it/s] 51%|█████     | 49/97 [00:08<00:07,  6.50it/s] 52%|█████▏    | 50/97 [00:08<00:07,  6.65it/s] 53%|█████▎    | 51/97 [00:09<00:06,  6.59it/s] 54%|█████▎    | 52/97 [00:09<00:06,  6.55it/s] 55%|█████▍    | 53/97 [00:09<00:06,  6.48it/s] 56%|█████▌    | 54/97 [00:09<00:06,  6.44it/s] 57%|█████▋    | 55/97 [00:09<00:06,  6.63it/s] 58%|█████▊    | 56/97 [00:09<00:06,  6.31it/s] 59%|█████▉    | 57/97 [00:10<00:06,  5.99it/s] 60%|█████▉    | 58/97 [00:10<00:06,  6.08it/s] 61%|██████    | 59/97 [00:10<00:05,  6.62it/s] 62%|██████▏   | 60/97 [00:10<00:05,  6.62it/s] 63%|██████▎   | 61/97 [00:10<00:05,  6.30it/s] 64%|██████▍   | 62/97 [00:10<00:05,  6.67it/s] 65%|██████▍   | 63/97 [00:10<00:05,  6.73it/s] 66%|██████▌   | 64/97 [00:11<00:05,  6.37it/s] 67%|██████▋   | 65/97 [00:11<00:05,  6.16it/s] 68%|██████▊   | 66/97 [00:11<00:04,  6.65it/s] 69%|██████▉   | 67/97 [00:11<00:04,  6.35it/s] 70%|███████   | 68/97 [00:11<00:04,  6.15it/s] 71%|███████   | 69/97 [00:11<00:04,  6.48it/s] 72%|███████▏  | 70/97 [00:12<00:04,  6.33it/s] 73%|███████▎  | 71/97 [00:12<00:04,  6.46it/s] 74%|███████▍  | 72/97 [00:12<00:03,  6.26it/s] 75%|███████▌  | 73/97 [00:12<00:03,  6.37it/s] 76%|███████▋  | 74/97 [00:12<00:03,  6.06it/s] 77%|███████▋  | 75/97 [00:12<00:03,  6.22it/s] 78%|███████▊  | 76/97 [00:12<00:03,  6.85it/s] 79%|███████▉  | 77/97 [00:13<00:02,  7.06it/s] 80%|████████  | 78/97 [00:13<00:02,  7.39it/s] 81%|████████▏ | 79/97 [00:13<00:02,  7.39it/s] 82%|████████▏ | 80/97 [00:13<00:02,  7.64it/s] 84%|████████▎ | 81/97 [00:13<00:02,  7.54it/s] 85%|████████▍ | 82/97 [00:13<00:02,  7.42it/s] 86%|████████▌ | 83/97 [00:13<00:01,  7.76it/s] 87%|████████▋ | 84/97 [00:14<00:01,  7.93it/s] 88%|████████▊ | 85/97 [00:14<00:01,  8.09it/s] 89%|████████▊ | 86/97 [00:14<00:01,  8.22it/s] 90%|████████▉ | 87/97 [00:14<00:01,  8.16it/s] 91%|█████████ | 88/97 [00:14<00:01,  8.29it/s] 92%|█████████▏| 89/97 [00:14<00:00,  8.57it/s] 93%|█████████▎| 90/97 [00:14<00:00,  8.73it/s] 94%|█████████▍| 91/97 [00:14<00:00,  8.64it/s] 95%|█████████▍| 92/97 [00:14<00:00,  8.97it/s] 96%|█████████▌| 93/97 [00:15<00:00,  8.76it/s] 97%|█████████▋| 94/97 [00:15<00:00,  8.76it/s] 98%|█████████▊| 95/97 [00:15<00:00,  8.65it/s] 99%|█████████▉| 96/97 [00:15<00:00,  8.60it/s]100%|██████████| 97/97 [00:15<00:00,  6.21it/s]
+epoch = 11, learning rate = 0.00010682312313161358
+Saved train model at epoch 11
+Epoch 11 val
+Epoch 11 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:01<00:24,  1.21s/it] 14%|█▍        | 3/21 [00:01<00:06,  2.62it/s] 24%|██▍       | 5/21 [00:01<00:03,  4.23it/s] 29%|██▊       | 6/21 [00:01<00:03,  4.99it/s] 38%|███▊      | 8/21 [00:01<00:02,  6.44it/s] 43%|████▎     | 9/21 [00:02<00:01,  6.84it/s] 48%|████▊     | 10/21 [00:02<00:01,  7.37it/s] 57%|█████▋    | 12/21 [00:02<00:01,  8.43it/s] 67%|██████▋   | 14/21 [00:02<00:00,  9.05it/s] 76%|███████▌  | 16/21 [00:02<00:00,  9.64it/s] 86%|████████▌ | 18/21 [00:02<00:00, 10.24it/s]100%|██████████| 21/21 [00:02<00:00, 13.52it/s]100%|██████████| 21/21 [00:03<00:00,  6.68it/s]
+@@@ plot_pred_points
+Train GAE loss: 0
+Train loss breakdown {'perf': 1.0748140953250767, 'util-LUT': 0.40050346120116637, 'util-FF': 0.2871618307742876, 'util-DSP': 0.7845365850581336, 'util-BRAM': 0.27250583592763883}
+Val GAE loss: 0
+Val loss breakdown {}
+Test GAE loss: 0
+Test loss breakdown {'perf': 1.0816431300980704, 'util-LUT': 0.37439905745642527, 'util-FF': 0.290422152195658, 'util-DSP': 0.6487852845873151, 'util-BRAM': 0.33015530308087665}
+ 		 18.800 secs
+Epoch: 011, Train Loss: 2.8195, Val loss: 0.0000, Test: 2.7254) Time: 18.800 secs
+Test batch ID (resample): -1 - Epoch 12 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<02:53,  1.80s/it]  2%|▏         | 2/97 [00:01<01:19,  1.19it/s]  3%|▎         | 3/97 [00:02<00:51,  1.84it/s]  4%|▍         | 4/97 [00:02<00:36,  2.53it/s]  5%|▌         | 5/97 [00:02<00:28,  3.19it/s]  6%|▌         | 6/97 [00:02<00:24,  3.68it/s]  7%|▋         | 7/97 [00:02<00:22,  3.96it/s]  8%|▊         | 8/97 [00:03<00:19,  4.67it/s]  9%|▉         | 9/97 [00:03<00:16,  5.42it/s] 10%|█         | 10/97 [00:03<00:14,  6.05it/s] 11%|█▏        | 11/97 [00:03<00:13,  6.31it/s] 12%|█▏        | 12/97 [00:03<00:13,  6.53it/s] 13%|█▎        | 13/97 [00:03<00:12,  6.57it/s] 14%|█▍        | 14/97 [00:03<00:12,  6.55it/s] 15%|█▌        | 15/97 [00:04<00:13,  6.07it/s] 16%|█▋        | 16/97 [00:04<00:13,  6.01it/s] 18%|█▊        | 17/97 [00:04<00:12,  6.52it/s] 19%|█▊        | 18/97 [00:04<00:12,  6.36it/s] 20%|█▉        | 19/97 [00:04<00:11,  6.53it/s] 21%|██        | 20/97 [00:04<00:12,  6.11it/s] 22%|██▏       | 21/97 [00:04<00:12,  6.31it/s] 23%|██▎       | 22/97 [00:05<00:11,  6.67it/s] 24%|██▎       | 23/97 [00:05<00:10,  7.02it/s] 25%|██▍       | 24/97 [00:05<00:10,  7.23it/s] 26%|██▌       | 25/97 [00:05<00:09,  7.30it/s] 27%|██▋       | 26/97 [00:05<00:09,  7.45it/s] 28%|██▊       | 27/97 [00:05<00:10,  6.91it/s] 29%|██▉       | 28/97 [00:05<00:10,  6.68it/s] 30%|██▉       | 29/97 [00:06<00:10,  6.50it/s] 31%|███       | 30/97 [00:06<00:10,  6.61it/s] 32%|███▏      | 31/97 [00:06<00:10,  6.15it/s] 33%|███▎      | 32/97 [00:06<00:09,  6.50it/s] 34%|███▍      | 33/97 [00:06<00:09,  6.83it/s] 35%|███▌      | 34/97 [00:06<00:09,  6.32it/s] 36%|███▌      | 35/97 [00:07<00:09,  6.38it/s] 37%|███▋      | 36/97 [00:07<00:08,  6.78it/s] 38%|███▊      | 37/97 [00:07<00:09,  6.59it/s] 39%|███▉      | 38/97 [00:07<00:09,  6.55it/s] 40%|████      | 39/97 [00:07<00:09,  5.99it/s] 41%|████      | 40/97 [00:07<00:08,  6.44it/s] 42%|████▏     | 41/97 [00:07<00:07,  7.02it/s] 43%|████▎     | 42/97 [00:08<00:07,  7.05it/s] 44%|████▍     | 43/97 [00:08<00:07,  6.99it/s] 45%|████▌     | 44/97 [00:08<00:08,  6.45it/s] 46%|████▋     | 45/97 [00:08<00:07,  7.07it/s] 47%|████▋     | 46/97 [00:08<00:07,  7.17it/s] 48%|████▊     | 47/97 [00:08<00:06,  7.54it/s] 49%|████▉     | 48/97 [00:08<00:06,  7.11it/s] 51%|█████     | 49/97 [00:09<00:07,  6.80it/s] 52%|█████▏    | 50/97 [00:09<00:07,  6.30it/s] 53%|█████▎    | 51/97 [00:09<00:07,  6.42it/s] 54%|█████▎    | 52/97 [00:09<00:06,  6.91it/s] 55%|█████▍    | 53/97 [00:09<00:06,  7.11it/s] 56%|█████▌    | 54/97 [00:09<00:06,  6.84it/s] 57%|█████▋    | 55/97 [00:10<00:06,  6.25it/s] 58%|█████▊    | 56/97 [00:10<00:06,  6.59it/s] 59%|█████▉    | 57/97 [00:10<00:06,  6.31it/s] 60%|█████▉    | 58/97 [00:10<00:06,  6.19it/s] 61%|██████    | 59/97 [00:10<00:05,  6.70it/s] 62%|██████▏   | 60/97 [00:10<00:05,  6.64it/s] 63%|██████▎   | 61/97 [00:10<00:05,  6.31it/s] 64%|██████▍   | 62/97 [00:11<00:05,  6.73it/s] 65%|██████▍   | 63/97 [00:11<00:05,  6.57it/s] 66%|██████▌   | 64/97 [00:11<00:05,  6.24it/s] 67%|██████▋   | 65/97 [00:11<00:05,  6.07it/s] 68%|██████▊   | 66/97 [00:11<00:04,  6.55it/s] 69%|██████▉   | 67/97 [00:11<00:04,  6.65it/s] 70%|███████   | 68/97 [00:12<00:05,  5.65it/s] 71%|███████   | 69/97 [00:12<00:04,  5.90it/s] 72%|███████▏  | 70/97 [00:12<00:04,  6.58it/s] 73%|███████▎  | 71/97 [00:12<00:03,  6.83it/s] 74%|███████▍  | 72/97 [00:12<00:03,  6.59it/s] 75%|███████▌  | 73/97 [00:12<00:03,  7.06it/s] 76%|███████▋  | 74/97 [00:12<00:03,  6.49it/s] 77%|███████▋  | 75/97 [00:13<00:03,  6.48it/s] 78%|███████▊  | 76/97 [00:13<00:03,  6.44it/s] 79%|███████▉  | 77/97 [00:13<00:03,  6.20it/s] 80%|████████  | 78/97 [00:13<00:02,  6.90it/s] 81%|████████▏ | 79/97 [00:13<00:02,  7.20it/s] 82%|████████▏ | 80/97 [00:13<00:02,  7.40it/s] 84%|████████▎ | 81/97 [00:13<00:02,  7.34it/s] 85%|████████▍ | 82/97 [00:14<00:01,  7.66it/s] 86%|████████▌ | 83/97 [00:14<00:01,  7.80it/s] 87%|████████▋ | 84/97 [00:14<00:01,  7.92it/s] 88%|████████▊ | 85/97 [00:14<00:01,  7.98it/s] 89%|████████▊ | 86/97 [00:14<00:01,  8.17it/s] 90%|████████▉ | 87/97 [00:14<00:01,  8.12it/s] 91%|█████████ | 88/97 [00:14<00:01,  8.28it/s] 92%|█████████▏| 89/97 [00:14<00:00,  8.57it/s] 93%|█████████▎| 90/97 [00:15<00:00,  8.71it/s] 94%|█████████▍| 91/97 [00:15<00:00,  8.45it/s] 95%|█████████▍| 92/97 [00:15<00:00,  8.59it/s] 96%|█████████▌| 93/97 [00:15<00:00,  8.35it/s] 97%|█████████▋| 94/97 [00:15<00:00,  8.49it/s] 98%|█████████▊| 95/97 [00:15<00:00,  8.55it/s] 99%|█████████▉| 96/97 [00:15<00:00,  8.66it/s]100%|██████████| 97/97 [00:15<00:00,  6.07it/s]
+epoch = 12, learning rate = 0.00011651894066257989
+Epoch 12 val
+Epoch 12 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:01<00:28,  1.44s/it] 10%|▉         | 2/21 [00:01<00:12,  1.52it/s] 19%|█▉        | 4/21 [00:01<00:05,  3.27it/s] 29%|██▊       | 6/21 [00:01<00:02,  5.14it/s] 38%|███▊      | 8/21 [00:02<00:02,  6.39it/s] 48%|████▊     | 10/21 [00:02<00:01,  6.42it/s] 57%|█████▋    | 12/21 [00:02<00:01,  7.42it/s] 67%|██████▋   | 14/21 [00:02<00:00,  8.41it/s] 76%|███████▌  | 16/21 [00:02<00:00,  9.39it/s] 90%|█████████ | 19/21 [00:03<00:00, 12.11it/s]100%|██████████| 21/21 [00:03<00:00,  6.36it/s]
+Train GAE loss: 0
+Train loss breakdown {'perf': 1.0597779916733812, 'util-LUT': 0.39710034506837116, 'util-FF': 0.28552708628865864, 'util-DSP': 0.8279821765177029, 'util-BRAM': 0.2719004326259967}
+Val GAE loss: 0
+Val loss breakdown {}
+Test GAE loss: 0
+Test loss breakdown {'perf': 0.9914508348419553, 'util-LUT': 0.3603357821702957, 'util-FF': 0.23952110466502963, 'util-DSP': 1.0940181556202115, 'util-BRAM': 0.31945806386924924}
+ 		 19.294 secs
+Epoch: 012, Train Loss: 2.8423, Val loss: 0.0000, Test: 3.0048) Time: 19.294 secs
+Test batch ID (resample): -1 - Epoch 13 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<02:59,  1.87s/it]  2%|▏         | 2/97 [00:02<01:21,  1.17it/s]  3%|▎         | 3/97 [00:02<00:51,  1.82it/s]  4%|▍         | 4/97 [00:02<00:37,  2.46it/s]  5%|▌         | 5/97 [00:02<00:30,  3.05it/s]  6%|▌         | 6/97 [00:02<00:26,  3.46it/s]  7%|▋         | 7/97 [00:02<00:21,  4.13it/s]  8%|▊         | 8/97 [00:03<00:19,  4.65it/s]  9%|▉         | 9/97 [00:03<00:18,  4.82it/s] 10%|█         | 10/97 [00:03<00:15,  5.57it/s] 11%|█▏        | 11/97 [00:03<00:15,  5.59it/s] 12%|█▏        | 12/97 [00:03<00:14,  5.78it/s] 13%|█▎        | 13/97 [00:03<00:13,  6.27it/s] 14%|█▍        | 14/97 [00:04<00:13,  6.21it/s] 15%|█▌        | 15/97 [00:04<00:13,  6.02it/s] 16%|█▋        | 16/97 [00:04<00:12,  6.39it/s] 18%|█▊        | 17/97 [00:04<00:12,  6.30it/s] 19%|█▊        | 18/97 [00:04<00:13,  5.97it/s] 20%|█▉        | 19/97 [00:04<00:11,  6.64it/s] 21%|██        | 20/97 [00:04<00:12,  6.34it/s] 22%|██▏       | 21/97 [00:05<00:11,  6.33it/s] 23%|██▎       | 22/97 [00:05<00:11,  6.57it/s] 24%|██▎       | 23/97 [00:05<00:11,  6.52it/s] 25%|██▍       | 24/97 [00:05<00:11,  6.62it/s] 26%|██▌       | 25/97 [00:05<00:11,  6.50it/s] 27%|██▋       | 26/97 [00:05<00:11,  6.18it/s] 28%|██▊       | 27/97 [00:06<00:10,  6.94it/s] 29%|██▉       | 28/97 [00:06<00:09,  7.22it/s] 30%|██▉       | 29/97 [00:06<00:08,  7.65it/s] 31%|███       | 30/97 [00:06<00:09,  6.71it/s] 32%|███▏      | 31/97 [00:06<00:10,  6.34it/s] 33%|███▎      | 32/97 [00:06<00:09,  6.53it/s] 34%|███▍      | 33/97 [00:06<00:09,  7.04it/s] 35%|███▌      | 34/97 [00:07<00:09,  6.92it/s] 36%|███▌      | 35/97 [00:07<00:08,  7.13it/s] 37%|███▋      | 36/97 [00:07<00:08,  6.95it/s] 38%|███▊      | 37/97 [00:07<00:08,  6.98it/s] 39%|███▉      | 38/97 [00:07<00:08,  6.70it/s] 40%|████      | 39/97 [00:07<00:08,  6.86it/s] 41%|████      | 40/97 [00:07<00:08,  6.92it/s] 42%|████▏     | 41/97 [00:08<00:07,  7.18it/s] 43%|████▎     | 42/97 [00:08<00:07,  7.55it/s] 44%|████▍     | 43/97 [00:08<00:07,  7.70it/s] 45%|████▌     | 44/97 [00:08<00:07,  7.53it/s] 46%|████▋     | 45/97 [00:08<00:07,  6.68it/s] 47%|████▋     | 46/97 [00:08<00:06,  7.33it/s] 48%|████▊     | 47/97 [00:08<00:06,  7.18it/s] 49%|████▉     | 48/97 [00:08<00:06,  7.55it/s] 51%|█████     | 49/97 [00:09<00:05,  8.04it/s] 52%|█████▏    | 50/97 [00:09<00:05,  8.47it/s] 53%|█████▎    | 51/97 [00:09<00:06,  7.36it/s] 54%|█████▎    | 52/97 [00:09<00:06,  7.37it/s] 55%|█████▍    | 53/97 [00:09<00:06,  7.11it/s] 56%|█████▌    | 54/97 [00:09<00:06,  7.13it/s] 57%|█████▋    | 55/97 [00:09<00:05,  7.19it/s] 58%|█████▊    | 56/97 [00:10<00:05,  7.25it/s] 59%|█████▉    | 57/97 [00:10<00:05,  7.47it/s] 60%|█████▉    | 58/97 [00:10<00:05,  7.69it/s] 61%|██████    | 59/97 [00:10<00:04,  8.08it/s] 62%|██████▏   | 60/97 [00:10<00:04,  7.98it/s] 63%|██████▎   | 61/97 [00:10<00:04,  8.22it/s] 64%|██████▍   | 62/97 [00:10<00:04,  8.32it/s] 65%|██████▍   | 63/97 [00:10<00:04,  7.72it/s] 66%|██████▌   | 64/97 [00:11<00:04,  7.53it/s] 67%|██████▋   | 65/97 [00:11<00:04,  7.72it/s] 68%|██████▊   | 66/97 [00:11<00:03,  8.09it/s] 69%|██████▉   | 67/97 [00:11<00:03,  7.89it/s] 70%|███████   | 68/97 [00:11<00:03,  7.37it/s] 71%|███████   | 69/97 [00:11<00:04,  6.96it/s] 72%|███████▏  | 70/97 [00:11<00:03,  6.94it/s] 73%|███████▎  | 71/97 [00:12<00:03,  6.67it/s] 74%|███████▍  | 72/97 [00:12<00:03,  6.39it/s] 75%|███████▌  | 73/97 [00:12<00:03,  6.14it/s] 76%|███████▋  | 74/97 [00:12<00:03,  6.30it/s] 77%|███████▋  | 75/97 [00:12<00:03,  6.87it/s] 78%|███████▊  | 76/97 [00:12<00:02,  7.07it/s] 79%|███████▉  | 77/97 [00:12<00:02,  6.91it/s] 80%|████████  | 78/97 [00:13<00:02,  6.74it/s] 81%|████████▏ | 79/97 [00:13<00:02,  6.18it/s] 82%|████████▏ | 80/97 [00:13<00:02,  6.70it/s] 84%|████████▎ | 81/97 [00:13<00:02,  6.34it/s] 85%|████████▍ | 82/97 [00:13<00:02,  6.27it/s] 86%|████████▌ | 83/97 [00:13<00:02,  6.76it/s] 87%|████████▋ | 84/97 [00:14<00:01,  7.08it/s] 88%|████████▊ | 85/97 [00:14<00:01,  7.34it/s] 89%|████████▊ | 86/97 [00:14<00:01,  7.55it/s] 90%|████████▉ | 87/97 [00:14<00:01,  7.60it/s] 91%|█████████ | 88/97 [00:14<00:01,  7.90it/s] 92%|█████████▏| 89/97 [00:14<00:00,  8.27it/s] 93%|█████████▎| 90/97 [00:14<00:00,  8.38it/s] 94%|█████████▍| 91/97 [00:14<00:00,  8.26it/s] 95%|█████████▍| 92/97 [00:14<00:00,  8.56it/s] 96%|█████████▌| 93/97 [00:15<00:00,  8.37it/s] 97%|█████████▋| 94/97 [00:15<00:00,  8.48it/s] 98%|█████████▊| 95/97 [00:15<00:00,  8.46it/s] 99%|█████████▉| 96/97 [00:15<00:00,  8.45it/s]100%|██████████| 97/97 [00:15<00:00,  6.19it/s]
+epoch = 13, learning rate = 0.00012621312048340525
+Saved train model at epoch 13
+Epoch 13 val
+Epoch 13 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:01<00:29,  1.48s/it] 14%|█▍        | 3/21 [00:01<00:08,  2.20it/s] 24%|██▍       | 5/21 [00:01<00:03,  4.00it/s] 38%|███▊      | 8/21 [00:01<00:01,  7.01it/s] 48%|████▊     | 10/21 [00:02<00:02,  5.13it/s] 57%|█████▋    | 12/21 [00:02<00:01,  6.29it/s] 67%|██████▋   | 14/21 [00:02<00:00,  7.18it/s] 76%|███████▌  | 16/21 [00:03<00:00,  8.12it/s] 90%|█████████ | 19/21 [00:03<00:00, 11.00it/s]100%|██████████| 21/21 [00:03<00:00,  6.11it/s]
+@@@ plot_pred_points
+Train GAE loss: 0
+Train loss breakdown {'perf': 1.0377188257335388, 'util-LUT': 0.3955487785572858, 'util-FF': 0.27998682434104155, 'util-DSP': 0.7313325349817571, 'util-BRAM': 0.317905914230445}
+Val GAE loss: 0
+Val loss breakdown {}
+Test GAE loss: 0
+Test loss breakdown {'perf': 1.0326488585699172, 'util-LUT': 0.375493232692991, 'util-FF': 0.26079497876621427, 'util-DSP': 0.5166900165024257, 'util-BRAM': 0.4248570359888531}
+ 		 19.133 secs
+Epoch: 013, Train Loss: 2.7625, Val loss: 0.0000, Test: 2.6105) Time: 19.133 secs
+Test batch ID (resample): -1 - Epoch 14 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<02:49,  1.77s/it]  2%|▏         | 2/97 [00:01<01:18,  1.21it/s]  3%|▎         | 3/97 [00:02<00:50,  1.86it/s]  4%|▍         | 4/97 [00:02<00:36,  2.52it/s]  5%|▌         | 5/97 [00:02<00:29,  3.13it/s]  6%|▌         | 6/97 [00:02<00:25,  3.57it/s]  7%|▋         | 7/97 [00:02<00:22,  3.93it/s]  8%|▊         | 8/97 [00:03<00:19,  4.62it/s]  9%|▉         | 9/97 [00:03<00:16,  5.41it/s] 10%|█         | 10/97 [00:03<00:14,  6.20it/s] 11%|█▏        | 11/97 [00:03<00:13,  6.42it/s] 12%|█▏        | 12/97 [00:03<00:12,  6.68it/s] 13%|█▎        | 13/97 [00:03<00:12,  6.59it/s] 14%|█▍        | 14/97 [00:03<00:12,  6.74it/s] 15%|█▌        | 15/97 [00:03<00:12,  6.59it/s] 16%|█▋        | 16/97 [00:04<00:13,  5.94it/s] 18%|█▊        | 17/97 [00:04<00:12,  6.16it/s] 19%|█▊        | 18/97 [00:04<00:12,  6.41it/s] 20%|█▉        | 19/97 [00:04<00:12,  6.42it/s] 21%|██        | 20/97 [00:04<00:13,  5.87it/s] 22%|██▏       | 21/97 [00:04<00:12,  6.15it/s] 23%|██▎       | 22/97 [00:05<00:11,  6.61it/s] 24%|██▎       | 23/97 [00:05<00:10,  7.05it/s] 25%|██▍       | 24/97 [00:05<00:10,  7.20it/s] 26%|██▌       | 25/97 [00:05<00:10,  7.15it/s] 27%|██▋       | 26/97 [00:05<00:10,  6.91it/s] 28%|██▊       | 27/97 [00:05<00:10,  6.96it/s] 29%|██▉       | 28/97 [00:05<00:09,  7.41it/s] 30%|██▉       | 29/97 [00:06<00:09,  7.44it/s] 31%|███       | 30/97 [00:06<00:09,  7.13it/s] 32%|███▏      | 31/97 [00:06<00:10,  6.52it/s] 33%|███▎      | 32/97 [00:06<00:09,  6.99it/s] 34%|███▍      | 33/97 [00:06<00:09,  6.65it/s] 35%|███▌      | 34/97 [00:06<00:09,  6.50it/s] 36%|███▌      | 35/97 [00:06<00:09,  6.86it/s] 37%|███▋      | 36/97 [00:07<00:09,  6.69it/s] 38%|███▊      | 37/97 [00:07<00:09,  6.05it/s] 39%|███▉      | 38/97 [00:07<00:09,  6.09it/s] 40%|████      | 39/97 [00:07<00:08,  6.70it/s] 41%|████      | 40/97 [00:07<00:08,  7.00it/s] 42%|████▏     | 41/97 [00:07<00:07,  7.63it/s] 43%|████▎     | 42/97 [00:08<00:07,  6.90it/s] 44%|████▍     | 43/97 [00:08<00:08,  6.26it/s] 45%|████▌     | 44/97 [00:08<00:08,  6.50it/s] 46%|████▋     | 45/97 [00:08<00:07,  6.75it/s] 47%|████▋     | 46/97 [00:08<00:07,  6.68it/s] 48%|████▊     | 47/97 [00:08<00:07,  6.54it/s] 49%|████▉     | 48/97 [00:08<00:07,  6.46it/s] 51%|█████     | 49/97 [00:09<00:07,  6.58it/s] 52%|█████▏    | 50/97 [00:09<00:06,  6.94it/s] 53%|█████▎    | 51/97 [00:09<00:06,  6.69it/s] 54%|█████▎    | 52/97 [00:09<00:06,  6.68it/s] 55%|█████▍    | 53/97 [00:09<00:06,  6.43it/s] 56%|█████▌    | 54/97 [00:09<00:07,  6.06it/s] 57%|█████▋    | 55/97 [00:10<00:06,  6.75it/s] 58%|█████▊    | 56/97 [00:10<00:06,  6.67it/s] 59%|█████▉    | 57/97 [00:10<00:05,  6.69it/s] 60%|█████▉    | 58/97 [00:10<00:06,  6.27it/s] 61%|██████    | 59/97 [00:10<00:05,  6.87it/s] 62%|██████▏   | 60/97 [00:10<00:05,  6.76it/s] 63%|██████▎   | 61/97 [00:10<00:05,  7.13it/s] 64%|██████▍   | 62/97 [00:11<00:05,  6.96it/s] 65%|██████▍   | 63/97 [00:11<00:04,  7.14it/s] 66%|██████▌   | 64/97 [00:11<00:04,  6.89it/s] 67%|██████▋   | 65/97 [00:11<00:04,  7.02it/s] 68%|██████▊   | 66/97 [00:11<00:04,  6.86it/s] 69%|██████▉   | 67/97 [00:11<00:04,  6.63it/s] 70%|███████   | 68/97 [00:11<00:04,  5.98it/s] 71%|███████   | 69/97 [00:12<00:04,  5.99it/s] 72%|███████▏  | 70/97 [00:12<00:04,  6.45it/s] 73%|███████▎  | 71/97 [00:12<00:04,  6.28it/s] 74%|███████▍  | 72/97 [00:12<00:03,  6.32it/s] 75%|███████▌  | 73/97 [00:12<00:03,  6.50it/s] 76%|███████▋  | 74/97 [00:12<00:03,  6.04it/s] 77%|███████▋  | 75/97 [00:13<00:03,  6.51it/s] 78%|███████▊  | 76/97 [00:13<00:03,  6.65it/s] 79%|███████▉  | 77/97 [00:13<00:02,  6.69it/s] 80%|████████  | 78/97 [00:13<00:02,  6.72it/s] 81%|████████▏ | 79/97 [00:13<00:02,  6.84it/s] 82%|████████▏ | 80/97 [00:13<00:02,  6.52it/s] 84%|████████▎ | 81/97 [00:13<00:02,  6.18it/s] 85%|████████▍ | 82/97 [00:14<00:02,  6.80it/s] 86%|████████▌ | 83/97 [00:14<00:01,  7.22it/s] 87%|████████▋ | 84/97 [00:14<00:01,  7.52it/s] 88%|████████▊ | 85/97 [00:14<00:01,  7.79it/s] 89%|████████▊ | 86/97 [00:14<00:01,  7.90it/s] 90%|████████▉ | 87/97 [00:14<00:01,  8.04it/s] 91%|█████████ | 88/97 [00:14<00:01,  8.19it/s] 92%|█████████▏| 89/97 [00:14<00:00,  8.38it/s] 93%|█████████▎| 90/97 [00:15<00:00,  8.60it/s] 94%|█████████▍| 91/97 [00:15<00:00,  8.47it/s] 95%|█████████▍| 92/97 [00:15<00:00,  8.58it/s] 96%|█████████▌| 93/97 [00:15<00:00,  8.48it/s] 97%|█████████▋| 94/97 [00:15<00:00,  8.47it/s] 98%|█████████▊| 95/97 [00:15<00:00,  8.34it/s] 99%|█████████▉| 96/97 [00:15<00:00,  8.33it/s]100%|██████████| 97/97 [00:15<00:00,  6.07it/s]
+epoch = 14, learning rate = 0.00013590552627894912
+Saved train model at epoch 14
+Epoch 14 val
+Epoch 14 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:01<00:27,  1.35s/it] 14%|█▍        | 3/21 [00:01<00:07,  2.39it/s] 19%|█▉        | 4/21 [00:01<00:05,  3.21it/s] 29%|██▊       | 6/21 [00:01<00:02,  5.42it/s] 43%|████▎     | 9/21 [00:02<00:01,  6.39it/s] 52%|█████▏    | 11/21 [00:02<00:01,  7.22it/s] 62%|██████▏   | 13/21 [00:02<00:00,  8.04it/s] 71%|███████▏  | 15/21 [00:02<00:00,  8.77it/s] 81%|████████  | 17/21 [00:02<00:00,  9.29it/s] 90%|█████████ | 19/21 [00:03<00:00, 10.78it/s]100%|██████████| 21/21 [00:03<00:00,  6.40it/s]
+@@@ plot_pred_points
+Train GAE loss: 0
+Train loss breakdown {'perf': 1.0147468816373766, 'util-LUT': 0.39046626361375003, 'util-FF': 0.27398077160427253, 'util-DSP': 0.7023214888326901, 'util-BRAM': 0.27781072904154197}
+Val GAE loss: 0
+Val loss breakdown {}
+Test GAE loss: 0
+Test loss breakdown {'perf': 1.0340592832792372, 'util-LUT': 0.354990059421176, 'util-FF': 0.24979796367032187, 'util-DSP': 0.6054742421422686, 'util-BRAM': 0.46393461738313946}
+ 		 19.307 secs
+Epoch: 014, Train Loss: 2.6593, Val loss: 0.0000, Test: 2.7083) Time: 19.307 secs
+Test batch ID (resample): -1 - Epoch 15 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<02:53,  1.80s/it]  2%|▏         | 2/97 [00:01<01:20,  1.19it/s]  3%|▎         | 3/97 [00:02<00:49,  1.88it/s]  4%|▍         | 4/97 [00:02<00:36,  2.53it/s]  5%|▌         | 5/97 [00:02<00:29,  3.08it/s]  6%|▌         | 6/97 [00:02<00:25,  3.57it/s]  7%|▋         | 7/97 [00:02<00:21,  4.19it/s]  8%|▊         | 8/97 [00:03<00:19,  4.45it/s]  9%|▉         | 9/97 [00:03<00:16,  5.22it/s] 10%|█         | 10/97 [00:03<00:15,  5.58it/s] 11%|█▏        | 11/97 [00:03<00:14,  5.87it/s] 12%|█▏        | 12/97 [00:03<00:13,  6.22it/s] 13%|█▎        | 13/97 [00:03<00:13,  6.34it/s] 14%|█▍        | 14/97 [00:03<00:12,  6.49it/s] 15%|█▌        | 15/97 [00:04<00:12,  6.55it/s] 16%|█▋        | 16/97 [00:04<00:12,  6.42it/s] 18%|█▊        | 17/97 [00:04<00:11,  6.74it/s] 19%|█▊        | 18/97 [00:04<00:12,  6.55it/s] 20%|█▉        | 19/97 [00:04<00:12,  6.17it/s] 21%|██        | 20/97 [00:04<00:12,  6.18it/s] 22%|██▏       | 21/97 [00:04<00:11,  6.60it/s] 23%|██▎       | 22/97 [00:05<00:11,  6.30it/s] 24%|██▎       | 23/97 [00:05<00:12,  5.96it/s] 25%|██▍       | 24/97 [00:05<00:11,  6.36it/s] 26%|██▌       | 25/97 [00:05<00:12,  5.95it/s] 27%|██▋       | 26/97 [00:05<00:11,  6.17it/s] 28%|██▊       | 27/97 [00:05<00:10,  6.81it/s] 29%|██▉       | 28/97 [00:06<00:09,  7.30it/s] 30%|██▉       | 29/97 [00:06<00:09,  6.88it/s] 31%|███       | 30/97 [00:06<00:09,  6.96it/s] 32%|███▏      | 31/97 [00:06<00:09,  6.86it/s] 33%|███▎      | 32/97 [00:06<00:10,  6.22it/s] 34%|███▍      | 33/97 [00:06<00:09,  6.48it/s] 35%|███▌      | 34/97 [00:06<00:09,  6.81it/s] 36%|███▌      | 35/97 [00:07<00:09,  6.73it/s] 37%|███▋      | 36/97 [00:07<00:09,  6.70it/s] 38%|███▊      | 37/97 [00:07<00:09,  6.06it/s] 39%|███▉      | 38/97 [00:07<00:09,  6.08it/s] 40%|████      | 39/97 [00:07<00:09,  6.40it/s] 41%|████      | 40/97 [00:07<00:08,  6.61it/s] 42%|████▏     | 41/97 [00:08<00:08,  6.45it/s] 43%|████▎     | 42/97 [00:08<00:09,  6.02it/s] 44%|████▍     | 43/97 [00:08<00:09,  5.97it/s] 45%|████▌     | 44/97 [00:08<00:08,  6.43it/s] 46%|████▋     | 45/97 [00:08<00:08,  6.48it/s] 47%|████▋     | 46/97 [00:08<00:08,  6.12it/s] 48%|████▊     | 47/97 [00:09<00:07,  6.51it/s] 49%|████▉     | 48/97 [00:09<00:07,  6.54it/s] 51%|█████     | 49/97 [00:09<00:07,  6.51it/s] 52%|█████▏    | 50/97 [00:09<00:07,  6.18it/s] 53%|█████▎    | 51/97 [00:09<00:06,  6.82it/s] 54%|█████▎    | 52/97 [00:09<00:06,  6.71it/s] 55%|█████▍    | 53/97 [00:09<00:06,  7.07it/s] 56%|█████▌    | 54/97 [00:10<00:05,  7.36it/s] 57%|█████▋    | 55/97 [00:10<00:05,  7.76it/s] 58%|█████▊    | 56/97 [00:10<00:05,  7.38it/s] 59%|█████▉    | 57/97 [00:10<00:05,  7.24it/s] 60%|█████▉    | 58/97 [00:10<00:06,  6.45it/s] 61%|██████    | 59/97 [00:10<00:05,  6.47it/s] 62%|██████▏   | 60/97 [00:10<00:05,  6.95it/s] 63%|██████▎   | 61/97 [00:11<00:04,  7.39it/s] 64%|██████▍   | 62/97 [00:11<00:04,  7.52it/s] 65%|██████▍   | 63/97 [00:11<00:04,  7.36it/s] 66%|██████▌   | 64/97 [00:11<00:04,  6.89it/s] 67%|██████▋   | 65/97 [00:11<00:05,  6.31it/s] 68%|██████▊   | 66/97 [00:11<00:04,  6.96it/s] 69%|██████▉   | 67/97 [00:11<00:04,  6.71it/s] 70%|███████   | 68/97 [00:12<00:04,  6.72it/s] 71%|███████   | 69/97 [00:12<00:04,  6.43it/s] 72%|███████▏  | 70/97 [00:12<00:04,  6.05it/s] 73%|███████▎  | 71/97 [00:12<00:03,  6.51it/s] 74%|███████▍  | 72/97 [00:12<00:03,  6.33it/s] 75%|███████▌  | 73/97 [00:12<00:03,  6.57it/s] 76%|███████▋  | 74/97 [00:13<00:03,  6.27it/s] 77%|███████▋  | 75/97 [00:13<00:03,  6.86it/s] 78%|███████▊  | 76/97 [00:13<00:02,  7.32it/s] 79%|███████▉  | 77/97 [00:13<00:02,  6.98it/s] 80%|████████  | 78/97 [00:13<00:02,  6.81it/s] 81%|████████▏ | 79/97 [00:13<00:02,  6.74it/s] 82%|████████▏ | 80/97 [00:13<00:02,  6.54it/s] 84%|████████▎ | 81/97 [00:14<00:02,  6.17it/s] 85%|████████▍ | 82/97 [00:14<00:02,  6.66it/s] 86%|████████▌ | 83/97 [00:14<00:01,  7.16it/s] 87%|████████▋ | 84/97 [00:14<00:01,  7.57it/s] 88%|████████▊ | 85/97 [00:14<00:01,  7.69it/s] 89%|████████▊ | 86/97 [00:14<00:01,  7.84it/s] 90%|████████▉ | 87/97 [00:14<00:01,  7.75it/s] 91%|█████████ | 88/97 [00:14<00:01,  7.93it/s] 92%|█████████▏| 89/97 [00:15<00:00,  8.21it/s] 93%|█████████▎| 90/97 [00:15<00:00,  8.35it/s] 94%|█████████▍| 91/97 [00:15<00:00,  8.35it/s] 95%|█████████▍| 92/97 [00:15<00:00,  8.61it/s] 96%|█████████▌| 93/97 [00:15<00:00,  8.35it/s] 97%|█████████▋| 94/97 [00:15<00:00,  8.53it/s] 98%|█████████▊| 95/97 [00:15<00:00,  8.62it/s] 99%|█████████▉| 96/97 [00:15<00:00,  8.71it/s]100%|██████████| 97/97 [00:16<00:00,  6.03it/s]
+epoch = 15, learning rate = 0.00014559602176325147
+Saved train model at epoch 15
+Epoch 15 val
+Epoch 15 test
+  0%|          | 0/21 [00:00<?, ?it/s]  5%|▍         | 1/21 [00:01<00:28,  1.45s/it] 14%|█▍        | 3/21 [00:01<00:07,  2.26it/s] 24%|██▍       | 5/21 [00:01<00:04,  3.82it/s] 33%|███▎      | 7/21 [00:01<00:02,  5.48it/s] 43%|████▎     | 9/21 [00:02<00:01,  6.71it/s] 52%|█████▏    | 11/21 [00:02<00:01,  7.62it/s] 62%|██████▏   | 13/21 [00:02<00:00,  8.48it/s] 71%|███████▏  | 15/21 [00:02<00:00,  8.98it/s] 81%|████████  | 17/21 [00:02<00:00,  9.57it/s] 90%|█████████ | 19/21 [00:03<00:00, 11.14it/s]100%|██████████| 21/21 [00:03<00:00,  6.40it/s]
+@@@ plot_pred_points
+Saved test model at epoch 15
+Train GAE loss: 0
+Train loss breakdown {'perf': 1.0080789429010804, 'util-LUT': 0.37903262597998394, 'util-FF': 0.26374607571621533, 'util-DSP': 0.7233391772840441, 'util-BRAM': 0.27335217257135924}
+Val GAE loss: 0
+Val loss breakdown {}
+Test GAE loss: 0
+Test loss breakdown {'perf': 0.9128949755714053, 'util-LUT': 0.3335363914569219, 'util-FF': 0.2319809574456442, 'util-DSP': 0.4872455894947052, 'util-BRAM': 0.3705212530635652}
+ 		 19.415 secs
+Epoch: 015, Train Loss: 2.6475, Val loss: 0.0000, Test: 2.3362) Time: 19.415 secs
+Test batch ID (resample): -1 - Epoch 16 train
+  0%|          | 0/97 [00:00<?, ?it/s]  1%|          | 1/97 [00:01<03:09,  1.97s/it]  2%|▏         | 2/97 [00:02<01:26,  1.10it/s]  3%|▎         | 3/97 [00:02<00:53,  1.76it/s]  4%|▍         | 4/97 [00:02<00:39,  2.38it/s]  5%|▌         | 5/97 [00:02<00:30,  2.99it/s]  6%|▌         | 6/97 [00:02<00:26,  3.45it/s]  7%|▋         | 7/97 [00:03<00:21,  4.11it/s]  8%|▊         | 8/97 [00:03<00:20,  4.38it/s]  9%|▉         | 9/97 [00:03<00:17,  5.09it/s] 10%|█         | 10/97 [00:03<00:15,  5.44it/s] 11%|█▏        | 11/97 [00:03<00:14,  5.90it/s] 12%|█▏        | 12/97 [00:03<00:14,  5.69it/s] 13%|█▎        | 13/97 [00:03<00:14,  5.95it/s] 14%|█▍        | 14/97 [00:04<00:13,  6.38it/s] 15%|█▌        | 15/97 [00:04<00:12,  6.42it/s] 16%|█▋        | 16/97 [00:04<00:12,  6.47it/s] 18%|█▊        | 17/97 [00:04<00:12,  6.56it/s] 19%|█▊        | 18/97 [00:04<00:13,  6.04it/s] 20%|█▉        | 19/97 [00:04<00:12,  6.17it/s] 21%|██        | 20/97 [00:05<00:11,  6.48it/s] 22%|██▏       | 21/97 [00:05<00:11,  6.60it/s] 23%|██▎       | 22/97 [00:05<00:11,  6.43it/s] 24%|██▎       | 23/97 [00:05<00:12,  5.92it/s] 25%|██▍       | 24/97 [00:05<00:12,  6.06it/s] 26%|██▌       | 25/97 [00:05<00:10,  6.60it/s] 27%|██▋       | 26/97 [00:05<00:10,  6.47it/s] 28%|██▊       | 27/97 [00:06<00:10,  6.63it/s] 29%|██▉       | 28/97 [00:06<00:09,  7.07it/s] 30%|██▉       | 29/97 [00:06<00:09,  7.09it/s] 31%|███       | 30/97 [00:06<00:09,  6.79it/s] 32%|███▏      | 31/97 [00:06<00:10,  6.43it/s] 33%|███▎      | 32/97 [00:06<00:10,  6.45it/s] 34%|███▍      | 33/97 [00:07<00:09,  6.75it/s] 35%|███▌      | 34/97 [00:07<00:09,  6.83it/s] 36%|███▌      | 35/97 [00:07<00:09,  6.57it/s] 37%|███▋      | 36/97 [00:07<00:09,  6.38it/s] 38%|███▊      | 37/97 [00:07<00:08,  6.79it/s] 39%|███▉      | 38/97 [00:07<00:09,  6.43it/s] 40%|████      | 39/97 [00:07<00:09,  6.06it/s] 41%|████      | 40/97 [00:08<00:08,  6.35it/s] 42%|████▏     | 41/97 [00:08<00:08,  6.98it/s] 43%|████▎     | 42/97 [00:08<00:07,  7.12it/s] 44%|████▍     | 43/97 [00:08<00:07,  7.34it/s] 45%|████▌     | 44/97 [00:08<00:07,  7.28it/s] 46%|████▋     | 45/97 [00:08<00:07,  6.67it/s] 47%|████▋     | 46/97 [00:08<00:07,  7.23it/s] 48%|████▊     | 47/97 [00:09<00:07,  7.10it/s] 49%|████▉     | 48/97 [00:09<00:07,  6.97it/s] 51%|█████     | 49/97 [00:09<00:06,  7.07it/s] 52%|█████▏    | 50/97 [00:09<00:06,  7.40it/s] 53%|█████▎    | 51/97 [00:09<00:05,  7.68it/s] 54%|█████▎    | 52/97 [00:09<00:05,  7.98it/s] 55%|█████▍    | 53/97 [00:09<00:06,  7.28it/s] 56%|█████▌    | 54/97 [00:10<00:05,  7.27it/s] 57%|█████▋    | 55/97 [00:10<00:06,  6.97it/s] 58%|█████▊    | 56/97 [00:10<00:06,  6.74it/s] 59%|█████▉    | 57/97 [00:10<00:06,  6.44it/s] 60%|█████▉    | 58/97 [00:10<00:06,  6.28it/s] 61%|██████    | 59/97 [00:10<00:05,  6.86it/s] 62%|██████▏   | 60/97 [00:10<00:05,  7.12it/s] 63%|██████▎   | 61/97 [00:11<00:04,  7.36it/s] 64%|██████▍   | 62/97 [00:11<00:05,  6.84it/s] 65%|██████▍   | 63/97 [00:11<00:05,  6.53it/s] 66%|██████▌   | 64/97 [00:11<00:04,  7.00it/s] 67%|██████▋   | 65/97 [00:11<00:04,  7.25it/s] 68%|██████▊   | 66/97 [00:11<00:04,  7.63it/s] 69%|██████▉   | 67/97 [00:11<00:03,  7.74it/s] 70%|███████   | 68/97 [00:11<00:03,  7.81it/s] 71%|███████   | 69/97 [00:12<00:03,  8.02it/s] 72%|███████▏  | 70/97 [00:12<00:03,  7.95it/s] 73%|███████▎  | 71/97 [00:12<00:03,  8.02it/s] 74%|███████▍  | 72/97 [00:12<00:03,  7.85it/s] 75%|███████▌  | 73/97 [00:12<00:03,  7.37it/s] 76%|███████▋  | 74/97 [00:12<00:03,  6.70it/s] 77%|███████▋  | 75/97 [00:12<00:03,  7.13it/s] 78%|███████▊  | 76/97 [00:13<00:03,  6.85it/s] 79%|███████▉  | 77/97 [00:13<00:02,  7.02it/s] 80%|████████  | 78/97 [00:13<00:02,  7.07it/s] 81%|████████▏ | 79/97 [00:13<00:02,  6.94it/s]

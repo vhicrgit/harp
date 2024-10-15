@@ -545,7 +545,7 @@ def test(loader, tvt, model, epoch, plot_test = False, test_losses = [-1], csv_d
                 collect_test_results(out_dict, data, FLAGS.task)
                 
     if FLAGS.enable_print_test_res and epoch % 50 == 0:
-        print_test_results(f'/root/autodl-tmp/kaggle/save/peep/test_result_{epoch}.json')
+        print_test_results(join(FLAGS.harp_path, f'save/peep/test_result_{epoch}.json'))
 
                     
                     

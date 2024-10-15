@@ -37,10 +37,11 @@ NON_OPT_PRAGMAS = ['LOOP_TRIPCOUNT', 'INTERFACE', 'INTERFACE', 'KERNEL']
 WITH_VAR_PRAGMAS = ['DEPENDENCE', 'RESOURCE', 'STREAM', 'ARRAY_PARTITION']
 TARGET = ['perf', 'util-DSP', 'util-BRAM', 'util-LUT', 'util-FF']
 # SAVE_DIR = join(get_save_path(), FLAGS.dataset,  f'{FLAGS.v_db}_MLP-{FLAGS.pragma_as_MLP}-{FLAGS.graph_type}-{FLAGS.task}_edge-position-{FLAGS.encode_edge_position}_norm_with-invalid_{FLAGS.invalid}-normalization_{FLAGS.norm_method}_tag_{FLAGS.tag}_{"".join(TARGET)}')
-# SAVE_DIR = '/root/autodl-tmp/kaggle/mem_dict_temp'
-# SAVE_DIR = '/root/autodl-tmp/kaggle/save/v18_regression'
-# SAVE_DIR = '/root/autodl-tmp/kaggle/save/v21_class'
-SAVE_DIR = '/root/autodl-tmp/kaggle/save/infer_class'
+# SAVE_DIR = join(FLAGS.harp_path, 'save/mem_dict_temp')
+# SAVE_DIR = join(FLAGS.harp_path, 'save/v18_regression')
+# SAVE_DIR = join(FLAGS.harp_path, 'save/v21_class')
+# SAVE_DIR = join(FLAGS.harp_path, 'save/infer_class')
+SAVE_DIR = join(FLAGS.harp_path, 'save/v18_regression_unmasked')
 
 ENCODER_PATH = join(SAVE_DIR, 'encoders')
 create_dir_if_not_exists(SAVE_DIR)
@@ -125,7 +126,7 @@ class Design:
         self.version = version
         self.is_inference = is_inference
         self.point = design['point']
-        if not self.is_inference:
+        if not self.is_inference and FLAGS.v_db != 'kaggle':
             self.valid = design['valid']
             self.perf = design['perf']
             self.res_util = design['res_util']
@@ -383,7 +384,7 @@ def get_data_list():
         # saver.log_info(f'num keys for {n}: {len(keys)} and lv2 keys: {len(lv2_keys)}')
         
         if FLAGS.v_db == 'kaggle':
-            with open("/root/autodl-tmp/kaggle/dse_database/test.json", "r") as f:
+            with open(join(FLAGS.harp_path, 'dse_database/test.json'), "r") as f:
                 DESIGNS = json.load(f)
             if kernel_name not in DESIGNS:
                 continue
@@ -432,17 +433,18 @@ def get_data_list():
             obj = Design(kernel_name, 'v21', design, is_inference=(FLAGS.task=='inference'))
             if FLAGS.v_db == 'kaggle':
                 obj.id_ = design["id"]
-            if not obj.is_inference and obj.valid is False and FLAGS.task == 'regression':
-                continue
-            if not obj.is_inference and obj.perf == 0 and FLAGS.task == 'regression':
-                continue
-            
-            if type(obj) is int or type(obj) is dict:
-                continue
-            if FLAGS.task == 'regression' and key[0:3] == 'lv1':
-                continue
-            if FLAGS.task == 'regression' and not FLAGS.invalid and obj.perf < FLAGS.min_allowed_latency:
-                continue
+            else:
+                # if not obj.is_inference and obj.valid is False and FLAGS.task == 'regression':
+                #     continue
+                if not obj.is_inference and obj.perf == 0 and FLAGS.task == 'regression':
+                    continue
+                
+                if type(obj) is int or type(obj) is dict:
+                    continue
+                if FLAGS.task == 'regression' and key[0:3] == 'lv1':
+                    continue
+                if FLAGS.task == 'regression' and not FLAGS.invalid and obj.perf < FLAGS.min_allowed_latency:
+                    continue
             cnt += 1
             xy_dict = _encode_X_dict(
                 g, ntypes=ntypes, ptypes=ptypes, itypes=itypes, ftypes=ftypes, btypes = btypes, numerics=numerics, point=obj.point)
@@ -482,8 +484,9 @@ def get_data_list():
             xy_dict['kernel_name'] = obj.kernel_name
             xy_dict['design_name'] = key
 
-
-            if FLAGS.task == 'regression':
+            if FLAGS.v_db == 'kaggle':
+                xy_dict['id_'] = obj.id_
+            elif FLAGS.task == 'regression':
                 for tname in TARGETS:
                     if tname == 'perf':
                         if FLAGS.norm_method == 'log2':
@@ -529,8 +532,7 @@ def get_data_list():
                 xy_dict['perf'] = torch.FloatTensor(np.array([y])).type(torch.LongTensor)
             else:
                 raise NotImplementedError()
-            if FLAGS.v_db == 'kaggle':
-                xy_dict['id_'] = obj.id_
+
 
             vname = key
 
@@ -578,74 +580,116 @@ def get_data_list():
             torch.set_printoptions(threshold=float('inf'))
 
             X = _encode_X_torch(d_node, enc_ntype, enc_ptype, enc_itype, enc_ftype, enc_btype)
-            # print('================ X:', X.shape)
-            # print(len(X[0]))
-            # print(X[0])
-            # print('--------------')
-            # print(X[0][:5])
-            # print(X[0][5:9])
-            # print(X[0][9])
-            # print(X[0][10:93])
-            # print(X[0][93:101])
-            # print(X[0][101:])
-            # if(X[0][9].item() > 1):
-            #     print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-            #     print("X[0][9]:", X[0][9])
             edge_attr = _encode_edge_torch(d_edge, enc_ftype_edge, enc_ptype_edge)
 
-            if FLAGS.task == 'regression':
-                data_list.append(Data(
-                    # id=d_node["id_"],
-                    gname=new_gname,
-                    x=X,
-                    key=vname,
-                    edge_index=edge_index,
-                    edge_attr=edge_attr,
-                    kernel=gname,
-                    X_contextnids=d_node['X_contextnids'],
-                    X_pragmanids=d_node['X_pragmanids'],                    
-                    X_pragmascopenids=d_node['X_pragmascopenids'],                    
-                    X_pseudonids=d_node['X_pseudonids'],    
-                    X_icmpnids=d_node['X_icmpnids'],    
-                    X_pragma_per_node=d_node['X_pragma_per_node'],            
-                    pragmas=d_node['pragmas'],
-                    kernel_name=d_node['kernel_name'],
-                    design_name=d_node['design_name'],
-                    perf=d_node['perf'],
-                    actual_perf=d_node['actual_perf'],
-                    # kernel_speedup=d_node['kernel_speedup'], # base is different per kernel
-                    # quality=d_node['quality'],
-                    util_BRAM=d_node['util-BRAM'],
-                    util_DSP=d_node['util-DSP'],
-                    util_LUT=d_node['util-LUT'],
-                    util_FF=d_node['util-FF'],
-                    total_BRAM=d_node['total-BRAM'],
-                    total_DSP=d_node['total-DSP'],
-                    total_LUT=d_node['total-LUT'],
-                    total_FF=d_node['total-FF']
-                ))
-            elif FLAGS.task == 'class':
-                data_list.append(Data(
-                    # id=d_node["id_"],
-                    gname=new_gname,
-                    x=X,
-                    key=vname,
-                    edge_index=edge_index,
-                    edge_attr=edge_attr,
-                    kernel=gname,
-                    X_contextnids=d_node['X_contextnids'],
-                    X_pragmanids=d_node['X_pragmanids'],
-                    X_pragmascopenids=d_node['X_pragmascopenids'],                    
-                    X_pseudonids=d_node['X_pseudonids'],    
-                    X_icmpnids=d_node['X_icmpnids'],    
-                    X_pragma_per_node=d_node['X_pragma_per_node'],
-                    pragmas=d_node['pragmas'],
-                    kernel_name=d_node['kernel_name'],
-                    design_name=d_node['design_name'],
-                    perf=d_node['perf']
-                ))
+            if FLAGS.v_db == 'kaggle':
+                if FLAGS.task == 'regression':
+                    data_list.append(Data(
+                        id=d_node["id_"],
+                        gname=new_gname,
+                        x=X,
+                        key=vname,
+                        edge_index=edge_index,
+                        edge_attr=edge_attr,
+                        kernel=gname,
+                        X_contextnids=d_node['X_contextnids'],
+                        X_pragmanids=d_node['X_pragmanids'],                    
+                        X_pragmascopenids=d_node['X_pragmascopenids'],                    
+                        X_pseudonids=d_node['X_pseudonids'],    
+                        X_icmpnids=d_node['X_icmpnids'],    
+                        X_pragma_per_node=d_node['X_pragma_per_node'],            
+                        pragmas=d_node['pragmas'],
+                        kernel_name=d_node['kernel_name'],
+                        design_name=d_node['design_name'],
+                        # perf=d_node['perf'],
+                        # actual_perf=d_node['actual_perf'],
+                        # kernel_speedup=d_node['kernel_speedup'], # base is different per kernel
+                        # quality=d_node['quality'],
+                        # util_BRAM=d_node['util-BRAM'],
+                        # util_DSP=d_node['util-DSP'],
+                        # util_LUT=d_node['util-LUT'],
+                        # util_FF=d_node['util-FF'],
+                        # total_BRAM=d_node['total-BRAM'],
+                        # total_DSP=d_node['total-DSP'],
+                        # total_LUT=d_node['total-LUT'],
+                        # total_FF=d_node['total-FF']
+                    ))
+                elif FLAGS.task == 'class':
+                    data_list.append(Data(
+                        id=d_node["id_"],
+                        gname=new_gname,
+                        x=X,
+                        key=vname,
+                        edge_index=edge_index,
+                        edge_attr=edge_attr,
+                        kernel=gname,
+                        X_contextnids=d_node['X_contextnids'],
+                        X_pragmanids=d_node['X_pragmanids'],
+                        X_pragmascopenids=d_node['X_pragmascopenids'],                    
+                        X_pseudonids=d_node['X_pseudonids'],    
+                        X_icmpnids=d_node['X_icmpnids'],    
+                        X_pragma_per_node=d_node['X_pragma_per_node'],
+                        pragmas=d_node['pragmas'],
+                        kernel_name=d_node['kernel_name'],
+                        design_name=d_node['design_name'],
+                        # perf=d_node['perf']
+                    ))
+                else:
+                    raise NotImplementedError()
             else:
-                raise NotImplementedError()
+                if FLAGS.task == 'regression':
+                    data_list.append(Data(
+                        # id=d_node["id_"],
+                        gname=new_gname,
+                        x=X,
+                        key=vname,
+                        edge_index=edge_index,
+                        edge_attr=edge_attr,
+                        kernel=gname,
+                        X_contextnids=d_node['X_contextnids'],
+                        X_pragmanids=d_node['X_pragmanids'],                    
+                        X_pragmascopenids=d_node['X_pragmascopenids'],                    
+                        X_pseudonids=d_node['X_pseudonids'],    
+                        X_icmpnids=d_node['X_icmpnids'],    
+                        X_pragma_per_node=d_node['X_pragma_per_node'],            
+                        pragmas=d_node['pragmas'],
+                        kernel_name=d_node['kernel_name'],
+                        design_name=d_node['design_name'],
+                        perf=d_node['perf'],
+                        actual_perf=d_node['actual_perf'],
+                        # kernel_speedup=d_node['kernel_speedup'], # base is different per kernel
+                        # quality=d_node['quality'],
+                        util_BRAM=d_node['util-BRAM'],
+                        util_DSP=d_node['util-DSP'],
+                        util_LUT=d_node['util-LUT'],
+                        util_FF=d_node['util-FF'],
+                        total_BRAM=d_node['total-BRAM'],
+                        total_DSP=d_node['total-DSP'],
+                        total_LUT=d_node['total-LUT'],
+                        total_FF=d_node['total-FF']
+                    ))
+                elif FLAGS.task == 'class':
+                    data_list.append(Data(
+                        # id=d_node["id_"],
+                        gname=new_gname,
+                        x=X,
+                        key=vname,
+                        edge_index=edge_index,
+                        edge_attr=edge_attr,
+                        kernel=gname,
+                        X_contextnids=d_node['X_contextnids'],
+                        X_pragmanids=d_node['X_pragmanids'],
+                        X_pragmascopenids=d_node['X_pragmascopenids'],                    
+                        X_pseudonids=d_node['X_pseudonids'],    
+                        X_icmpnids=d_node['X_icmpnids'],    
+                        X_pragma_per_node=d_node['X_pragma_per_node'],
+                        pragmas=d_node['pragmas'],
+                        kernel_name=d_node['kernel_name'],
+                        design_name=d_node['design_name'],
+                        perf=d_node['perf']
+                    ))
+                else:
+                    raise NotImplementedError()
     
     nns = [d.x.shape[0] for d in data_list]
     print_stats(nns, 'number of nodes')
