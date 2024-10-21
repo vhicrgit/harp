@@ -12,8 +12,8 @@ parser = argparse.ArgumentParser()
 TASK = 'regression'
 parser.add_argument('--task', default=TASK)
 
-SUBTASK = 'train'
-# SUBTASK = 'inference'
+# SUBTASK = 'train'
+SUBTASK = 'inference'
 parser.add_argument('--subtask', default=SUBTASK)
 parser.add_argument('--plot_dse', default=False)
 
@@ -60,7 +60,7 @@ parser.add_argument('--new_speedup', default=True) # new_speedup: same reference
 parser.add_argument('--invalid', type = bool, default=False ) # False: do not include invalid designs
 
 parser.add_argument('--encode_log', type = bool, default=False)
-v_db = 'v18' # 'v20': v20 database, 'v18': v18 database 'kaggle': kaggle
+v_db = 'kaggle' # 'v20', 'v18', 'kaggle',  'v18_util3.0_perf1000000000.0'
 parser.add_argument('--v_db', default=v_db) # if set to true uses the db of the new version of the tool: 2020.2
 
 test_kernels = None
@@ -242,8 +242,8 @@ parser.add_argument('--pragma_MLP_hidden_channels', default=pragma_MLP_hidden_ch
 parser.add_argument('--merge_MLP_hidden_channels', default=merge_MLP_hidden_channels)
 
 
-# model_path = join(harp_path, 'models/v18/v18.regression.pth')
-model_path = None
+model_path = join(harp_path, 'models/submission/class.pth')
+# model_path = None
 model_path_list = []
 use_pretrain = False
 # if use_pretrain:
@@ -298,7 +298,7 @@ parser.add_argument('--val_ratio', type=float, default=val_ratio) # ratio of dat
 parser.add_argument('--test_ratio', type=float, default=test_ratio) # ratio of database for validation set
 parser.add_argument('--activation', default='elu')     
 parser.add_argument('--D', type=int, default=64)
-parser.add_argument('--lr', default=2e-4) ## default=0.001
+parser.add_argument('--lr', default=1e-3) ## default=0.001
 scheduler, warmup, weight_decay = None, None, 0
 scheduler, warmup, weight_decaty = 'cosine', 'linear', 1e-4
 parser.add_argument('--weight_decay', default=weight_decay) ## default=0.0001, larger than 1e-4 didn't help original graph P+T
@@ -322,7 +322,7 @@ else:
 
 parser.add_argument('--epoch_num', type=int, default=epoch_num)
 
-gpu = 0
+gpu = 2
 device = str('cuda:{}'.format(gpu) if torch.cuda.is_available() and gpu != -1
              else 'cpu')
 parser.add_argument('--device', default=device)

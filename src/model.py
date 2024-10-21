@@ -513,7 +513,9 @@ class Net(nn.Module):
                         loss = self.loss_function(out, target) 
                     else:
                         raise NotImplementedError()
-                    # print('loss', loss.shape)
+                    
+                    if target_name == 'perf':
+                        loss = 0*loss
                 else:
                     target = y.view((len(y)))
                     loss = self.loss_function(out, target)

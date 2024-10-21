@@ -474,8 +474,8 @@ def inference(model, inference_dataset):
                     
         result_list.append(result)
         
-    with open("result.json", "w") as f:
-        json.dump(result_list, f)
+    with open(f"{FLAGS.task}.json", "w") as f:
+        json.dump(result_list, f, indent=4)
                     
     
 

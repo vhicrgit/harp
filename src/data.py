@@ -40,8 +40,11 @@ TARGET = ['perf', 'util-DSP', 'util-BRAM', 'util-LUT', 'util-FF']
 # SAVE_DIR = join(FLAGS.harp_path, 'save/mem_dict_temp')
 # SAVE_DIR = join(FLAGS.harp_path, 'save/v18_regression')
 # SAVE_DIR = join(FLAGS.harp_path, 'save/v21_class')
-# SAVE_DIR = join(FLAGS.harp_path, 'save/infer_class')
-SAVE_DIR = join(FLAGS.harp_path, 'save/v18_regression_unmasked')
+SAVE_DIR = join(FLAGS.harp_path, 'save/infer_class')
+# SAVE_DIR = join(FLAGS.harp_path, 'save/v18_regression_data_enhance')
+# SAVE_DIR = join(FLAGS.harp_path, 'save/v18_regression_unmasked')
+if FLAGS.v_db == 'kaggle':
+    SAVE_DIR = join(FLAGS.harp_path, 'save/infer_class')
 
 ENCODER_PATH = join(SAVE_DIR, 'encoders')
 create_dir_if_not_exists(SAVE_DIR)

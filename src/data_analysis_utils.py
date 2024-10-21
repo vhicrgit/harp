@@ -1,9 +1,9 @@
 import json
 import os
 import numpy as np
-
 import pandas as pd
 import re
+from config import FLAGS
 
 def create_id_kernel_map():
     file_path = './test.csv'
@@ -24,17 +24,23 @@ def create_id_kernel_map():
     # print(id_kernel_map)
     return id_kernel_map
 
-def use_mean_target(id_kernel_map, mead_map, path='./fm_v4.csv'):
+def use_mean_target(id_kernel_map, mean_map, path='./fm_v4.csv'):
     df = pd.read_csv(path)
     for index, row in df.iterrows():
         if row['valid'] == True:
             kernel = id_kernel_map[index]
-            df.at[index, 'perf'] = 1e7 / np.exp(mead_map[kernel]['perf'])
-            df.at[index, 'util-LUT'] = mead_map[kernel]['util-LUT']
-            df.at[index, 'util-FF'] = mead_map[kernel]['util-FF']
-            df.at[index, 'util-BRAM'] = mead_map[kernel]['util-BRAM']
-            df.at[index, 'util-DSP'] = mead_map[kernel]['util-DSP']
+            df.at[index, 'perf'] = 1e7 / np.exp(mean_map[kernel]['perf'])
+            df.at[index, 'util-LUT'] = mean_map[kernel]['util-LUT']
+            df.at[index, 'util-FF'] = mean_map[kernel]['util-FF']
+            df.at[index, 'util-BRAM'] = mean_map[kernel]['util-BRAM']
+            df.at[index, 'util-DSP'] = mean_map[kernel]['util-DSP']
     df.to_csv(path, index=False)
+    
+def mean_fix(path='./fm_v4.csv'):
+    v21_all_data = get_all_json_data_in_dir('../dse_database/train_data/data/designs/v21')
+    v21_mean = calc_mean_per_kernel(v21_all_data)
+    id_kernel_map = create_id_kernel_map()
+    use_mean_target(id_kernel_map, v21_mean, path)
 
 # 统计v21下每个kernel有多少个design（按照valid=True,Valid=False各多少个）
 def designs_cnt(data):
@@ -198,10 +204,58 @@ def combine_class_reg_csv(class_path='./mask0.9_v21mean.csv',
     df_combined = df_combined.apply(mask_row, axis=1)
     df_combined.to_csv(output_path, index=False)
         
+        
+def data_enhance(v_db='v18', default_util=3.0, default_perf=1e9):
+    path = os.path.join(FLAGS.harp_path, f'dse_database/train_data/data/designs/{v_db}')
+    out_db= f'{v_db}_util{default_util}_perf{default_perf}'
+    out_path = os.path.join(FLAGS.harp_path, f'dse_database/train_data/data/designs/{out_db}')
+    os.makedirs(out_path, exist_ok=True)
+    
+    def process_signle(path, out_path):
+        sigma_util = 0.5
+        sigma_perf = 1e8
+        with open(path, 'r') as f:
+            data = json.load(f)
+        for design_name, design in data.items():
+            if design['valid'] is False and design['perf'] == 0:
+                design['perf'] = np.random.normal(default_perf, sigma_perf)
+                for util_name, util in design['res_util'].items():
+                    if 'util' in util_name:
+                        design['res_util'][util_name] = np.random.normal(default_util, sigma_util)
+        with open(out_path, 'w') as f:
+            json.dump(data, f, indent=4)
+    
+    for filename in os.listdir(path):
+        process_signle(os.path.join(path, filename), os.path.join(out_path, filename))
+        
+        
+def get_baseline(v_db='v18'):
+    baseline_dict = dict()
+    path = os.path.join(FLAGS.harp_path, f'dse_database/train_data/data/designs/{v_db}')
+    for kernel_name in os.listdir(path):
+        with open(os.path.join(path, kernel_name), 'r') as f:
+            kernel = json.load(f)
+        for design_name, design in kernel.items():
+            flag = True
+            for _, p in design['point'].items():
+                if p != 1 and p != 'off':
+                    flag = False
+                    break
+            if flag:
+                design['res_util']['perf'] = design['perf']
+                design['res_util']['valid'] = design['valid']
+                design['res_util']['design_name'] = design_name
+                baseline_dict[kernel_name] = design['res_util']
+                break
+    
+    with open(os.path.join(path, '..',f'baseline_dict_{v_db}.json'), 'w') as f:
+        json.dump(baseline_dict, f, indent=4)
+    # print(baseline_dict)
 
+        
 # v18_all_data = get_all_json_data_in_dir('designs/v18')
 # v20_all_data = get_all_json_data_in_dir('designs/v20')
-v21_all_data = get_all_json_data_in_dir('designs/v21')
+# v21_all_data = get_all_json_data_in_dir('designs/v21')
 # designs_cnt(v18_all_data)
 # designs_cnt(v20_all_data)
 # designs_cnt(v21_all_data)
@@ -212,14 +266,16 @@ v21_all_data = get_all_json_data_in_dir('designs/v21')
 # print(1e7 / np.exp(3.9761188363287503))
 # lut_analysis(res['util-LUT'])
 # print(np.mean([1,1.2,3,9.4]))
-v21_mean = calc_mean_per_kernel(v21_all_data)
+# v21_mean = calc_mean_per_kernel(v21_all_data)
 # v18_mean = calc_mean_per_kernel(v18_all_data)
 # print("v21_mean:", v21_mean)
 # print("v18_mean:", v18_mean)
 
 # v21_all_data = get_all_json_data_in_dir('designs/v21')
 # v21_mean = calc_mean_per_kernel(v21_all_data)
-id_kernel_map = create_id_kernel_map()
-use_mean_target(id_kernel_map, v21_mean)
+# id_kernel_map = create_id_kernel_map()
+# use_mean_target(id_kernel_map, v21_mean)
 
 # mask_big_util()
+
+get_baseline()
