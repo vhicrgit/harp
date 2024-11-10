@@ -13,7 +13,8 @@ TASK = 'regression'
 parser.add_argument('--task', default=TASK)
 
 # SUBTASK = 'train'
-SUBTASK = 'inference'
+# SUBTASK = 'inference'
+SUBTASK = 'dse'
 parser.add_argument('--subtask', default=SUBTASK)
 parser.add_argument('--plot_dse', default=False)
 
@@ -35,11 +36,14 @@ MACHSUITE_KERNEL = ['aes', 'gemm-blocked', 'gemm-ncubed', 'spmv-crs', 'spmv-ellp
                     'nw', 'md', 'stencil-3d']
 
 poly_KERNEL = ['2mm', '3mm', 'adi', 'atax', 'bicg', 'bicg-large', 'covariance', 'doitgen', 
-               'doitgen-red', 'fdtd-2d', 'fdtd-2d-large', 'gemm-p', 'gemm-p-large', 'gemver', 
+               'doitgen-red', 'fdtd-2d', 'fdtd-2d-large', 'gemm-p', 'gemm-p-large', 'gemver','gemver-medium',
                'gesummv', 'heat-3d', 'jacobi-1d', 'jacobi-2d', 'mvt', 'seidel-2d', 'symm', 
                'symm-opt', 'syrk', 'syr2k', 'trmm', 'trmm-opt', 'mvt-medium', 'correlation',
                'atax-medium', 'bicg-medium', 'gesummv-medium']
 
+# MACHSUITE_KERNEL = []
+
+# poly_KERNEL = ['gemver-medium']
 
 parser.add_argument('--force_regen', type=bool, default=False) ## must be set to True for the first time to generate the dataset
 
@@ -60,7 +64,7 @@ parser.add_argument('--new_speedup', default=True) # new_speedup: same reference
 parser.add_argument('--invalid', type = bool, default=False ) # False: do not include invalid designs
 
 parser.add_argument('--encode_log', type = bool, default=False)
-v_db = 'kaggle' # 'v20', 'v18', 'kaggle',  'v18_util3.0_perf1000000000.0'
+v_db = 'v21' # 'v20', 'v18', 'kaggle',  'v18_util3.0_perf1000000000.0'
 parser.add_argument('--v_db', default=v_db) # if set to true uses the db of the new version of the tool: 2020.2
 
 test_kernels = None
@@ -112,8 +116,9 @@ else:
         model_ver = 'hierarchy-PT'        
 
 ################# one-hot encoder ##################
-encoder_path = None
-# encoder_path = "/root/autodl-tmp/kaggle/save/harp/v18_MLP-True-extended-pseudo-block-connected-hierarchy-class_edge-position-True_norm_with-invalid_False-normalization_speedup-log2_tag_whole-machsuite-poly_perfutil-DSPutil-BRAMutil-LUTutil-FF/encoders.klepto"
+# encoder_path = None
+# encoder_path = "/home/wqlou/kzw3933/harp/save/v18_regression_purned/encoders.klepto"
+encoder_path = "/home/wqlou/kzw3933/harp/save/v18_regression_origin/encoders.klepto"
 encode_edge_position = True
 use_encoder = False 
 if use_encoder:
@@ -128,7 +133,7 @@ parser.add_argument('--encoder_path', default=encoder_path)
 
 
 parser.add_argument('--bad_embedding', type=bool, default=False) 
-enable_embedding = True
+enable_embedding = False
 parser.add_argument('--enable_embedding', type=bool, default=enable_embedding) 
 # n: (ndata['type'])
 # p: (ptype) 替换数据后的pragma, eg.'ACCEL PARALLEL AUTO{<>}', 'ACCEL PIPELINE', 'ACCEL TILE AUTO{<>}', 'None'
@@ -174,6 +179,7 @@ parser.add_argument('--encode_edge_position', type=bool, default=encode_edge_pos
 
 num_layers = 6
 parser.add_argument('--num_layers', type=int, default=num_layers) 
+num_features = 157 # dse时我临时改的
 parser.add_argument('--num_features', default=num_features) 
 parser.add_argument('--edge_dim', default=edge_dim) 
 
@@ -242,7 +248,10 @@ parser.add_argument('--pragma_MLP_hidden_channels', default=pragma_MLP_hidden_ch
 parser.add_argument('--merge_MLP_hidden_channels', default=merge_MLP_hidden_channels)
 
 
-model_path = join(harp_path, 'models/submission/class.pth')
+# model_path = join(harp_path, 'src/logs/baseline/run1/train_model_state_dict.pth') #baseline
+# model_path = join(harp_path, 'src/logs/layer1/run1/train_model_state_dict.pth') #layer1
+# model_path = join(harp_path, 'src/logs/v18_head2_layer6_class/run1/train_model_state_dict.pth')
+model_path = join(harp_path, 'src/logs/v21_head2_layer6_reg/run1/train_model_state_dict.pth')
 # model_path = None
 model_path_list = []
 use_pretrain = False
@@ -266,7 +275,7 @@ ensemble = 0
 ensemble_weights = None
 parser.add_argument('--ensemble', type=int, default=ensemble)
 parser.add_argument('--ensemble_weights', default=ensemble_weights)
-class_model_path = None
+class_model_path = join(harp_path, 'src/logs/v21_head2_layer6_class/run1/train_model_state_dict.pth')
 # if SUBTASK == 'dse':
 #     keyword =  v_db
 #     includes = [keyword, model_ver, 'class']
@@ -298,7 +307,7 @@ parser.add_argument('--val_ratio', type=float, default=val_ratio) # ratio of dat
 parser.add_argument('--test_ratio', type=float, default=test_ratio) # ratio of database for validation set
 parser.add_argument('--activation', default='elu')     
 parser.add_argument('--D', type=int, default=64)
-parser.add_argument('--lr', default=1e-3) ## default=0.001
+parser.add_argument('--lr', default=5e-4) ## default=0.001
 scheduler, warmup, weight_decay = None, None, 0
 scheduler, warmup, weight_decaty = 'cosine', 'linear', 1e-4
 parser.add_argument('--weight_decay', default=weight_decay) ## default=0.0001, larger than 1e-4 didn't help original graph P+T
@@ -306,23 +315,26 @@ parser.add_argument("--scheduler", default=scheduler)
 parser.add_argument("--warmup", default=warmup)
 
 parser.add_argument('--random_seed', default=123) ## default=100
-batch_size = 64
+batch_size = 32
 parser.add_argument('--batch_size', type=int, default=batch_size)
 
-loss = 'RMSE' # RMSE, MSE, 
+loss = 'MSE' # RMSE, MSE, 
 parser.add_argument('--loss', type=str, default=loss) 
 
 if model_path == None:
     if TASK == 'regression':
-        epoch_num = 1000
+        epoch_num = 1500
     else:
-        epoch_num = 200
+        epoch_num = 500
 else:
-    epoch_num = 200
+    if TASK == 'regression':
+        epoch_num = 1500
+    else:
+        epoch_num = 500
 
 parser.add_argument('--epoch_num', type=int, default=epoch_num)
 
-gpu = 2
+gpu = 1
 device = str('cuda:{}'.format(gpu) if torch.cuda.is_available() and gpu != -1
              else 'cpu')
 parser.add_argument('--device', default=device)

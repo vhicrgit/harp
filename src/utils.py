@@ -1014,7 +1014,7 @@ def plot_models_per_graph(save_dir, name, graph_types, plot_data, multi_target):
 # 可视化
 harp_path = '/home/wqlou/kzw3933/harp'
 visual_save_dir = join(harp_path, 'save/harp/visual')
-labels_map_dir = join(harp_path, 'save/harp/idx2text.json')
+labels_map_dir = join(harp_path, 'save/harp/idx2text_origin.json')
 batch_size = 64
 
 def clear_directory(directory_path):
@@ -1137,10 +1137,23 @@ def draw_graph(data:SingleData, root_path, epoch):
     if len(path) > 200:
         path = path[:200]
     makedirs(path, exist_ok=True)
-    path = join(path, f'{pseudo_or_P}_epoch-{epoch}.png')
+    png_path = join(path, f'{pseudo_or_P}_epoch-{epoch}.png')
     plt.title(tittle)
-    plt.savefig(path, dpi=500)
-    plt.close() 
+    plt.savefig(png_path, dpi=500)
+    plt.close()
+    
+    # attention json file
+    json_path = join(path, f'{pseudo_or_P}_epoch-{epoch}.json')
+    attention_dict = dict()
+    # print(f'kernel: {data.kernel_name}')
+    # print(len(data.labels), len(data.attention_weights), len(data.nodes))
+    # print(data.nodes)
+    for i in range(len(data.nodes)):
+        attention_dict[i] = data.labels[i], data.attention_weights[i]
+    sorted_data_desc = dict(sorted(attention_dict.items(), key=lambda item: item[1][1], reverse=True))
+    with open(json_path, 'w') as f:
+        json.dump(sorted_data_desc, f, indent=4)
+    
 
 
 def draw_attention_graph(data, attention_weights, epoch, path):

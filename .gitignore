@@ -15,3 +15,6 @@ venv/
 *.pt
 src/logs/
 .vscode/
+save/harp/visual/
+save/peep/
+*.pickle

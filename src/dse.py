@@ -121,7 +121,7 @@ class GNNModel():
         else:
             if task == 'regression':
                 if FLAGS.model_path == None:
-                    assert len(model) == 1
+                    assert len(model) == 1, len(model)
                     self.model_path = model[0]
                 else:
                     if type(FLAGS.model_path) is list:
@@ -266,7 +266,7 @@ class GNNModel():
 
         for data in loader:
             data = data.to(FLAGS.device)
-            out_dict, loss, loss_dict, _ = self.model(data)
+            out_dict, loss, loss_dict, _, _ = self.model(data)
             
             if mode == 'regression':
                 for i in range(len(out_dict['perf'])):

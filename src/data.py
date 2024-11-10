@@ -38,9 +38,13 @@ WITH_VAR_PRAGMAS = ['DEPENDENCE', 'RESOURCE', 'STREAM', 'ARRAY_PARTITION']
 TARGET = ['perf', 'util-DSP', 'util-BRAM', 'util-LUT', 'util-FF']
 # SAVE_DIR = join(get_save_path(), FLAGS.dataset,  f'{FLAGS.v_db}_MLP-{FLAGS.pragma_as_MLP}-{FLAGS.graph_type}-{FLAGS.task}_edge-position-{FLAGS.encode_edge_position}_norm_with-invalid_{FLAGS.invalid}-normalization_{FLAGS.norm_method}_tag_{FLAGS.tag}_{"".join(TARGET)}')
 # SAVE_DIR = join(FLAGS.harp_path, 'save/mem_dict_temp')
-# SAVE_DIR = join(FLAGS.harp_path, 'save/v18_regression')
+# SAVE_DIR = join(FLAGS.harp_path, 'save/v18_regression_origin')
+# SAVE_DIR = join(FLAGS.harp_path, 'save/v18_regression_purned')
+# SAVE_DIR = join(FLAGS.harp_path, 'save/v18_class_purned')
+# SAVE_DIR = join(FLAGS.harp_path, 'save/v18_class_origin')
 # SAVE_DIR = join(FLAGS.harp_path, 'save/v21_class')
-SAVE_DIR = join(FLAGS.harp_path, 'save/infer_class')
+SAVE_DIR = join(FLAGS.harp_path, 'save/v21_reg')
+# SAVE_DIR = join(FLAGS.harp_path, 'save/infer_class')
 # SAVE_DIR = join(FLAGS.harp_path, 'save/v18_regression_data_enhance')
 # SAVE_DIR = join(FLAGS.harp_path, 'save/v18_regression_unmasked')
 if FLAGS.v_db == 'kaggle':
@@ -347,6 +351,17 @@ def get_data_list():
             kernel_name = 'stencil_stencil2d'
 
         g = nx.read_gexf(gexf_file)
+        # debug
+        print(f'Kernel: {kernel_name}')
+        print(f'nodes: {len(g.nodes)}')
+        with open('/home/wqlou/kzw3933/harp/save/harp/idx2text_purned.json', 'r') as f:
+            purned_data = json.load(f)
+        if kernel_name == 'stencil_stencil2d':
+            real_kernel_name = 'stencil'
+        else:
+            real_kernel_name = kernel_name
+        print(f'purned nodes: {len(purned_data[real_kernel_name])}')
+        
         g.variants = OrderedDict()
         gname = basename(gexf_file).split('.')[0]
         n = f"{basename(gexf_file).split('_')[0]}_"
@@ -844,7 +859,7 @@ def _encode_X_dict(g, ntypes=None, ptypes=None, numerics=None, itypes=None, ftyp
       
     for nid, (node, ndata) in enumerate(g.nodes(data=True)):  # TODO: node ordering
         # print(node['type'], type(node['type']))
-        assert nid == int(node), f'{nid} {node}'
+        # assert nid == int(node), f'{nid} {node}'
         if ntypes is not None:
             ntypes[ndata['type']] += 1
         if itypes is not None:

@@ -21,27 +21,35 @@ class MultiheadTransformer(nn.Module):
                  in_channels, 
                  out_channels, 
                  hidden_channels=64, 
-                 num_heads=4,        
+                 num_heads=2,        
                  dropout: float = 0.,
                  edge_dim: Optional[int] = None,
                  resnet_enable = True):
         super().__init__()
         self.resnet_enable = resnet_enable
         self.num_heads = num_heads
-        self.bn = BatchNorm(in_channels)
+        self.hidden_channels = hidden_channels
+        # self.bn = BatchNorm(in_channels)
         self.residual = torch.nn.Identity()
+        self.gate = Linear(in_channels, num_heads)
         self.conv = TransformerConv(in_channels, hidden_channels, heads=num_heads, dropout=dropout, edge_dim=edge_dim)
-        self.fc = Linear(hidden_channels * num_heads, out_channels)
+        # self.fc = Linear(hidden_channels * num_heads, out_channels)
         
-        nn.init.xavier_normal_(self.fc.weight, gain=nn.init.calculate_gain('relu'))
+        # nn.init.xavier_normal_(self.fc.weight, gain=nn.init.calculate_gain('relu'))
+        nn.init.xavier_normal_(self.gate.weight, gain=nn.init.calculate_gain('relu'))
     
     def forward(self, x, edge_index, edge_attr=None):
         if self.resnet_enable:
             res = self.residual(x)
-        x = self.bn(x)
-        x = F.relu(x)
+        # x = self.bn(x)
+        # x = F.relu(x)
+        gate = self.gate(x)
+        gate = F.softmax(gate, dim=-1)
         x = self.conv(x, edge_index, edge_attr=edge_attr)
-        x = self.fc(x)
+        x = x.view(-1, self.num_heads, self.hidden_channels)
+        gate = gate.view(-1, self.num_heads, 1)
+        x = torch.sum(gate*x, dim=1)
+        # x = self.fc(x)
         if self.resnet_enable:
             x += res
         return x
@@ -140,11 +148,11 @@ class Net(nn.Module):
         num_layers += FLAGS.gnn_layer_after_MLP
         for i in range(num_layers - 1):
             if i == num_layers - 2:
-                heads = 4
+                heads = 2
             # elif i == num_layers - 3 or i == num_layers - 4:
             #     heads = 2
             else:
-                heads = 4
+                heads = 2
             if FLAGS.encode_edge and FLAGS.gnn_type == 'transformer':
                 conv = conv_class(D, D, edge_dim=edge_dim, dropout=FLAGS.dropout)
             elif FLAGS.encode_edge and FLAGS.gnn_type == 'multihead_transformer':
@@ -514,8 +522,8 @@ class Net(nn.Module):
                     else:
                         raise NotImplementedError()
                     
-                    if target_name == 'perf':
-                        loss = 0*loss
+                    # if target_name == 'perf':
+                    #     loss = 0*loss
                 else:
                     target = y.view((len(y)))
                     loss = self.loss_function(out, target)
