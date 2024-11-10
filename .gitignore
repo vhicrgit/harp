@@ -18,3 +18,4 @@ src/logs/
 save/harp/visual/
 save/peep/
 *.pickle
+src/stage2/pickle/debug.txt
